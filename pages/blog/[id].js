@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import ReactHtmlParser from "react-html-parser";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
@@ -9,22 +10,50 @@ import {
   FacebookShareButton,
   LinkedinIcon,
   LinkedinShareButton,
-  PinterestIcon,
-  PinterestShareButton,
-  RedditIcon,
-  RedditShareButton,
-  TumblrIcon,
-  TumblrShareButton,
+  // PinterestIcon,
+  // PinterestShareButton,
+  // RedditIcon,
+  // RedditShareButton,
+  // TumblrIcon,
+  // TumblrShareButton,
   TwitterIcon,
   TwitterShareButton,
 } from "react-share";
-import { blogData } from "../../src/components/fakeData/blogData";
+import { BlogData } from "../../Data/BlogData";
 
 const BlogDetails = () => {
   const router = useRouter();
   const id = router.query.id;
-  const currentBlog = blogData.find((blog) => blog.id === id);
+  const [sBlog, setSBlog] = useState([]);
+  const [newBlog, setNewBlog] = useState([]);
 
+  useEffect(() => {
+    fetch("https://virtual-experts-server.cyclic.app/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setSBlog(data);
+        const cBlog = data.find((blog) => blog._id === id);
+        // console.log(currentBlog)
+        setNewBlog(cBlog);
+
+      });
+  }, [id]);
+
+  const currentBlog = BlogData?.find((blog) => blog.id === id);
+
+  let date = new Date(newBlog?.createdAt)
+  let original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
+
+
+  let imgType;
+  if (newBlog?.img?.contentType === "image/svg+xml") {
+    imgType = "data:image/svg+xml";
+  } else if (newBlog?.img?.contentType === "image/png") {
+    imgType = "data:image/png";
+  } else {
+    imgType = "data:image/jpg";
+  }
   return (
     <>
       <Head>
@@ -49,14 +78,14 @@ const BlogDetails = () => {
               Blog
             </span>
             <span className="text-warning mx-2">{`>`}</span>{" "}
-            <span>{currentBlog?.title}</span>
+            <span>{currentBlog?.title || newBlog?.title}</span>
           </p>
         </div>
       </div>
 
       <div className="blog-title-background py-md-5">
         <div className="container py-5">
-          <h1 className="text-center text-white">{currentBlog?.metaTitle}</h1>
+          <h1 className="text-center text-white">{currentBlog?.title || newBlog?.title}</h1>
         </div>
       </div>
 
@@ -69,16 +98,39 @@ const BlogDetails = () => {
                   {currentBlog && (
                     <Image
                       src={currentBlog?.img}
+                      blurDataURL={currentBlog?.img}
                       alt={currentBlog?.imgAlt}
                       title={currentBlog?.imgAlt}
-                      layout="responsive"
                       height="420"
-                      width="1000"
-                      className="borderRadius mt-4"
+                      width="700"
+                      quality={100}
+                      className="borderRadius mt-4 w-100"
+                      style={{
+                        objectFit: 'contain'
+                      }}
                     />
                   )}
+                  {newBlog?.img && (
+                    <Image
+                      src={`${imgType} ; base64, ${newBlog.img.img}`}
+                      alt={newBlog.imgAlt}
+                      title={newBlog.imgTitle}
+                      width={100}
+                      height={100}
+                    />)}
                 </div>
                 <div className="d-block d-md-none">
+                  {newBlog?.img && (
+                    <Image
+                      src={`${imgType} ; base64, ${newBlog.img.img}`}
+                      alt={newBlog?.imgAlt}
+                      title={newBlog?.imgAlt}
+                      layout="responsive"
+                      height="450"
+                      width="1000"
+                      className="borderRadius"
+                    />
+                  )}
                   {currentBlog && (
                     <Image
                       src={currentBlog?.img}
@@ -94,29 +146,31 @@ const BlogDetails = () => {
                 <div className="d-flex align-items-center justify-content-evenly mt-4 ">
                   <p style={{ fontSize: "14px" }}>
                     {" "}
-                    <FaUser className="me-1" /> {currentBlog?.writerName}
+                    <FaUser className="me-1" /> {currentBlog?.writerName || newBlog?.writerName}
                   </p>
                   <p style={{ fontSize: "14px" }}>
                     {" "}
                     <AiOutlineClockCircle className="me-1" />{" "}
-                    {currentBlog?.publishedDate}
+                    {currentBlog?.publishedDate || original_date}
                   </p>
                 </div>
 
                 <h1 className="fs-32 my-4 lh-36">
-                  {ReactHtmlParser(currentBlog?.title)}
+                  {ReactHtmlParser(currentBlog?.title || newBlog?.title)}
                 </h1>
 
-                <h6 className="my-3">Table Of Contents</h6>
+                {(currentBlog?.tableOfContent || newBlog?.tableOfContent) &&
+                  <h6 className="my-3">Table Of Contents</h6>
+                }
                 <p className="table-of-content cursor-pointer d-inline-block">
-                  {ReactHtmlParser(currentBlog?.tableOfContent)}
+                  {ReactHtmlParser(currentBlog?.tableOfContent || newBlog?.tableOfContent)}
                 </p>
 
                 <div className="fs-28 my-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle)}
                 </div>
                 <p className="fs-14 lh-36 text-justify mb-5">
-                  {ReactHtmlParser(currentBlog?.description)}
+                  {ReactHtmlParser(currentBlog?.description || newBlog?.description)}
                 </p>
 
                 <div className="fs-28 my-4 lh-30">
@@ -185,7 +239,7 @@ const BlogDetails = () => {
             </div>
             <div className="col-md-4 my-5">
               <div className="">
-                {blogData.map((blog) => (
+                {BlogData?.map((blog) => (
                   <div
                     className="col-12 cursor-pointer p-3 mb-4 border boxShadow rounded-1"
                     key={blog.id}
@@ -215,13 +269,57 @@ const BlogDetails = () => {
                     </div>
                   </div>
                 ))}
+                {sBlog?.map((blog) => {
+                  var date = new Date(blog?.createdAt)
+                  var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
+
+                  let imgType;
+                  if (blog?.img?.contentType === "image/svg+xml") {
+                    imgType = "data:image/svg+xml";
+                  } else if (blog?.img?.contentType === "image/png") {
+                    imgType = "data:image/png";
+                  } else {
+                    imgType = "data:image/jpg";
+                  }
+                  return (
+                    <div
+                      className="col-12 cursor-pointer p-3 mb-4 border boxShadow rounded-1"
+                      key={blog._id}
+                      onClick={() => router.push(`/blog/${blog._id}`)}
+                    >
+                      <div className="row">
+                        <div className="col-md-4">
+                          {blog?.img && (
+                            <Image
+                              src={`${imgType} ; base64, ${blog.img.img}`}
+                              title={blog.imgAlt}
+                              alt={blog.imgAlt}
+                              width="200"
+                              height="150"
+                              layout="responsive"
+                              className="rounded-3 mt-3"
+                            />)}
+                        </div>
+                        <div className="col-md-8">
+                          <div className="px-3">
+                            <h3 className="fs-18 lh-36 m-0">{blog?.title}</h3>
+                            <div className="d-flex justify-content-between">
+                              <p>{blog?.writerName}</p>
+                              <p>{original_date}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className={`position-fixed left-0 top-30`}>
+      <div className={`position-fixed bg-light rounded m-3 shadow-lg py-3 left-0 top-30`}>
         <FacebookShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
@@ -229,14 +327,14 @@ const BlogDetails = () => {
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
 
-        <LinkedinShareButton
+        {/* <LinkedinShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <LinkedinIcon size={32} round={true} />
-        </LinkedinShareButton>
+        </LinkedinShareButton> */}
 
-        <PinterestShareButton
+        {/* <PinterestShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
         >
@@ -248,7 +346,7 @@ const BlogDetails = () => {
           className="d-block p-2"
         >
           <RedditIcon size={32} round={true} />
-        </RedditShareButton>
+        </RedditShareButton> */}
 
         <TwitterShareButton
           url="https://virtualexperts.net/"
@@ -257,12 +355,12 @@ const BlogDetails = () => {
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
 
-        <TumblrShareButton
+        {/* <TumblrShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <TumblrIcon size={32} round={true} />
-        </TumblrShareButton>
+        </TumblrShareButton> */}
       </div>
     </>
   );
