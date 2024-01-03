@@ -11,6 +11,7 @@ import React, { createContext, useEffect, useState } from "react";
 // import Footer from '../Components/Shared/Footer/Footer';
 import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query';
 import Script from 'next/script';
+import { FaArrowAltCircleUp } from 'react-icons/fa';
 
 nProgress.configure(
   { showSpinner: true },
@@ -172,13 +173,6 @@ export default function App({ Component, pageProps }) {
           <FaArrowAltCircleUp size={40} />
         </div> */}
       </div>
-      {/* twak add */}
-      
-      <Script
-        strategy="lazyOnload"
-        src='https://embed.tawk.to/5dc483b81936a27a715fd119/default'
-      />
-
       <Footer />
 
     </>
