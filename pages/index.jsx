@@ -32,13 +32,13 @@ export async function getServerSideProps() {
     urls.map((url) => fetch(url).then((res) => res.json()))
   );
 
-  return {
+    return {
     props: {
       topServicesData,
       headerInfoTopServicesData,
       virtualServicesData,
       headerInfoVirtualExpertsData,
-      bannerData,
+      bannerData: bannerData[0],
       testimonials,
       amazonData,
       placeAnOrderListData,
