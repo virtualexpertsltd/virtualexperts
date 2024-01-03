@@ -52,7 +52,6 @@ export default function Home() {
         setBannerData(res[0])
       }).catch(err => console.log(err))
 
-
       fetch("https://virtual-experts-server.cyclic.app/testimonials").then(firstRes => firstRes.json()).then(res => {
         setTestimonials(res)
       }).catch(err => console.log(err))
@@ -69,10 +68,9 @@ export default function Home() {
         setPlaceAnOrderData(res)
       }).catch(err => console.log(err))
 
-      fetch("https://virtual-Bxperts-server.cyclic.app/metaHome").then(firstRes => firstRes.json()).then(res => {
+      fetch("https://virtual-experts-server.cyclic.app/metaHome").then(firstRes => firstRes.json()).then(res => {
         setMetaHome(res[0])
       }).catch(err => console.log(err))
-
     })()
   }, [])
 
