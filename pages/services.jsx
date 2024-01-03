@@ -6,34 +6,60 @@ import React, { useEffect, useState } from "react";
 const ServicesComponents = dynamic(() => import('../Components/Services/Services'));
 const ScheduleMeeting = dynamic(() => import('../Components/ScheduleMeeting/ScheduleMeeting'));
 
-const Services = () => {
-  const [servicesCardData, setServicesCardData] = useState();
-  const [whatWeDo, setWhatWeDo] = useState();
-  const [serviceCardHeader, setServiceCardHeader] = useState();
-  const [metaService, setMetaService] = useState();
+export async function getServerSideProps() {
+  const urls = [
+    "http://localhost:5000/servicesCard",
+    "http://localhost:5000/whatWeDo",
+    "http://localhost:5000/serviceCardHeader",
+    "http://localhost:5000/metaService",
+  ];
+
+  const [servicesCardData, whatWeDo, serviceCardHeader, metaService] = await Promise.all(
+    urls.map((url) => fetch(url).then((res) => res.json()))
+  );
+
+  return {
+    props: {
+      servicesCardData,
+      whatWeDo,
+      serviceCardHeader,
+      metaService: metaService[0]
+    },
+  };
+}
+
+const Services = ({
+  servicesCardData,
+  whatWeDo,
+  serviceCardHeader,
+  metaService
+}) => {
+  // const [servicesCardData, setServicesCardData] = useState();
+  // const [whatWeDo, setWhatWeDo] = useState();
+  // const [serviceCardHeader, setServiceCardHeader] = useState();
+  // const [metaService, setMetaService] = useState();
+
+  // useEffect(() => {
+  //   (async () => {
+  //     fetch("https://virtual-experts-server.cyclic.app/servicesCard").then(firstRes => firstRes.json()).then(res => {
+  //       setServicesCardData(res);
+  //     }).catch(err => console.log(err))
 
 
-  useEffect(() => {
-    (async () => {
-      fetch("https://virtual-experts-server.cyclic.app/servicesCard").then(firstRes => firstRes.json()).then(res => {
-        setServicesCardData(res);
-      }).catch(err => console.log(err))
+  //     fetch("https://virtual-experts-server.cyclic.app/whatWeDo").then(firstRes => firstRes.json()).then(res => {
+  //       setWhatWeDo(res);
+  //     }).catch(err => console.log(err))
+
+  //     fetch("https://virtual-experts-server.cyclic.app/serviceCardHeader").then(firstRes => firstRes.json()).then(res => {
+  //       setServiceCardHeader(res);
+  //     }).catch(err => console.log(err))
 
 
-      fetch("https://virtual-experts-server.cyclic.app/whatWeDo").then(firstRes => firstRes.json()).then(res => {
-        setWhatWeDo(res);
-      }).catch(err => console.log(err))
-
-      fetch("https://virtual-experts-server.cyclic.app/serviceCardHeader").then(firstRes => firstRes.json()).then(res => {
-        setServiceCardHeader(res);
-      }).catch(err => console.log(err))
-
-
-      fetch("https://virtual-experts-server.cyclic.app/metaService").then(firstRes => firstRes.json()).then(res => {
-        setMetaService(res[0]);
-      }).catch(err => console.log(err))
-    })()
-  }, [])
+  //     fetch("https://virtual-experts-server.cyclic.app/metaService").then(firstRes => firstRes.json()).then(res => {
+  //       setMetaService(res[0]);
+  //     }).catch(err => console.log(err))
+  //   })()
+  // }, [])
 
 
   return (

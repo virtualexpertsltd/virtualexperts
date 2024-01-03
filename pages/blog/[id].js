@@ -21,26 +21,35 @@ import {
 } from "react-share";
 import { BlogData } from "../../Data/BlogData";
 
-const BlogDetails = () => {
+export async function getServerSideProps() {
+  const res = await fetch(`http://localhost:5000/blogs`);
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+      blogData: BlogData,
+    },
+  };
+}
+
+const BlogDetails = ({
+  data,
+  blogData,
+}) => {
   const router = useRouter();
   const id = router.query.id;
   const [sBlog, setSBlog] = useState([]);
   const [newBlog, setNewBlog] = useState([]);
 
   useEffect(() => {
-    fetch("https://virtual-experts-server.cyclic.app/blogs")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setSBlog(data);
-        const cBlog = data.find((blog) => blog._id === id);
-        // console.log(currentBlog)
-        setNewBlog(cBlog);
+    setSBlog(data);
+    const cBlog = data?.find((blog) => blog._id === id);
+    // console.log(currentBlog)
+    setNewBlog(cBlog);
+  }, [data, id]);
 
-      });
-  }, [id]);
-
-  const currentBlog = BlogData?.find((blog) => blog.id === id);
+  const currentBlog = blogData?.find((blog) => blog.id === id);
 
   let date = new Date(newBlog?.createdAt)
   let original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();

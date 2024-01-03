@@ -18,28 +18,50 @@ import { BlogData } from "../../Data/BlogData";
 
 const SideLink = dynamic(() => import('../../Components/Home/Banner/SideLink/SideLink'));
 
+export async function getServerSideProps() {
+  const urls = [
+    "http://localhost:5000/blogs",
+    "http://localhost:5000/metaBlog",
+  ];
 
-const Blog = () => {
+  const [blogsCardData, metaBlog] = await Promise.all(
+    urls.map((url) => fetch(url).then((res) => res.json()))
+  );
+
+  return {
+    props: {
+      blogsCardData,
+      blogData: BlogData,
+      metaBlog,
+    },
+  };
+}
+
+const Blog = ({
+  blogsCardData,
+  blogData,
+  metaBlog
+}) => {
   const router = useRouter();
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [txt, setTxt] = useState("");
-  const [blogsCardData, setBlogsCardData] = useState([]);
-  const [metaBlog, setMetaBlog] = useState()
+  // const [blogsCardData, setBlogsCardData] = useState([]);
+  // const [metaBlog, setMetaBlog] = useState()
   // const [verfied, setVerifed] = useState(false);
-  const [number, setNumber] = useState(0);
+  // const [number, setNumber] = useState(0);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    fetch("https://virtual-experts-server.cyclic.app/metaBlog").then(firstRes => firstRes.json()).then(res => {
-      setMetaBlog(res[0])
-    }).catch(err => console.log(err))
+  //   fetch("https://virtual-experts-server.cyclic.app/metaBlog").then(firstRes => firstRes.json()).then(res => {
+  //     setMetaBlog(res[0])
+  //   }).catch(err => console.log(err))
 
-    fetch("https://virtual-experts-server.cyclic.app/blogs")
-      .then((res) => res.json())
-      .then((data) => {
-        setBlogsCardData(data);
-      });
-  }, [number]);
+  //   fetch("https://virtual-experts-server.cyclic.app/blogs")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setBlogsCardData(data);
+  //     });
+  // }, [number]);
 
 
   //recaptcha function
@@ -158,7 +180,7 @@ const Blog = () => {
           {/* divide two main columns */}
           <div className="col-md-8 mb-md-5">
             <div className="row">
-              {BlogData?.map((blog) => (
+              {blogData?.map((blog) => (
                 <div
                   className="col-12 col-md-6 my-2 cursor-pointer"
                   key={blog.id}

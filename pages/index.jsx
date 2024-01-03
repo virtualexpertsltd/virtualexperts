@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { useState, useEffect } from "react";
 import Amazon from "../Components/Home/Amazon/Amazon";
 import Banner from "../Components/Home/Banner/Banner";
 
@@ -15,64 +14,109 @@ const WhyChooseVirtualExperts = dynamic(() => import('../Components/Home/WhyChoo
 const ScheduleMeeting = dynamic(() => import('../Components/ScheduleMeeting/ScheduleMeeting'));
 
 
-export default function Home() {
-  const [topServicesData, setTopServicesData] = useState()
-  const [headerInfoTopServicesData, setHeaderInfoTopServicesData] = useState()
-  const [headerInfoVirtualExpertsData, seTheaderInfoVirtualExpertsData] = useState()
-  const [virtualServicesData, setVirtualServicesData] = useState()
-  const [testimonials, setTestimonials] = useState()
-  const [amazonData, setAmazonData] = useState()
-  const [placeAnOrderListData, setPlaceAnOrderListData] = useState()
-  const [placeAnOrderData, setPlaceAnOrderData] = useState()
-  const [bannerData, setBannerData] = useState()
-  const [metaHome, setMetaHome] = useState()
+export async function getServerSideProps() {
+  const urls = [
+    "http://localhost:5000/topServices",
+    "http://localhost:5000/headerInfoTopServices",
+    "http://localhost:5000/virtualService",
+    "http://localhost:5000/headerInfoVirtualExports",
+    "http://localhost:5000/banner",
+    "http://localhost:5000/testimonials",
+    "http://localhost:5000/amazon",
+    "http://localhost:5000/placeAnOrderList",
+    "http://localhost:5000/placeAnOrder",
+    "http://localhost:5000/metaHome"
+  ];
+  
+  const [topServicesData, headerInfoTopServicesData, virtualServicesData, headerInfoVirtualExpertsData, bannerData, testimonials, amazonData, placeAnOrderListData, placeAnOrderData, metaHome] = await Promise.all(
+    urls.map((url) => fetch(url).then((res) => res.json()))
+  );
 
-  useEffect(() => {
-    (async () => {
+  return {
+    props: {
+      topServicesData,
+      headerInfoTopServicesData,
+      virtualServicesData,
+      headerInfoVirtualExpertsData,
+      bannerData,
+      testimonials,
+      amazonData,
+      placeAnOrderListData,
+      placeAnOrderData,
+      metaHome: metaHome[0]
+    },
+  };
+}
 
-      fetch("https://virtual-experts-server.cyclic.app/topServices").then(firstRes => firstRes.json()).then(res => {
-        setTopServicesData(res)
-      }).catch(err => console.log(err))
+export default function Home({
+  topServicesData,
+  headerInfoTopServicesData,
+  virtualServicesData,
+  headerInfoVirtualExpertsData,
+  bannerData,
+  testimonials,
+  amazonData,
+  placeAnOrderListData,
+  placeAnOrderData,
+  metaHome
+}) {
+  // const [topServicesData, setTopServicesData] = useState()
+  // const [headerInfoTopServicesData, setHeaderInfoTopServicesData] = useState()
+  // const [headerInfoVirtualExpertsData, seTheaderInfoVirtualExpertsData] = useState()
+  // const [virtualServicesData, setVirtualServicesData] = useState()
+  // const [testimonials, setTestimonials] = useState()
+  // const [amazonData, setAmazonData] = useState()
+  // const [placeAnOrderListData, setPlaceAnOrderListData] = useState()
+  // const [placeAnOrderData, setPlaceAnOrderData] = useState()
+  // const [bannerData, setBannerData] = useState()
+  // const [metaHome, setMetaHome] = useState()
 
-      fetch("https://virtual-experts-server.cyclic.app/headerInfoTopServices").then(firstRes => firstRes.json()).then(res => {
-        setHeaderInfoTopServicesData(res)
-      }).catch(err => console.log(err))
+  // useEffect(() => {
+  //   (async () => {
 
-      fetch("https://virtual-experts-server.cyclic.app/virtualService").then(firstRes => firstRes.json()).then(res => {
-        setVirtualServicesData(res)
-      }).catch(err => console.log(err))
+  //     fetch("https://virtual-experts-server.cyclic.app/topServices").then(firstRes => firstRes.json()).then(res => {
+  //       setTopServicesData(res)
+  //     }).catch(err => console.log(err))
 
-      fetch("https://virtual-experts-server.cyclic.app/headerInfoVirtualExports").then(firstRes => firstRes.json()).then(res => {
-        seTheaderInfoVirtualExpertsData(res)
-      }).catch(err => console.log(err))
+  //     fetch("https://virtual-experts-server.cyclic.app/headerInfoTopServices").then(firstRes => firstRes.json()).then(res => {
+  //       setHeaderInfoTopServicesData(res)
+  //     }).catch(err => console.log(err))
+
+  //     fetch("https://virtual-experts-server.cyclic.app/virtualService").then(firstRes => firstRes.json()).then(res => {
+  //       setVirtualServicesData(res)
+  //     }).catch(err => console.log(err))
+
+  //     fetch("https://virtual-experts-server.cyclic.app/headerInfoVirtualExports").then(firstRes => firstRes.json()).then(res => {
+  //       seTheaderInfoVirtualExpertsData(res)
+  //     }).catch(err => console.log(err))
 
 
-      fetch("https://virtual-experts-server.cyclic.app/banner").then(firstRes => firstRes.json()).then(res => {
-        console.log(res[0], 'banner')
-        setBannerData(res[0])
-      }).catch(err => console.log(err))
+  //     fetch("https://virtual-experts-server.cyclic.app/banner").then(firstRes => firstRes.json()).then(res => {
+  //       console.log(res[0], 'banner')
+  //       setBannerData(res[0])
+  //     }).catch(err => console.log(err))
 
-      fetch("https://virtual-experts-server.cyclic.app/testimonials").then(firstRes => firstRes.json()).then(res => {
-        setTestimonials(res)
-      }).catch(err => console.log(err))
+  //     fetch("https://virtual-experts-server.cyclic.app/testimonials").then(firstRes => firstRes.json()).then(res => {
+  //       setTestimonials(res)
+  //     }).catch(err => console.log(err))
 
-      fetch("https://virtual-experts-server.cyclic.app/amazon").then(firstRes => firstRes.json()).then(res => {
-        setAmazonData(res)
-      }).catch(err => console.log(err))
+  //     fetch("https://virtual-experts-server.cyclic.app/amazon").then(firstRes => firstRes.json()).then(res => {
+  //       setAmazonData(res)
+  //     }).catch(err => console.log(err))
 
-      fetch("https://virtual-experts-server.cyclic.app/placeAnOrderList").then(firstRes => firstRes.json()).then(res => {
-        setPlaceAnOrderListData(res)
-      }).catch(err => console.log(err))
+  //     fetch("https://virtual-experts-server.cyclic.app/placeAnOrderList").then(firstRes => firstRes.json()).then(res => {
+  //       setPlaceAnOrderListData(res)
+  //     }).catch(err => console.log(err))
 
-      fetch("https://virtual-experts-server.cyclic.app/placeAnOrder").then(firstRes => firstRes.json()).then(res => {
-        setPlaceAnOrderData(res)
-      }).catch(err => console.log(err))
+  //     fetch("https://virtual-experts-server.cyclic.app/placeAnOrder").then(firstRes => firstRes.json()).then(res => {
+  //       setPlaceAnOrderData(res)
+  //     }).catch(err => console.log(err))
 
-      fetch("https://virtual-experts-server.cyclic.app/metaHome").then(firstRes => firstRes.json()).then(res => {
-        setMetaHome(res[0])
-      }).catch(err => console.log(err))
-    })()
-  }, [])
+  //     fetch("https://virtual-experts-server.cyclic.app/metaHome").then(firstRes => firstRes.json()).then(res => {
+  //       setMetaHome(res[0])
+  //     }).catch(err => console.log(err))
+  //   })()
+  // }, [])
 
 
   return (

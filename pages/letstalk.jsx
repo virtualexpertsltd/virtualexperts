@@ -5,22 +5,44 @@ import LetsTalk from "../Components/LetsTalk/LetsTalk";
 
 // const LetsTalk = dynamic(() => import('../Components/LetsTalk/LetsTalk'));
 
-const LetsTalks = () => {
-  const [footerData, setFooterData] = useState();
-  const [metaLetsTalk, setMetaLetsTalk] = useState();
+export async function getServerSideProps() {
+  const urls = [
+    "http://localhost:5000/footer",
+    "http://localhost:5000/metaLetsTalk",
+  ];
 
-  useEffect(() => {
-    (() => {
-      fetch("https://virtual-experts-server.cyclic.app/footer").then(firstRes => firstRes.json()).then(res => {
-        setFooterData(res)
-      }).catch(err => console.log(err))
+  const [footerData, metaLetsTalk] = await Promise.all(
+    urls.map((url) => fetch(url).then((res) => res.json()))
+  );
 
-      fetch("https://virtual-experts-server.cyclic.app/metaLetsTalk").then(firstRes => firstRes.json()).then(res => {
-        setMetaLetsTalk(res[0])
-      }).catch(err => console.log(err))
+  return {
+    props: {
+      footerData,
+      metaLetsTalk: metaLetsTalk[0]
+    },
+  };
+}
 
-    })()
-  }, [])
+
+const LetsTalks = ({
+  footerData,
+  metaLetsTalk
+}) => {
+  // const [footerData, setFooterData] = useState();
+  // const [metaLetsTalk, setMetaLetsTalk] = useState();
+
+  // useEffect(() => {
+  //   (() => {
+  //     fetch("https://virtual-experts-server.cyclic.app/footer").then(firstRes => firstRes.json()).then(res => {
+  //       setFooterData(res)
+  //     }).catch(err => console.log(err))
+
+  //     fetch("https://virtual-experts-server.cyclic.app/metaLetsTalk").then(firstRes => firstRes.json()).then(res => {
+  //       setMetaLetsTalk(res[0])
+  //     }).catch(err => console.log(err))
+
+  //   })()
+  // }, [])
 
 
   return (
