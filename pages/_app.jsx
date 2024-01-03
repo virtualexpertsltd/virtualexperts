@@ -1,64 +1,50 @@
-import '../styles/globals.css';
-import dynamic from 'next/dynamic';
-import { lazy } from 'react';
 import jwt_decode from "jwt-decode";
 import Head from "next/head";
 import Router, { useRouter } from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import React, { createContext, useEffect, useState } from "react";
-// import Navbar from '../Components/Shared/Navbar/Navbar';
-// import Footer from '../Components/Shared/Footer/Footer';
-import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query';
-import Script from 'next/script';
-import { FaArrowAltCircleUp } from 'react-icons/fa';
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import Footer from "../Components/Shared/Footer/Footer";
+import Navbar from "../Components/Shared/Navbar/Navbar";
+import "../styles/globals.css";
 
 nProgress.configure(
-  { showSpinner: true },
-  {
-    template: "<div role='bar' className='bg-info'>...</div>",
-  }
+	{ showSpinner: true },
+	{
+		template: "<div role='bar' className='bg-info'>...</div>",
+	}
 );
-
-const Navbar = dynamic(() => import('../Components/Shared/Navbar/Navbar'));
-const Footer = dynamic(() => import('../Components/Shared/Footer/Footer'));
-
 
 export const UserContext = createContext();
 export default function App({ Component, pageProps }) {
-  // return <Component {...pageProps} />
-  const router = useRouter();
-  const [queryClient] = React.useState(() => new QueryClient())
+	const router = useRouter();
+	const [signedUser, setSignedUser] = useState({});
 
-  const handelClickTop = () => {
-    window.scroll(0, 0);
-  };
+	//showing n-progress
+	Router.events.on("routeChangeStart", (url) => {
+		nProgress.start();
+	});
+	Router.events.on("routeChangeComplete", (url) => {
+		nProgress.done();
+	});
+	Router.events.on("routeChangeError", () => nProgress.done());
 
-  const [signedUser, setSignedUser] = useState({});
+	useEffect(() => {
+		const info = JSON.parse(window.localStorage.getItem("info"));
+		try {
+			const decoded = jwt_decode(info);
+			setSignedUser(decoded);
+		} catch (err) {}
+	}, []);
 
-  //showing n-progress
-  Router.events.on("routeChangeStart", (url) => {
-    nProgress.start();
-  });
-  Router.events.on("routeChangeComplete", (url) => {
-    nProgress.done();
-  });
-  Router.events.on("routeChangeError", () => nProgress.done());
-
-  useEffect(() => {
-    const info = JSON.parse(window.localStorage.getItem("info"));
-    try {
-      const decoded = jwt_decode(info);
-      setSignedUser(decoded);
-    } catch (err) { }
-  }, []);
-
-  if (Component.getLayout) {
-    return Component.getLayout(
-      <>
-        {/* <Head> */}
-        {/* Google Analytics Script Add */}
-        {/* <script
+	if (Component.getLayout) {
+		return Component.getLayout(
+			<>
+				{/* <Head> */}
+				{/* Google Analytics Script Add */}
+				{/* <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
           ></script>
@@ -72,8 +58,8 @@ export default function App({ Component, pageProps }) {
               gtag("config", "G-M0L3PN9HQL");`,
             }}
           /> */}
-        {/* facebook Analytics Script Add */}
-        {/* <script
+				{/* facebook Analytics Script Add */}
+				{/* <script
             dangerouslySetInnerHTML={{
               __html: `!function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -86,7 +72,7 @@ export default function App({ Component, pageProps }) {
               fbq('track', 'PageView');`,
             }}
           /> */}
-        {/* <noscript>
+				{/* <noscript>
             <img
               height="1"
               width="1"
@@ -94,22 +80,18 @@ export default function App({ Component, pageProps }) {
               src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
             />
           </noscript> */}
-        {/* </Head> */}
-        <QueryClientProvider client={queryClient}>
-          <Hydrate state={pageProps.dehydratedState}>
-            <UserContext.Provider value={[signedUser, setSignedUser]}>
-              <Component {...pageProps} />
-            </UserContext.Provider>
-          </Hydrate>
-        </QueryClientProvider>
-      </>
-    );
-  }
-  return (
-    <>
-      <Head>
-        {/* Google Analytics Script Add */}
-        {/* <script
+				{/* </Head> */}
+				<UserContext.Provider value={[signedUser, setSignedUser]}>
+					<Component {...pageProps} />
+				</UserContext.Provider>
+			</>
+		);
+	}
+	return (
+		<>
+			<Head>
+				{/* Google Analytics Script Add */}
+				{/* <script
           dangerouslySetInnerHTML={{
             __html: `[window.dataLayer = window.dataLayer || [];
               function gtag() {
@@ -119,8 +101,8 @@ export default function App({ Component, pageProps }) {
               gtag("config", "G-M0L3PN9HQL");]`,
           }}
         /> */}
-        {/* facebook Analytics Script Add */}
-        {/* <script
+				{/* facebook Analytics Script Add */}
+				{/* <script
           dangerouslySetInnerHTML={{
             __html: `!function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -133,7 +115,7 @@ export default function App({ Component, pageProps }) {
               fbq('track', 'PageView');`,
           }}
         /> */}
-        {/* <noscript>
+				{/* <noscript>
           <img
             height="1"
             width="1"
@@ -141,40 +123,35 @@ export default function App({ Component, pageProps }) {
             src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
           />
         </noscript> */}
-      </Head>
-      {/* <Script
+			</Head>
+			{/* <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
       /> */}
-      <Navbar />
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps.dehydratedState}>
-          <UserContext.Provider value={[signedUser, setSignedUser]}>
-            <Component {...pageProps} />
-          </UserContext.Provider>
-        </Hydrate>
-      </QueryClientProvider>
-      <div
-        className={
-          router.pathname === "/richard" ||
-            router.pathname === "/richard/service" ||
-            router.pathname === "/richard/about" ||
-            router.pathname === "/richard/orders" ||
-            router.pathname === "/richard/invoice" ||
-            router.pathname === "/richard/meta"
-            ? "d-none"
-            : ""
-        }
-      >
-        {/* <div
+			<Navbar />
+			<UserContext.Provider value={[signedUser, setSignedUser]}>
+				<Component {...pageProps} />
+			</UserContext.Provider>
+			<div
+				className={
+					router.pathname === "/richard" ||
+					router.pathname === "/richard/service" ||
+					router.pathname === "/richard/about" ||
+					router.pathname === "/richard/orders" ||
+					router.pathname === "/richard/invoice" ||
+					router.pathname === "/richard/meta"
+						? "d-none"
+						: ""
+				}
+			>
+				{/* <div
           onClick={handelClickTop}
           className="scrol-icon me-5 position-fixed end-0 top-80 cursor-pointer"
         >
           <FaArrowAltCircleUp size={40} />
         </div> */}
-      </div>
-      <Footer />
-
-    </>
-  );
+			</div>
+			<Footer />
+		</>
+	);
 }
