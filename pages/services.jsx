@@ -30,7 +30,7 @@ const Services = () => {
 
 
       fetch("https://virtual-experts-server.cyclic.app/metaService").then(firstRes => firstRes.json()).then(res => {
-        setMetaService(metaService[0]);
+        setMetaService(res[0]);
       }).catch(err => console.log(err))
     })()
   }, [])
