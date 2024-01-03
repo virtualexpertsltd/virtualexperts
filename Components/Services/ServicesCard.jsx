@@ -13,15 +13,6 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
             <div className="container">
                 <div className="row">
                     {servicesCardData?.map((servicesCard) => {
-                        let imgType;
-                        if (servicesCard.img.contentType === "image/svg+xml") {
-                            imgType = "data:image/svg+xml";
-                        } else if (servicesCard.img.contentType === "image/png") {
-                            imgType = "data:image/png";
-                        } else {
-                            imgType = "data:image/jpg";
-                        }
-
                         return (
                             <div
                                 className="col-md-4 position-relative overflow-hidden serviceCard cursor-pointer my-4"
@@ -29,24 +20,13 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                             >
                                 <div className="card h-100 border-0 borderRadius overflow-hidden">
                                     <div className="d-flex justify-content-center background-color-skyblue overflow-hidden ">
-                                        {servicesCard.img ? (
-                                            <Image
-                                                src={`${imgType} ; base64, ${servicesCard.img.img}`}
-                                                alt={servicesCard.imgAlt}
-                                                title={servicesCard.imgTitle}
-                                                width={200}
-                                                height={200}
-                                            />
-
-                                        ) : (
-                                            <Image
-                                                src={servicesCard.imgURL}
-                                                alt={servicesCard.imgAlt}
-                                                title={servicesCard.imgTitle}
-                                                width={200}
-                                                height={200}
-                                            />
-                                        )}
+                                        <Image
+                                            src={servicesCard.imgURL}
+                                            alt={servicesCard.imgAlt}
+                                            title={servicesCard.imgTitle}
+                                            width={200}
+                                            height={200}
+                                        />
                                     </div>
                                     <div className="card-body">
                                         <div style={{ height: "300px" }} className="">
