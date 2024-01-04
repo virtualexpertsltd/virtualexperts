@@ -21,13 +21,6 @@ const Banner = ({ bannerData }) => {
 	// const [verfied, setVerifed] = useState(false);
 	const [txt, setTxt] = useState("");
 
-	//recaptcha function
-
-	function onChange(value) {
-		console.log("Captcha value:", value);
-		setVerifed(true);
-	}
-
 	const onSubmit = async (data) => {
 		const Info = {
 			name: data.name,
@@ -36,14 +29,12 @@ const Banner = ({ bannerData }) => {
 			description: txt,
 		};
 
-		// console.log(Info);
-
 		const res = await fetch("https://virtual-experts-server.cyclic.app/leads/post", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify(Info),
 		});
-		console.log(res, "banner res");
+
 		if (res.status === 200) {
 			const msgTemplate = {
 				service_id: "service_rluy6hk",
@@ -66,7 +57,6 @@ const Banner = ({ bannerData }) => {
 
 	const onInputChange = (e) => {
 		const { value } = e.target;
-		console.log("Input value: ", value);
 
 		const re = /^[A-Za-z. ]+(?:[ .-][A-Za-z]+)*$/;
 		if (value === "" || re.test(value)) {

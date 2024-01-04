@@ -73,8 +73,6 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 			description: txt,
 		};
 
-		console.log(Info);
-
 		const res = await fetch("https://virtual-experts-server.cyclic.app/leads/post", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
@@ -102,7 +100,6 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 
 	const onInputChange = (e) => {
 		const { value } = e.target;
-		console.log("Input value: ", value);
 
 		const re = /^[A-Za-z. ]+(?:[ .-][A-Za-z]+)*$/;
 		if (value === "" || re.test(value)) {
@@ -229,7 +226,6 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 									"," +
 									" " +
 									date.getFullYear();
-								console.log(blog.description.slice(100, 500));
 								return (
 									<div
 										className="col-12 col-md-6 my-2 cursor-pointer"

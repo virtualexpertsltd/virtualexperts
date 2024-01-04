@@ -92,7 +92,6 @@ const Signin = () => {
 							headers: { "content-type": "application/json" },
 							body: JSON.stringify(msgTemplate),
 						});
-						console.log(res);
 						if (res.status === 200) {
 							setShowSpinner(false);
 							toast.success("Verification Code Sent Successfully");
