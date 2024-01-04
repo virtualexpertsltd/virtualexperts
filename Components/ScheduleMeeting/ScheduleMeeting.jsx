@@ -6,7 +6,7 @@ const ScheduleMeeting = () => {
   // const [scheduleTitle, setScheduleTitle] = useState({});
 
   // useEffect(() => {
-  //   fetch("https://virtual-experts-server.cyclic.app/scheduleMeeting")
+  //   fetch("https://virtualexperts.net/api/scheduleMeeting")
   //     .then((res) => res.json())
   //     .then((data) => setScheduleTitle(data));
   // }, []);

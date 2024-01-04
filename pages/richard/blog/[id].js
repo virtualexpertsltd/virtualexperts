@@ -14,7 +14,7 @@ const BlogDetails = () => {
 
 	useEffect(() => {
 		setShowSpinner(true);
-		fetch("https://virtual-experts-server.cyclic.app/blogs")
+		fetch("https://virtualexperts.net/api/blogs")
 			.then((res) => res.json())
 			.then((data) => {
 				// setBlogsData(data);

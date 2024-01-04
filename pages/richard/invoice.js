@@ -26,7 +26,7 @@ const Invoice = () => {
 
     useEffect(() => {
         const loadData = async () => {
-            const res = await fetch("https://virtual-experts-server.cyclic.app/invoice", {
+            const res = await fetch("https://virtualexperts.net/api/invoice", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ page: page }),
@@ -49,7 +49,7 @@ const Invoice = () => {
 
     const handleDeleteInvoice = (id) => {
         const _id = id;
-        fetch("https://virtual-experts-server.cyclic.app/invoice/delete", {
+        fetch("https://virtualexperts.net/api/invoice/delete", {
             method: "DELETE",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ _id }),

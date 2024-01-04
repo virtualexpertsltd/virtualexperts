@@ -21,7 +21,7 @@ const Orders = () => {
 
     useEffect(() => {
         const loadData = async () => {
-            const res = await fetch("https://virtual-experts-server.cyclic.app/order", {
+            const res = await fetch("https://virtualexperts.net/api/order", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ page: page }),
@@ -43,7 +43,7 @@ const Orders = () => {
 
     const handleDeleteOrder = (id) => {
         const _id = id;
-        fetch("https://virtual-experts-server.cyclic.app/order/delete", {
+        fetch("https://virtualexperts.net/api/order/delete", {
             method: "DELETE",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ _id }),

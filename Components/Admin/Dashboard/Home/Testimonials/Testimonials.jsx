@@ -14,7 +14,7 @@ const AdminTestimonials = () => {
 
 	useEffect(() => {
 		setShowSpinner(true);
-		fetch("https://virtual-experts-server.cyclic.app/testimonials")
+		fetch("https://virtualexperts.net/api/testimonials")
 			.then((res) => res.json())
 			.then((data) => {
 				setShowSpinner(false);
@@ -38,7 +38,7 @@ const AdminTestimonials = () => {
 		formData.append("jobTitle", jobTitle);
 		formData.append("review", review);
 
-		fetch("https://virtual-experts-server.cyclic.app/testimonials/post", {
+		fetch("https://virtualexperts.net/api/testimonials/post", {
 			method: "POST",
 			body: formData,
 		})

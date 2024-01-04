@@ -33,7 +33,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
 		formData.append("description", newDescription);
 
 		if (file === null) {
-			fetch("https://virtual-experts-server.cyclic.app/topServices/update", {
+			fetch("https://virtualexperts.net/api/topServices/update", {
 				method: "PUT",
 				headers: { "content-type": "application/json" },
 				body: JSON.stringify(newData),
@@ -44,7 +44,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
 					setNumber((prvState) => prvState + 1);
 				});
 		} else {
-			fetch("https://virtual-experts-server.cyclic.app/topServices/update", {
+			fetch("https://virtualexperts.net/api/topServices/update", {
 				method: "PUT",
 				body: formData,
 			})

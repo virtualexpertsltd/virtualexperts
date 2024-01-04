@@ -20,11 +20,11 @@ const Footer = () => {
 	const [footerLink, setFooterLink] = useState({});
 
 	useEffect(() => {
-		fetch("http://localhost:5000/footer")
+		fetch("https://virtualexperts.net/api/footer")
 			.then((res) => res.json())
 			.then((data) => setFooter(data[0]));
 
-		fetch("http://localhost:5000/footerLink")
+		fetch("https://virtualexperts.net/api/footerLink")
 			.then((res) => res.json())
 			.then((data) => setFooterLink(data[0]));
 	}, []);

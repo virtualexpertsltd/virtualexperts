@@ -22,15 +22,15 @@ const Service = () => {
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("https://virtual-experts-server.cyclic.app/whatWeDo")
+    fetch("https://virtualexperts.net/api/whatWeDo")
       .then((res) => res.json())
       .then((data) => setServiceBanner(data));
 
-    fetch("https://virtual-experts-server.cyclic.app/serviceCardHeader")
+    fetch("https://virtualexperts.net/api/serviceCardHeader")
       .then((res) => res.json())
       .then((data) => setServiceCardHeader(data));
 
-    fetch("https://virtual-experts-server.cyclic.app/servicesCard")
+    fetch("https://virtualexperts.net/api/servicesCard")
       .then((res) => res.json())
       .then((data) => {
         setServicesCardData(data);

@@ -24,11 +24,11 @@ const LetsTalks = ({ footerData, metaLetsTalk }) => {
 
 	// useEffect(() => {
 	//   (() => {
-	//     fetch("https://virtual-experts-server.cyclic.app/footer").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/footer").then(firstRes => firstRes.json()).then(res => {
 	//       setFooterData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/metaLetsTalk").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/metaLetsTalk").then(firstRes => firstRes.json()).then(res => {
 	//       setMetaLetsTalk(res[0])
 	//     }).catch(err => console.log(err))
 

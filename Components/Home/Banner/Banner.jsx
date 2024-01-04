@@ -29,7 +29,7 @@ const Banner = ({ bannerData }) => {
 			description: txt,
 		};
 
-		const res = await fetch("https://virtual-experts-server.cyclic.app/leads/post", {
+		const res = await fetch("https://virtualexperts.net/api/leads/post", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify(Info),

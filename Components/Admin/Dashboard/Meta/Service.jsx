@@ -16,7 +16,7 @@ const Service = ({ serviceData, setNumber }) => {
         const keywords = data.keywords || newKeywords;
 
 
-        fetch("https://virtual-experts-server.cyclic.app/metaService/update", {
+        fetch("https://virtualexperts.net/api/metaService/update", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

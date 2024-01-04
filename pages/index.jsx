@@ -78,44 +78,44 @@ export default function Home({
 	// useEffect(() => {
 	//   (async () => {
 
-	//     fetch("https://virtual-experts-server.cyclic.app/topServices").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/topServices").then(firstRes => firstRes.json()).then(res => {
 	//       setTopServicesData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/headerInfoTopServices").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/headerInfoTopServices").then(firstRes => firstRes.json()).then(res => {
 	//       setHeaderInfoTopServicesData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/virtualService").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/virtualService").then(firstRes => firstRes.json()).then(res => {
 	//       setVirtualServicesData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/headerInfoVirtualExports").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/headerInfoVirtualExports").then(firstRes => firstRes.json()).then(res => {
 	//       seTheaderInfoVirtualExpertsData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/banner").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/banner").then(firstRes => firstRes.json()).then(res => {
 	//       console.log(res[0], 'banner')
 	//       setBannerData(res[0])
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/testimonials").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/testimonials").then(firstRes => firstRes.json()).then(res => {
 	//       setTestimonials(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/amazon").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/amazon").then(firstRes => firstRes.json()).then(res => {
 	//       setAmazonData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/placeAnOrderList").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/placeAnOrderList").then(firstRes => firstRes.json()).then(res => {
 	//       setPlaceAnOrderListData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/placeAnOrder").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/placeAnOrder").then(firstRes => firstRes.json()).then(res => {
 	//       setPlaceAnOrderData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/metaHome").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/metaHome").then(firstRes => firstRes.json()).then(res => {
 	//       setMetaHome(res[0])
 	//     }).catch(err => console.log(err))
 	//   })()

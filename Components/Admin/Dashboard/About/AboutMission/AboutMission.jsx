@@ -14,7 +14,7 @@ const AdminAboutMission = () => {
     useEffect(() => {
         const loadData = async () => {
             const aboutMissionResponse = await fetch(
-                "https://virtual-experts-server.cyclic.app/aboutMission"
+                "https://virtualexperts.net/api/aboutMission"
             );
             const aboutMissionData = await aboutMissionResponse.json();
             setAboutMissionData(aboutMissionData[0]);
@@ -25,7 +25,7 @@ const AdminAboutMission = () => {
     const onSubmit = (data) => {
         const mission = data.mission || aboutMissionData.mission;
         const vision = data.vision || aboutMissionData.vision;
-        fetch("https://virtual-experts-server.cyclic.app/aboutMission/update", {
+        fetch("https://virtualexperts.net/api/aboutMission/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ mission, _id: aboutMissionData._id, vision }),

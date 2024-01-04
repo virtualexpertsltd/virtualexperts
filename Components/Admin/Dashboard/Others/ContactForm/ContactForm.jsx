@@ -8,7 +8,7 @@ const AdminContactForm = () => {
     useEffect(() => {
         const loadData = async () => {
             const contactFormResponse = await fetch(
-                "https://virtual-experts-server.cyclic.app/contactform"
+                "https://virtualexperts.net/api/contactform"
             );
             const contactFormData = await contactFormResponse.json();
             setInfoData(contactFormData);

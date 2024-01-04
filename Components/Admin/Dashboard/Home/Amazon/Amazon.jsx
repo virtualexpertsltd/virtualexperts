@@ -13,7 +13,7 @@ const AdminAmazon = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("https://virtual-experts-server.cyclic.app/amazon")
+    fetch("https://virtualexperts.net/api/amazon")
       .then((res) => res.json())
       .then((data) => setAmazon(data));
   }, [number]);
@@ -38,7 +38,7 @@ const AdminAmazon = () => {
       description_part_3 = amazon.description_part_3;
     }
 
-    fetch("https://virtual-experts-server.cyclic.app/amazon/update", {
+    fetch("https://virtualexperts.net/api/amazon/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

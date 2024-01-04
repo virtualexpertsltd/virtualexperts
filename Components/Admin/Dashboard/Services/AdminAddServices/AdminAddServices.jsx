@@ -30,7 +30,7 @@ const AdminAddServices = ({ setNumber }) => {
     formData.append("imgTitle", data.imgTitle);
     formData.append("imgAlt", data.imgAlt);
 
-    fetch(`https://virtual-experts-server.cyclic.app/servicesCard/post`, {
+    fetch(`https://virtualexperts.net/api/servicesCard/post`, {
       method: "POST",
       body: formData,
     })

@@ -12,7 +12,7 @@ const AdminTeamSection = () => {
     useEffect(() => {
         const loadData = async () => {
             const aboutTeamResponse = await fetch(
-                "https://virtual-experts-server.cyclic.app/aboutTeam"
+                "https://virtualexperts.net/api/aboutTeam"
             );
             const aboutTeamData = await aboutTeamResponse.json();
             setAdminTeamSection(aboutTeamData[0]);
@@ -23,7 +23,7 @@ const AdminTeamSection = () => {
     const onSubmit = (data) => {
         const title = data.title || teamSection.title;
         const discription = data.discription || teamSection.discription;
-        fetch("https://virtual-experts-server.cyclic.app/aboutTeam/update", {
+        fetch("https://virtualexperts.net/api/aboutTeam/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ title, _id: teamSection._id, discription }),

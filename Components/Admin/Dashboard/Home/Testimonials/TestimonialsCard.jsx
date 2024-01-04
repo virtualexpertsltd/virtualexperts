@@ -15,7 +15,7 @@ const TestimonialsCard = ({ testimonial, testimonials, setTestimonials, index, s
 
 
   const deleteTestimonial = (id) => {
-    fetch(`https://virtual-experts-server.cyclic.app/testimonials/delete/${id}`, {
+    fetch(`https://virtualexperts.net/api/testimonials/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -54,7 +54,7 @@ const TestimonialsCard = ({ testimonial, testimonials, setTestimonials, index, s
     formData.append("_id", _id);
 
     if (file === null) {
-      fetch("https://virtual-experts-server.cyclic.app/testimonials/update", {
+      fetch("https://virtualexperts.net/api/testimonials/update", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(newData),
@@ -64,7 +64,7 @@ const TestimonialsCard = ({ testimonial, testimonials, setTestimonials, index, s
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("https://virtual-experts-server.cyclic.app/testimonials/update", {
+      fetch("https://virtualexperts.net/api/testimonials/update", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: formData,

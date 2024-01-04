@@ -7,7 +7,7 @@ const FBAServiceSingleData = ({ answer, index, setNumber }) => {
 
     const onSubmit = (data) => {
         const title = data.title || answer.title;
-        fetch("https://virtual-experts-server.cyclic.app/fbaservice/update", {
+        fetch("https://virtualexperts.net/api/fbaservice/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ title, _id: answer._id }),

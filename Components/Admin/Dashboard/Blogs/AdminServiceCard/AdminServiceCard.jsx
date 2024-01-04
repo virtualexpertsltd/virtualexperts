@@ -32,7 +32,7 @@ const AdminBlogCard = ({
 	};
 
 	const deleteBlog = (id) => {
-		fetch(`https://virtual-experts-server.cyclic.app/blogs/delete/${id}`, {
+		fetch(`https://virtualexperts.net/api/blogs/delete/${id}`, {
 			method: "DELETE",
 		})
 			.then((res) => res.json())
@@ -72,7 +72,7 @@ const AdminBlogCard = ({
 		formData.append("imgAlt", newImgAlt);
 
 		if (file === null) {
-			fetch("https://virtual-experts-server.cyclic.app/blogs/update", {
+			fetch("https://virtualexperts.net/api/blogs/update", {
 				method: "PUT",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(newData),
@@ -83,7 +83,7 @@ const AdminBlogCard = ({
 					setNumber((prvState) => prvState + 1);
 				});
 		} else {
-			fetch("https://virtual-experts-server.cyclic.app/blogs/update", {
+			fetch("https://virtualexperts.net/api/blogs/update", {
 				method: "PUT",
 				body: formData,
 			})

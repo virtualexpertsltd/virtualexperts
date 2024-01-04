@@ -9,7 +9,7 @@ const SideLink = () => {
   // const [footerLink, setFooterLink] = useState({});
 
   // useEffect(() => {
-  //   fetch("https://virtual-experts-server.cyclic.app/footer")
+  //   fetch("https://virtualexperts.net/api/footer")
   //     .then((res) => res.json())
   //     .then((data) => setFooterLink(data[0]));
   // }, []);

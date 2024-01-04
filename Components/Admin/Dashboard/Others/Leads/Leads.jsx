@@ -8,7 +8,7 @@ const AdminLeads = () => {
     useEffect(() => {
         const loadData = async () => {
             const leadsResponse = await fetch(
-                "https://virtual-experts-server.cyclic.app/leads"
+                "https://virtualexperts.net/api/leads"
             );
             const leadsData = await leadsResponse.json();
             setLeadData(leadsData);

@@ -38,23 +38,23 @@ const AmazonFBA = ({ fbaData, fbad1Data, whyshouldhireData, fbaServiceData, meta
 	// useEffect(() => {
 	//   (() => {
 
-	//     fetch("https://virtual-experts-server.cyclic.app/amazonfba").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/amazonfba").then(firstRes => firstRes.json()).then(res => {
 	//       setFbaData(res[0])
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/fbadesc1").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/fbadesc1").then(firstRes => firstRes.json()).then(res => {
 	//       setfbad1Data(res[0])
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/whyshouldhire").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/whyshouldhire").then(firstRes => firstRes.json()).then(res => {
 	//       setwhyshouldhireData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/fbaservice").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/fbaservice").then(firstRes => firstRes.json()).then(res => {
 	//       setfbaServiceData(res)
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/metaFBA").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/metaFBA").then(firstRes => firstRes.json()).then(res => {
 	//       setmetaFBA(res[0])
 	//     }).catch(err => console.log(err))
 

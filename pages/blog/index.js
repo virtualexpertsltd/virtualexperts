@@ -48,11 +48,11 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 
 	// useEffect(() => {
 
-	//   fetch("https://virtual-experts-server.cyclic.app/metaBlog").then(firstRes => firstRes.json()).then(res => {
+	//   fetch("https://virtualexperts.net/api/metaBlog").then(firstRes => firstRes.json()).then(res => {
 	//     setMetaBlog(res[0])
 	//   }).catch(err => console.log(err))
 
-	//   fetch("https://virtual-experts-server.cyclic.app/blogs")
+	//   fetch("https://virtualexperts.net/api/blogs")
 	//     .then((res) => res.json())
 	//     .then((data) => {
 	//       setBlogsCardData(data);
@@ -73,7 +73,7 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 			description: txt,
 		};
 
-		const res = await fetch("https://virtual-experts-server.cyclic.app/leads/post", {
+		const res = await fetch("https://virtualexperts.net/api/leads/post", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify(Info),

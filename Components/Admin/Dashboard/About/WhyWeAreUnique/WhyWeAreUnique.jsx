@@ -8,7 +8,7 @@ const AdminWhyWeAreUnique = () => {
   useEffect(() => {
     const loadData = async () => {
       const aboutUniqueListResponse = await fetch(
-        "https://virtual-experts-server.cyclic.app/aboutUniqueList"
+        "https://virtualexperts.net/api/aboutUniqueList"
       );
       const aboutUniquetListData = await aboutUniqueListResponse.json();
       setAnswers(aboutUniquetListData);

@@ -57,7 +57,7 @@ const AdminUpdateBlog = ({ blogsData, setNumber }) => {
 		formData.append("imgAlt", newImgAlt);
 
 		if (file === null) {
-			fetch("https://virtual-experts-server.cyclic.app/blogs/update", {
+			fetch("https://virtualexperts.net/api/blogs/update", {
 				method: "PUT",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(newData),
@@ -71,7 +71,7 @@ const AdminUpdateBlog = ({ blogsData, setNumber }) => {
 					}
 				});
 		} else {
-			fetch("https://virtual-experts-server.cyclic.app/blogs/update", {
+			fetch("https://virtualexperts.net/api/blogs/update", {
 				method: "PUT",
 				body: formData,
 			})

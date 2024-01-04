@@ -16,7 +16,7 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
     const subDescription_1 = data.subDescription_1 || serviceBanner.subDescription_1;
     const subDescription_2 = data.subDescription_2 || serviceBanner.subDescription_2;
 
-    fetch("https://virtual-experts-server.cyclic.app/whatWeDo/update", {
+    fetch("https://virtualexperts.net/api/whatWeDo/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ _id, title, description, subDescription_1, subDescription_2 }),

@@ -18,13 +18,13 @@ const AdminWhyChooseVirtualExperts = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("https://virtual-experts-server.cyclic.app/headerInfoVirtualExports")
+    fetch("https://virtualexperts.net/api/headerInfoVirtualExports")
       .then((res) => res.json())
       .then((result) => {
         setInfo(result[0]);
       });
 
-    fetch("https://virtual-experts-server.cyclic.app/virtualService")
+    fetch("https://virtualexperts.net/api/virtualService")
       .then((res) => res.json())
       .then((result) => setCardsData(result));
   }, [number]);
@@ -34,7 +34,7 @@ const AdminWhyChooseVirtualExperts = () => {
     const description_part_1 = data.description_part_1 || description1Data;
     const description_part_2 = data.description_part_2 || description2Data;
     fetch(
-      "https://virtual-experts-server.cyclic.app/headerInfoVirtualExports/update",
+      "https://virtualexperts.net/api/headerInfoVirtualExports/update",
       {
         method: "PUT",
         headers: { "content-type": "application/json" },

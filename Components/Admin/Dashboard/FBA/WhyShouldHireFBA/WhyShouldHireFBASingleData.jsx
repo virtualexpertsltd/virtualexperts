@@ -8,7 +8,7 @@ const WhyShouldHireFBASingleData = ({ hire, index, setNumber }) => {
     const onSubmit = (data) => {
         const title = data.title || hire.title;
         const description = data.description || hire.description;
-        fetch("https://virtual-experts-server.cyclic.app/whyshouldhire/update", {
+        fetch("https://virtualexperts.net/api/whyshouldhire/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ title, _id: hire._id, description }),

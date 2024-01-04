@@ -14,7 +14,7 @@ const AdminWhoAreVirtualExperts = () => {
     useEffect(() => {
         const loadData = async () => {
             const aboutResponse = await fetch(
-                "https://virtual-experts-server.cyclic.app/about"
+                "https://virtualexperts.net/api/about"
             );
             const aboutData = await aboutResponse.json();
             setAboutData(aboutData[0]);
@@ -25,7 +25,7 @@ const AdminWhoAreVirtualExperts = () => {
     const onSubmit = (data) => {
         const title = data.title || aboutData.title;
         const discription = data.discription || aboutData.discription;
-        fetch("https://virtual-experts-server.cyclic.app/about/update", {
+        fetch("https://virtualexperts.net/api/about/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ title, _id: aboutData._id, discription }),

@@ -27,7 +27,7 @@ const LetsTalk = ({ footerData }) => {
 	} = useForm();
 
 	useEffect(() => {
-		fetch("https://virtual-experts-server.cyclic.app/footerLink")
+		fetch("https://virtualexperts.net/api/footerLink")
 			.then((res) => res.json())
 			.then((data) => setFooterLink(data[0]));
 	}, []);
@@ -77,7 +77,7 @@ const LetsTalk = ({ footerData }) => {
 			message: txt,
 		};
 
-		const res = await fetch("https://virtual-experts-server.cyclic.app/contactform/post", {
+		const res = await fetch("https://virtualexperts.net/api/contactform/post", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify(emailInfo),

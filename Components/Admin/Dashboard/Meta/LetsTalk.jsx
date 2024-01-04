@@ -16,7 +16,7 @@ const LetsTalk = ({ letsTalkData, setNumber }) => {
         const keywords = data.keywords || newKeywords;
 
 
-        fetch("https://virtual-experts-server.cyclic.app/metaletsTalk/update", {
+        fetch("https://virtualexperts.net/api/metaletsTalk/update", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

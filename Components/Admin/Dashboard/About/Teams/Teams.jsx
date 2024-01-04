@@ -14,7 +14,7 @@ const AdminTeams = () => {
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("https://virtual-experts-server.cyclic.app/teams")
+    fetch("https://virtualexperts.net/api/teams")
       .then((res) => res.json())
       .then((data) => {
         setShowSpinner(false);
@@ -36,7 +36,7 @@ const AdminTeams = () => {
     formData.append("name", name);
     formData.append("jobTitle", jobTitle);
 
-    fetch("https://virtual-experts-server.cyclic.app/teams/post", {
+    fetch("https://virtualexperts.net/api/teams/post", {
       method: "POST",
       body: formData,
     })

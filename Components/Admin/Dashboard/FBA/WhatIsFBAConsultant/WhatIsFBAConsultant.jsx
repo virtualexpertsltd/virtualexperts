@@ -12,7 +12,7 @@ const AdminWhatIsFBAConsultant = () => {
     useEffect(() => {
         const loadData = async () => {
             const fbaResponse = await fetch(
-                "https://virtual-experts-server.cyclic.app/amazonfba"
+                "https://virtualexperts.net/api/amazonfba"
             );
             const fbaData = await fbaResponse.json();
             setFBAData(fbaData[0]);
@@ -25,7 +25,7 @@ const AdminWhatIsFBAConsultant = () => {
         const title = data.title || fbaData.title;
         const description_part_1 = data.description_part_1 || fbaData.description_part_1;
         const description_part_2 = data.description_part_2 || fbaData.description_part_2;
-        fetch("https://virtual-experts-server.cyclic.app/amazonfba/update", {
+        fetch("https://virtualexperts.net/api/amazonfba/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ title, _id, description_part_1, description_part_2 }),

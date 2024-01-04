@@ -17,19 +17,6 @@ nProgress.configure(
 	}
 );
 
-async function fetchFooterData() {
-	const urls = ["http://localhost:5000/footer", "http://localhost:5000/footerLink"];
-
-	const [footer, footerLink] = await Promise.all(
-		urls.map((url) => fetch(url).then((res) => res.json()))
-	);
-
-	return {
-		footer: footer[0],
-		footerLink: footerLink[0],
-	};
-}
-
 export const UserContext = createContext();
 export default function App({ Component, pageProps }) {
 	const router = useRouter();

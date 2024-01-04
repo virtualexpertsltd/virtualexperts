@@ -20,27 +20,27 @@ const Meta = () => {
   const [blogData, setBlogData] = useState({});
   const [letsTalkData, setletsTalkData] = useState({});
   useEffect(() => {
-    fetch("https://virtual-experts-server.cyclic.app/metaHome")
+    fetch("https://virtualexperts.net/api/metaHome")
       .then((res) => res.json())
       .then((data) => setHomeData(data[0]));
 
-    fetch("https://virtual-experts-server.cyclic.app/metaFBA")
+    fetch("https://virtualexperts.net/api/metaFBA")
       .then((res) => res.json())
       .then((data) => setFBAData(data[0]));
 
-    fetch("https://virtual-experts-server.cyclic.app/metaAbout")
+    fetch("https://virtualexperts.net/api/metaAbout")
       .then((res) => res.json())
       .then((data) => setAboutData(data[0]));
 
-    fetch("https://virtual-experts-server.cyclic.app/metaService")
+    fetch("https://virtualexperts.net/api/metaService")
       .then((res) => res.json())
       .then((data) => setServiceData(data[0]));
 
-    fetch("https://virtual-experts-server.cyclic.app/metaBlog")
+    fetch("https://virtualexperts.net/api/metaBlog")
       .then((res) => res.json())
       .then((data) => setBlogData(data[0]));
 
-    fetch("https://virtual-experts-server.cyclic.app/metaLetsTalk")
+    fetch("https://virtualexperts.net/api/metaLetsTalk")
       .then((res) => res.json())
       .then((data) => setletsTalkData(data[0]));
   }, [number]);

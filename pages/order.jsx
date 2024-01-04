@@ -40,7 +40,7 @@ const Order = () => {
 		orderInfo.description = otherInfo[3];
 		orderInfo.selectedServices = [...services];
 
-		fetch("https://virtual-experts-server.cyclic.app/order/post", {
+		fetch("https://virtualexperts.net/api/order/post", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify(orderInfo),

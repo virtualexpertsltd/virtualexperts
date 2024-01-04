@@ -57,43 +57,43 @@ const AboutCopy = ({
 
 	// useEffect(() => {
 	//   (async () => {
-	//     fetch("https://virtual-experts-server.cyclic.app/about").then((firstRes) => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/about").then((firstRes) => firstRes.json()).then(res => {
 	//       setAboutData(res[0])
 	//     }).catch((e) => {
 	//       console.log(e)
 	//     });
 
-	//     fetch("https://virtual-experts-server.cyclic.app/aboutUnique").then((firstRes) => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/aboutUnique").then((firstRes) => firstRes.json()).then(res => {
 	//       setAboutUniquetData(res[0])
 	//     }).catch((e) => {
 	//       console.log(e)
 	//     });
 
-	//     fetch("https://virtual-experts-server.cyclic.app/aboutMission").then((firstRes) => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/aboutMission").then((firstRes) => firstRes.json()).then(res => {
 	//       setAboutMissionData(res[0])
 	//     }).catch((e) => {
 	//       console.log(e)
 	//     });
 
-	//     fetch("https://virtual-experts-server.cyclic.app/aboutUniqueList").then((firstRes) => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/aboutUniqueList").then((firstRes) => firstRes.json()).then(res => {
 	//       setAboutUniquetListData(res)
 	//     }).catch((e) => {
 	//       console.log(e)
 	//     });
 
-	//     fetch("https://virtual-experts-server.cyclic.app/aboutTeam").then((firstRes) => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/aboutTeam").then((firstRes) => firstRes.json()).then(res => {
 	//       setAboutTeamData(res[0])
 	//     }).catch((e) => {
 	//       console.log(e)
 	//     });
 
-	//     fetch("https://virtual-experts-server.cyclic.app/teams").then((firstRes) => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/teams").then((firstRes) => firstRes.json()).then(res => {
 	//       setTeams(res)
 	//     }).catch((e) => {
 	//       console.log(e)
 	//     });
 
-	//     fetch("https://virtual-experts-server.cyclic.app/metaAbout").then((firstRes) => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/metaAbout").then((firstRes) => firstRes.json()).then(res => {
 	//       setMetaAbout(res[0])
 	//     }).catch((e) => {
 	//       console.log(e)

@@ -39,7 +39,7 @@ const Signin = () => {
 		const username = data.username;
 		const password = data.password;
 
-		fetch("https://virtual-experts-server.cyclic.app/adminLogin/login", {
+		fetch("https://virtualexperts.net/api/adminLogin/login", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ username, password }),
@@ -78,7 +78,7 @@ const Signin = () => {
 			},
 		};
 
-		fetch("https://virtual-experts-server.cyclic.app/adminLogin/update/verificationCode", {
+		fetch("https://virtualexperts.net/api/adminLogin/update/verificationCode", {
 			method: "PUT",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify({ verificationCode: randomNumber }),

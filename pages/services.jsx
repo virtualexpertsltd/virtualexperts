@@ -34,19 +34,19 @@ const Services = ({ servicesCardData, whatWeDo, serviceCardHeader, metaService }
 
 	// useEffect(() => {
 	//   (async () => {
-	//     fetch("https://virtual-experts-server.cyclic.app/servicesCard").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/servicesCard").then(firstRes => firstRes.json()).then(res => {
 	//       setServicesCardData(res);
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/whatWeDo").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/whatWeDo").then(firstRes => firstRes.json()).then(res => {
 	//       setWhatWeDo(res);
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/serviceCardHeader").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/serviceCardHeader").then(firstRes => firstRes.json()).then(res => {
 	//       setServiceCardHeader(res);
 	//     }).catch(err => console.log(err))
 
-	//     fetch("https://virtual-experts-server.cyclic.app/metaService").then(firstRes => firstRes.json()).then(res => {
+	//     fetch("https://virtualexperts.net/api/metaService").then(firstRes => firstRes.json()).then(res => {
 	//       setMetaService(res[0]);
 	//     }).catch(err => console.log(err))
 	//   })()

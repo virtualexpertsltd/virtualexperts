@@ -11,7 +11,7 @@ const ServiceCardHeader = ({ serviceCardHeader, setNumber }) => {
     const _id = serviceCardHeader._id;
     const title = data.title || serviceBanner.title;
 
-    fetch("https://virtual-experts-server.cyclic.app/serviceCardHeader/update", {
+    fetch("https://virtualexperts.net/api/serviceCardHeader/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ _id, title }),

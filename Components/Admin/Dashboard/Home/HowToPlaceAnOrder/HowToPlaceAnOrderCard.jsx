@@ -7,7 +7,7 @@ const HowToPlaceAnOrderCard = ({ answer, index, setNumber }) => {
 
   const onSubmit = (data) => {
     const title = data.title || answer.title;
-    fetch("https://virtual-experts-server.cyclic.app/placeAnOrderList/update", {
+    fetch("https://virtualexperts.net/api/placeAnOrderList/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
