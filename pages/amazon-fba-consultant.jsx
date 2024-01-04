@@ -1,9 +1,8 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
 
-const AmazonFBAConsultant = dynamic(() => import("../Components/AmazonFBA/AmazonFBAConsultant"));
-const ScheduleMeeting = dynamic(() => import("../Components/ScheduleMeeting/ScheduleMeeting"));
+import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
+import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
 export async function getServerSideProps() {
 	const urls = [

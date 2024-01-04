@@ -1,9 +1,8 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
 
-const AboutComponents = dynamic(() => import("../Components/About/About"));
-const ScheduleMeeting = dynamic(() => import("../Components/ScheduleMeeting/ScheduleMeeting"));
+import AboutComponents from "../Components/About/About";
+import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
 export async function getServerSideProps() {
 	const urls = [
