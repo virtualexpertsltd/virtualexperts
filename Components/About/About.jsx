@@ -130,18 +130,9 @@ const AboutComponents = ({
 					{teams?.length > 0 && (
 						<div className="row">
 							{teams?.map((team) => {
-								let imgType;
-								if (team.img.contentType === "image/svg+xml") {
-									imgType = "data:image/svg+xml";
-								} else if (team.img.contentType === "image/png") {
-									imgType = "data:image/png";
-								} else {
-									imgType = "data:image/jpg";
-								}
 								return (
 									<div className="col-12 col-md-4 text-center" key={team._id}>
 										<div className="m-3 p-2 cursor-pointer">
-											{team.imgURL ? (
 												<Image
 													src={team.imgURL}
 													alt={team.alt}
@@ -151,17 +142,7 @@ const AboutComponents = ({
 													layout="responsive"
 													className="pb-1"
 												/>
-											) : (
-												<Image
-													src={`${imgType} ; base64, ${team.img.img}`}
-													alt="loading.."
-													height="350"
-													width="300"
-													layout="responsive"
-													className="pb-1"
-												/>
-											)}
-											<div className={`${styles.name} mt-4`}>
+												<div className={`${styles.name} mt-4`}>
 												<h6 className="fs-18 lh-26 fw-500">{team.name}</h6>
 												<p className="fs-15 lh-26">{team.jobTitle}</p>
 											</div>
