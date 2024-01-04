@@ -88,11 +88,11 @@ const Banner = ({ bannerData }) => {
 						<div className="col-md-6 order-1 order-md-2 pb-5 pb-md-0">
 							<Image
 								src={bannerImg}
-								blurDataURL={bannerImg}
 								alt="amazon-fba-consultant-virtual-experts"
 								title="amazon-fba-consultant-virtual-experts"
 								className="img-fluid"
 								sizes="(max-width: 768px) 100vw, 636px"
+								placeholder="blur"
 								priority
 							/>
 						</div>

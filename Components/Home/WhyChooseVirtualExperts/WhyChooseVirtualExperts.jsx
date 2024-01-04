@@ -34,6 +34,7 @@ const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExperts
 												alt={virtualService?.alt}
 												height="60"
 												width="60"
+												sizes="60px"
 											/>
 										) : null}
 									</div>

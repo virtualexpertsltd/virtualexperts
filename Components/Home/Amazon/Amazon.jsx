@@ -16,6 +16,8 @@ const Amazon = ({ amazonData }) => {
 								alt="amazon-marketing-service-virtual-experts-limited"
 								title="amazon-marketing-service-virtual-experts-limited"
 								sizes="(max-width: 768px) 100vw, 564px"
+								placeholder="blur"
+								priority
 							/>
 						</div>
 						<div className="col-md-6 mt-md-2">
