@@ -133,16 +133,15 @@ const AboutComponents = ({
 								return (
 									<div className="col-12 col-md-4 text-center" key={team._id}>
 										<div className="m-3 p-2 cursor-pointer">
-												<Image
-													src={team.imgURL}
-													alt={team.alt}
-													title={team.alt}
-													height="350"
-													width="300"
-													layout="responsive"
-													className="pb-1"
-												/>
-												<div className={`${styles.name} mt-4`}>
+											<Image
+												src={team.imgURL}
+												alt={team.alt}
+												title={team.alt}
+												height="350"
+												width="300"
+												className="pb-1"
+											/>
+											<div className={`${styles.name} mt-4`}>
 												<h6 className="fs-18 lh-26 fw-500">{team.name}</h6>
 												<p className="fs-15 lh-26">{team.jobTitle}</p>
 											</div>

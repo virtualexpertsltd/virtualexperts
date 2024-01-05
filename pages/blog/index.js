@@ -176,7 +176,6 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 											alt={blog.imgAlt}
 											width="200"
 											height="150"
-											layout="responsive"
 											className="rounded-3"
 										/>
 										<div className="d-flex align-items-center justify-content-evenly mt-2 ">
@@ -210,14 +209,6 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 								</div>
 							))}
 							{blogsCardData?.map((blog) => {
-								let imgType;
-								if (blog.img.contentType === "image/svg+xml") {
-									imgType = "data:image/svg+xml";
-								} else if (blog.img.contentType === "image/png") {
-									imgType = "data:image/png";
-								} else {
-									imgType = "data:image/jpg";
-								}
 								var date = new Date(blog?.createdAt);
 								var original_date =
 									date.toLocaleString("default", { month: "long" }) +
@@ -239,12 +230,11 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 													className=""
 												>
 													<Image
-														src={`${imgType} ; base64, ${blog.img.img}`}
+														src={blog.img}
 														title={blog.imgAlt}
 														alt={blog.imgAlt}
 														width="200"
 														height="150"
-														layout="responsive"
 														className="rounded-3"
 													/>
 												</div>

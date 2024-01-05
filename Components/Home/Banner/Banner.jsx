@@ -93,6 +93,7 @@ const Banner = ({ bannerData }) => {
 								className="img-fluid"
 								sizes="(max-width: 768px) 100vw, 636px"
 								placeholder="blur"
+								quality={100}
 								priority
 							/>
 						</div>

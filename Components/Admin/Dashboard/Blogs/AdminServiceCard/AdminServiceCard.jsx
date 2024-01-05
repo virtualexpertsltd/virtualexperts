@@ -6,14 +6,7 @@ import ReactHtmlParser from "react-html-parser";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const AdminBlogCard = ({
-	imgType,
-	blogsCard,
-	index,
-	blogsCardData,
-	setBlogsCardData,
-	setNumber,
-}) => {
+const AdminBlogCard = ({ blogsCard, index, blogsCardData, setBlogsCardData, setNumber }) => {
 	const router = useRouter();
 	const [file, setFile] = useState(null);
 	const { register, handleSubmit } = useForm();
@@ -100,7 +93,7 @@ const AdminBlogCard = ({
 			<div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
 				{blogsCard.img && (
 					<Image
-						src={`${imgType} ; base64, ${blogsCard.img.img}`}
+						src={blogsCard.img}
 						alt={blogsCard.imgAlt}
 						title={blogsCard.imgTitle}
 						width={100}

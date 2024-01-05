@@ -5,7 +5,6 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const AdminServiceCard = ({
-	imgType,
 	servicesCard,
 	index,
 	setServicesCardData,
@@ -132,23 +131,13 @@ const AdminServiceCard = ({
 	return (
 		<div className="col-md-6" key={servicesCard._id}>
 			<div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
-				{servicesCard.img ? (
-					<Image
-						src={`${imgType} ; base64, ${servicesCard.img.img}`}
-						alt={servicesCard.imgAlt}
-						title={servicesCard.imgTitle}
-						width={100}
-						height={100}
-					/>
-				) : (
-					<Image
-						src={servicesCard.imgURL}
-						alt={servicesCard.imgAlt}
-						title={servicesCard.imgTitle}
-						width={100}
-						height={100}
-					/>
-				)}
+				<Image
+					src={servicesCard.imgURL}
+					alt={servicesCard.imgAlt}
+					title={servicesCard.imgTitle}
+					width={100}
+					height={100}
+				/>
 				<div className="boxShadow p-3 borderRadius" style={{ height: "270px" + "em" }}>
 					<h6 className="fs-18">{servicesCard.title}</h6>
 					<h6 className="fs-14 mt-2">{servicesCard.subTitle}</h6>

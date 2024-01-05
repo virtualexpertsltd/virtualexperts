@@ -40,7 +40,6 @@ const BlogDetails = ({ data, blogData }) => {
 	useEffect(() => {
 		setSBlog(data);
 		const cBlog = data?.find((blog) => blog._id === id);
-		// console.log(currentBlog)
 		setNewBlog(cBlog);
 	}, [data, id]);
 
@@ -54,14 +53,6 @@ const BlogDetails = ({ data, blogData }) => {
 		" " +
 		date.getFullYear();
 
-	let imgType;
-	if (newBlog?.img?.contentType === "image/svg+xml") {
-		imgType = "data:image/svg+xml";
-	} else if (newBlog?.img?.contentType === "image/png") {
-		imgType = "data:image/png";
-	} else {
-		imgType = "data:image/jpg";
-	}
 	return (
 		<>
 			<Head>
@@ -130,21 +121,19 @@ const BlogDetails = ({ data, blogData }) => {
 								<div className="d-block d-md-none">
 									{newBlog?.img && (
 										<Image
-											src={`${imgType} ; base64, ${newBlog.img.img}`}
+											src={newBlog?.img}
 											alt={newBlog?.imgAlt}
 											title={newBlog?.imgAlt}
-											layout="responsive"
 											height="450"
 											width="1000"
 											className="borderRadius"
 										/>
 									)}
-									{currentBlog && (
+									{currentBlog?.img && (
 										<Image
 											src={currentBlog?.img}
 											alt={currentBlog?.imgAlt}
 											title={currentBlog?.imgAlt}
-											layout="responsive"
 											height="450"
 											width="1000"
 											className="borderRadius"
@@ -266,7 +255,6 @@ const BlogDetails = ({ data, blogData }) => {
 													alt={blog.imgAlt}
 													width="200"
 													height="150"
-													layout="responsive"
 													className="rounded-3 mt-3"
 												/>
 											</div>
@@ -293,14 +281,6 @@ const BlogDetails = ({ data, blogData }) => {
 										" " +
 										date.getFullYear();
 
-									let imgType;
-									if (blog?.img?.contentType === "image/svg+xml") {
-										imgType = "data:image/svg+xml";
-									} else if (blog?.img?.contentType === "image/png") {
-										imgType = "data:image/png";
-									} else {
-										imgType = "data:image/jpg";
-									}
 									return (
 										<div
 											className="col-12 cursor-pointer p-3 mb-4 border boxShadow rounded-1"
@@ -311,12 +291,11 @@ const BlogDetails = ({ data, blogData }) => {
 												<div className="col-md-4">
 													{blog?.img && (
 														<Image
-															src={`${imgType} ; base64, ${blog.img.img}`}
+															src={blog?.img}
 															title={blog.imgAlt}
 															alt={blog.imgAlt}
 															width="200"
 															height="150"
-															layout="responsive"
 															className="rounded-3 mt-3"
 														/>
 													)}

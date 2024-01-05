@@ -56,22 +56,13 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
 		}
 	};
 
-	let imgType;
-	if (serviceCard.img.contentType === "image/svg+xml") {
-		imgType = "data:image/svg+xml";
-	} else if (serviceCard.img.contentType === "image/png") {
-		imgType = "data:image/png";
-	} else {
-		imgType = "data:image/jpg";
-	}
-
 	return (
 		<>
 			<div className="col-12 col-md-6 my-2" key={serviceCard._id}>
 				<div className="boxShadow bg-gray2 rounded p-3 h-100">
 					<Image
 						className="d-flex justify-content-center mx-auto w-25 h-25"
-						src={`${imgType} ; base64, ${serviceCard.img.img}`}
+						src={serviceCard.imgURL}
 						alt="Loading..."
 						height="150"
 						width="150"
