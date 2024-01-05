@@ -25,15 +25,6 @@ const TopAmazonClients = ({ topclients }) => {
 		setCurrentTestimonial(topclients[id]);
 	};
 
-	let imgType;
-	if (currentTestimonials.img.contentType === "image/svg+xml") {
-		imgType = "data:image/svg+xml";
-	} else if (currentTestimonials.img.contentType === "image/png") {
-		imgType = "data:image/png";
-	} else {
-		imgType = "data:image/jpg";
-	}
-
 	return (
 		<section>
 			<div className="container py-5">
@@ -48,7 +39,7 @@ const TopAmazonClients = ({ topclients }) => {
 					</div>
 					<div className="p-2 p-md-5 text-center">
 						<Image
-							src={`${imgType} ; base64, ${currentTestimonials?.img.img}`}
+							src={currentTestimonials.imageURL}
 							alt="Loading..."
 							width="70"
 							height="70"
@@ -65,14 +56,6 @@ const TopAmazonClients = ({ topclients }) => {
 					</div>
 					<div className="position-absolute right-38 d-flex flex-md-column">
 						{topclients?.map((data, index) => {
-							let imgType;
-							if (data.img.contentType === "image/svg+xml") {
-								imgType = "data:image/svg+xml";
-							} else if (data.img.contentType === "image/png") {
-								imgType = "data:image/png";
-							} else {
-								imgType = "data:image/jpg";
-							}
 							return (
 								<div
 									key={data._id}
@@ -81,7 +64,7 @@ const TopAmazonClients = ({ topclients }) => {
 								>
 									{currentTestimonials._id === data._id ? (
 										<Image
-											src={`${imgType} ; base64, ${data.img.img}`}
+											src={data.imageURL}
 											alt="Loading..."
 											height="30"
 											width="30"
@@ -90,7 +73,7 @@ const TopAmazonClients = ({ topclients }) => {
 										/>
 									) : (
 										<Image
-											src={`${imgType} ; base64, ${data.img.img}`}
+											src={data.imageURL}
 											alt="Loading..."
 											height="24"
 											width="24"

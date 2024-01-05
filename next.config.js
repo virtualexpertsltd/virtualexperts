@@ -11,6 +11,7 @@ const nextConfig = {
 			"www.amzonestep.com",
 			"res.cloudinary.com",
 			"i.ibb.co",
+			"www.virtualexperts.net"
 		],
 	},
 };
