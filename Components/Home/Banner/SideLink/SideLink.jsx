@@ -1,0 +1,81 @@
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { FaSkype } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import styles from "../../../../styles/SideLink.module.css";
+
+const SideLink = () => {
+  // const [footerLink, setFooterLink] = useState({});
+
+  // useEffect(() => {
+  //   fetch("https://virtualexperts.net/api/footer")
+  //     .then((res) => res.json())
+  //     .then((data) => setFooterLink(data[0]));
+  // }, []);
+
+  // console.log(footerLink);
+
+  return (
+    <div className={`position-fixed left-0 top-30 ${styles.zIndex}`}>
+      <Link
+        href={`https://join.skype.com/invite/NMl9NExzR6b3`}
+        // href={`${footerLink.skype}`}
+        target="_blank"
+        title={`virtualExpertsltd`}
+        // title={footerLink.skypeTitle}
+        className="position-relative d-flex align-items-center test">
+
+        <FaSkype
+          className={`d-block cursor-pointer px-2 order-color fixedIcon ${styles.sidelinkColor}`}
+          size={40}
+        />
+        <span
+          className={`social-address fs-12 ms-1 text-secondary bg-light p-1`}
+        >
+          skype:{`virtualExpertsltd`}
+          {/* skype:{footerLink.skypeTitle} */}
+        </span>
+
+      </Link>
+      <Link
+        href={`https://wa.me/15099035120`}
+        // href={`${footerLink.whatsApp}`}
+        target="_blank"
+        title={`+15099035120`}
+        // title={footerLink.whatsAppTitle}
+        className="position-relative d-flex align-items-center test">
+
+        <IoLogoWhatsapp
+          className={`d-block cursor-pointer px-2 order-color fixedIcon ${styles.sidelinkColor}`}
+          size={40}
+        />
+        <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+          WhatsApp:{`+15099035120`}
+          {/* WhatsApp:{footerLink.whatsAppTitle} */}
+        </span>
+
+      </Link>
+      <Link
+        href={`mailto:help@virtualexperts.net`}
+        // href={`mailto:${footerLink.email}`}
+        target="_blank"
+        title={`help@virtualexperts.net`}
+        // title={footerLink.email}
+        className="position-relative d-flex align-items-center test">
+
+        <MdEmail
+          className={`d-block cursor-pointer px-2 order-color fixedIcon ${styles.sidelinkColor}`}
+          size={40}
+        />
+        <span className="social-address fs-12 ms-1 text-secondary bg-light p-1">
+          {`help@virtualexperts.net`}
+          {/* {footerLink.email} */}
+        </span>
+
+      </Link>
+    </div>
+  );
+};
+
+export default SideLink;
