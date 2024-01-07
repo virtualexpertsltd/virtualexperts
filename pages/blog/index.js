@@ -235,6 +235,7 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 														alt={blog.imgAlt}
 														width="200"
 														height="150"
+														layout="responsive"
 														className="rounded-3"
 													/>
 												</div>
