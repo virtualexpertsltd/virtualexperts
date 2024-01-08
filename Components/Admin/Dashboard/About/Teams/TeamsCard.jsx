@@ -5,8 +5,6 @@ import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const TeamsCard = ({ team, index, setNumber }) => {
-	console.log(team);
-
 	const { register, handleSubmit } = useForm();
 	const [file, setFile] = useState(null);
 
