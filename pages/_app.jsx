@@ -4,8 +4,11 @@ import Router, { useRouter } from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import React, { createContext, useEffect, useState } from "react";
-import "slick-carousel/slick/slick-theme.css";
+// organize-imports-disable-next-line
+// organize-imports-disable-next-line
 import "slick-carousel/slick/slick.css";
+// organize-imports-disable-next-line
+import "slick-carousel/slick/slick-theme.css";
 import Footer from "../Components/Shared/Footer/Footer";
 import Navbar from "../Components/Shared/Navbar/Navbar";
 import "../styles/globals.css";
