@@ -4,7 +4,7 @@ import React from "react";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 import ServicesComponents from "../Components/Services/Services";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = [
 		"http://localhost:5000/servicesCard",
 		"http://localhost:5000/whatWeDo",
@@ -23,6 +23,7 @@ export async function getServerSideProps() {
 			serviceCardHeader,
 			metaService: metaService[0],
 		},
+		revalidate: 60 * 5,
 	};
 }
 

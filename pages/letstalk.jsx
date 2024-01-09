@@ -3,7 +3,7 @@ import LetsTalk from "../Components/LetsTalk/LetsTalk";
 
 // const LetsTalk = dynamic(() => import('../Components/LetsTalk/LetsTalk'));
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = ["http://localhost:5000/footer", "http://localhost:5000/metaLetsTalk"];
 
 	const [footerData, metaLetsTalk] = await Promise.all(
@@ -15,6 +15,7 @@ export async function getServerSideProps() {
 			footerData,
 			metaLetsTalk: metaLetsTalk[0],
 		},
+		revalidate: 60 * 5,
 	};
 }
 

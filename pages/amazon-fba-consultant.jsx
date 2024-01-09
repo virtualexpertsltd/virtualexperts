@@ -4,7 +4,7 @@ import React from "react";
 import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = [
 		"http://localhost:5000/amazonfba",
 		"http://localhost:5000/fbadesc1",
@@ -25,6 +25,7 @@ export async function getServerSideProps() {
 			fbaServiceData,
 			metaFBA: metaFBA[0],
 		},
+		revalidate: 60 * 5,
 	};
 }
 

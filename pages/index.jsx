@@ -9,7 +9,7 @@ import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServic
 import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = [
 		"http://localhost:5000/topServices",
 		"http://localhost:5000/headerInfoTopServices",
@@ -49,6 +49,7 @@ export async function getServerSideProps() {
 			placeAnOrderData,
 			metaHome: metaHome[0],
 		},
+		revalidate: 60 * 5,
 	};
 }
 

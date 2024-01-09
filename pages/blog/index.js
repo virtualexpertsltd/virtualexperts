@@ -16,7 +16,7 @@ import { BlogData } from "../../Data/BlogData";
 
 import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = ["http://localhost:5000/blogs", "http://localhost:5000/metaBlog"];
 
 	const [blogsCardData, metaBlog] = await Promise.all(
@@ -29,6 +29,7 @@ export async function getServerSideProps() {
 			blogData: BlogData,
 			metaBlog,
 		},
+		revalidate: 60,
 	};
 }
 
