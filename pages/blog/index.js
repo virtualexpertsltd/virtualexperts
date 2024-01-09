@@ -170,14 +170,15 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 									onClick={() => router.push(`/blog/${blog.id}`)}
 								>
 									<div className="mx-1 boxShadow borderRadius h-100">
-										<Image
-											src={blog.img}
-											title={blog.imgAlt}
-											alt={blog.imgAlt}
-											width="200"
-											height="150"
-											className="rounded-3"
-										/>
+										<div className="ratio ratio-16x9">
+											<Image
+												src={blog.img}
+												title={blog.imgAlt}
+												alt={blog.imgAlt}
+												className="rounded-3"
+												fill
+											/>
+										</div>
 										<div className="d-flex align-items-center justify-content-evenly mt-2 ">
 											<p style={{ fontSize: "14px" }}>
 												{" "}

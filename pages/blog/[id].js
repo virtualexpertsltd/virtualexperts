@@ -94,50 +94,52 @@ const BlogDetails = ({ data, blogData }) => {
 							<div className="boxShadow border py-3 px-md-5 px-3">
 								<div className="d-none d-md-block">
 									{currentBlog && (
-										<Image
-											src={currentBlog?.img}
-											blurDataURL={currentBlog?.img}
-											alt={currentBlog?.imgAlt}
-											title={currentBlog?.imgAlt}
-											height="420"
-											width="700"
-											quality={100}
-											className="borderRadius mt-4 w-100"
-											style={{
-												objectFit: "contain",
-											}}
-										/>
+										<div className="ratio ratio-16x9 mt-4">
+											<Image
+												src={currentBlog?.img}
+												blurDataURL={currentBlog?.img}
+												alt={currentBlog?.imgAlt}
+												title={currentBlog?.imgAlt}
+												quality={100}
+												className="borderRadius object-cover object-center"
+												fill
+											/>
+										</div>
 									)}
 									{newBlog?.img && (
-										<Image
-											src={`${imgType} ; base64, ${newBlog.img.img}`}
-											alt={newBlog.imgAlt}
-											title={newBlog.imgTitle}
-											width={100}
-											height={100}
-										/>
+										<div className="ratio ratio-16x9 mt-4">
+											<Image
+												src={`${imgType} ; base64, ${newBlog.img.img}`}
+												alt={newBlog.imgAlt}
+												title={newBlog.imgTitle}
+												className="borderRadius  object-cover object-center"
+												fill
+											/>
+										</div>
 									)}
 								</div>
 								<div className="d-block d-md-none">
 									{newBlog?.img && (
-										<Image
-											src={newBlog?.img}
-											alt={newBlog?.imgAlt}
-											title={newBlog?.imgAlt}
-											height="450"
-											width="1000"
-											className="borderRadius"
-										/>
+										<div className="ratio ratio-16x9 mt-4">
+											<Image
+												src={newBlog?.img}
+												alt={newBlog?.imgAlt}
+												title={newBlog?.imgAlt}
+												className="borderRadius  object-cover object-center"
+												fill
+											/>
+										</div>
 									)}
 									{currentBlog?.img && (
-										<Image
-											src={currentBlog?.img}
-											alt={currentBlog?.imgAlt}
-											title={currentBlog?.imgAlt}
-											height="450"
-											width="1000"
-											className="borderRadius"
-										/>
+										<div className="ratio ratio-16x9 mt-4">
+											<Image
+												src={currentBlog?.img}
+												alt={currentBlog?.imgAlt}
+												title={currentBlog?.imgAlt}
+												className="borderRadius object-cover object-center"
+												fill
+											/>
+										</div>
 									)}
 								</div>
 								<div className="d-flex align-items-center justify-content-evenly mt-4 ">
@@ -249,17 +251,19 @@ const BlogDetails = ({ data, blogData }) => {
 									>
 										<div className="row">
 											<div className="col-md-4">
-												<Image
-													src={blog.img}
-													title={blog.imgAlt}
-													alt={blog.imgAlt}
-													width="200"
-													height="150"
-													className="rounded-3 mt-3"
-												/>
+												<div className="ratio ratio-16x9 mt-3">
+													<Image
+														src={blog.img}
+														title={blog.imgAlt}
+														alt={blog.imgAlt}
+														width="200"
+														height="150"
+														className="rounded-3 object-cover object-center"
+													/>
+												</div>
 											</div>
 											<div className="col-md-8">
-												<div className="px-3">
+												<div className="">
 													<h3 className="fs-18 lh-36 m-0">
 														{blog.title}
 													</h3>

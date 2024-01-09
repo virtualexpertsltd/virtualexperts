@@ -537,3 +537,10 @@ ul li {
 .table-of-content a {
 	color: #ff9f26;
 }
+
+.object-cover {
+	object-fit: cover;
+}
+.object-center {
+	object-position: center;
+}
