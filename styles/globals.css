@@ -241,6 +241,14 @@ ul {
 	background-color: #ffac45;
 	color: #ffaf;
 }
+.logOut {
+	background-color: rgb(121, 4, 4);
+	color: #fff;
+}
+.logOut:hover {
+	background-color: #c11f22;
+	color: #fff;
+}
 .bg-orange {
 	background-color: #ffac45;
 }
