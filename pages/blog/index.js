@@ -29,7 +29,7 @@ export async function getStaticProps() {
 			blogData: BlogData,
 			metaBlog,
 		},
-		revalidate: 60,
+		revalidate: 60 * 5,
 	};
 }
 
