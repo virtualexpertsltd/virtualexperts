@@ -132,7 +132,7 @@ const Sidebar = () => {
 				</Link>
 				<Link
 					href="/"
-					className={`d-block py-1 px-3 rounded-3 bg-gray text-black my-2 navHover`}
+					className={`d-block py-1 px-3 rounded-3 my-2 logOut`}
 					onClick={logout}
 				>
 					Logout
