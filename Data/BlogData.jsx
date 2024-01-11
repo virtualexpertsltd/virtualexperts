@@ -96,7 +96,7 @@ export const BlogData = [
 	{
 		tableOfContent:
 			"<a href='#Intoduction' style='display: inline-block;  margin-bottom: 10px;'>Introduction</a> <br /> <a href='#Amazon_Search_Engine_is_Like_Google' style='display: inline-block;  margin-bottom: 10px;'>Amazon Search Engine is Like Google</a> <br /> <a href='#Why_is_Amazon_SEO_important' style='display: inline-block;  margin-bottom: 10px;'>Why is Amazon SEO important</a> <br /> <a href='#Same_But_Different' style='display: inline-block;  margin-bottom: 10px;'>Same But Different</a> <br /> <a href='#Mastering_Amazon_SEO_Best_Practices' style='display: inline-block;  margin-bottom: 10px;'>Mastering Amazon SEO Best Practices</a> <br /> <a href='#Best_Amazon_SEO_Strategy' style='display: inline-block;  margin-bottom: 10px;'>Best Amazon SEO Strategy</a> <br /> <a href='#FBM_or_FBA_Which_is_Better' style='display: inline-block;  margin-bottom: 10px;'>FBM or FBA Which is Better</a>",
-		id: "improve_your_amazon_search_ranking_and_earn_more_revenues",
+		id: "improve-your-amazon-search-ranking-and-earn-more-revenues",
 		img: "https://res.cloudinary.com/dhhcesyn3/image/upload/v1630867342/v-expert/Blog/amazon-seo-services_sriimh.png",
 		imgAlt: "amazon-seo-services",
 		title: "Improve Your Amazon Search Ranking and Earn More Revenues",

@@ -125,6 +125,11 @@ const AboutCopy = ({
 							: "amazon fba consultant, amazon seo services, amazon seo consultant, amazon seo agency"
 					}
 				/>
+				<link
+          rel="canonical"
+          href="https://virtualexperts.net/about"
+          key="canonical"
+        />
 			</Head>
 			<AboutComponents
 				aboutData={aboutData}

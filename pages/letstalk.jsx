@@ -53,6 +53,11 @@ const LetsTalks = ({ footerData, metaLetsTalk }) => {
 							: "virtual Experts"
 					}
 				/>
+				<link
+          rel="canonical"
+          href="https://virtualexperts.net/letstalk"
+          key="canonical"
+        />
 			</Head>
 
 			{footerData && <LetsTalk footerData={footerData} />}

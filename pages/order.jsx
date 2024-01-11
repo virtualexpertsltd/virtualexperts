@@ -82,6 +82,11 @@ const Order = () => {
 			<Head>
 				<title>Virtual Experts | Order</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<link
+          rel="canonical"
+          href="https://virtualexperts.net/order"
+          key="canonical"
+        />
 			</Head>
 			<section className="order-bg position-relative">
 				<div className="background-color-skyblue">

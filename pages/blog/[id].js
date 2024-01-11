@@ -60,6 +60,11 @@ const BlogDetails = ({ data, blogData }) => {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta name="description" content={currentBlog?.metaDescription} />
 				<meta name="keyword" content={currentBlog?.metaKeyword} />
+				<link
+          rel="canonical"
+          href={`https://virtualexperts.net/blog/${currentBlog?.id}`}
+          key="canonical"
+        />
 			</Head>
 
 			<div className="background-color-skyblue">

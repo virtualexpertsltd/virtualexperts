@@ -82,6 +82,11 @@ const AmazonFBA = ({ fbaData, fbad1Data, whyshouldhireData, fbaServiceData, meta
 							: "amazon fba consultant, amazon seo services, amazon seo consultant, amazon seo agency"
 					}
 				/>
+				<link
+					rel="canonical"
+					href="https://virtualexperts.net/amazon-fba-consultant"
+					key="canonical"
+				/>
 			</Head>
 
 			<AmazonFBAConsultant
