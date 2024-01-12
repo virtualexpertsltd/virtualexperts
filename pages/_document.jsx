@@ -17,6 +17,43 @@ export default function Document() {
 					defer
 					src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 				></script>
+				<script type="application/ld+json" dangerouslySetInnerHTML={{
+					__html: `
+{
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "Virtual Experts",
+	"legalName": "Virtual Experts Limited",
+	"alternateName": "Virtual Experts | Amazon FBA Consultant & Amazon Marketing Services",
+	"description": "Virtual Experts Limited is a well-known USA-based Amazon FBA/Kindle Consultant & Amazon Marketing Services provider. Virtual Experts Limited was founded in 2014 by Richard Sid, an experienced Amazon seller who saw a need for specialized amazon services. Richard Sid, helped hundreds of online sellers navigate the complex world of Amazon FBA with Consultancy & Marketing Services. Our team of experts has a combined experience of over 9 years in Amazon FBA Marketing, and we've helped our clients achieve millions of dollars in sales.",
+	"logo": "https://virtualexperts.net/Logo.svg",
+	"image": "https://virtualexperts.net/Logo.svg",
+	"url": "https://virtualexperts.net",
+	"sameAs": [
+		"https://www.facebook.com/virtualexpertsltd",
+		"https://twitter.com/withExpert",
+		"https://www.youtube.com/channel/UC2LkG4rJDLMPcU_2QJys1XA",
+		"https://telegram.me/virtualexperts"
+	],
+	"email": "help@virtualexperts.net",
+	"telephone": "+1 347-871-3917",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "9070 179 PL Jamaica AV, New York, NY, United States, New York",
+		"addressLocality": "New York",
+		"addressRegion": "NY",
+		"postalCode": "11432",
+		"addressCountry": "US"
+	},
+	"contactPoint": {
+		"@type": "ContactPoint",
+		"contactType": "Customer Support",
+		"telephone": "+1 347-871-3917"
+	},
+	"foundingDate": "2014"
+}
+					`
+				}}></script>
 			</Head>
 			<body>
 				<noscript>
