@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /richard
+Disallow: /richard/
+Disallow: /api
+Disallow: /api/
+
+Sitemap: http://virtualexperts.net/sitemap.xml

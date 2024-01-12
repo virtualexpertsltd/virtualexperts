@@ -16,7 +16,7 @@ import { BlogData } from "../../Data/BlogData";
 
 import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = ["http://localhost:5000/blogs", "http://localhost:5000/metaBlog"];
 
 	const [blogsCardData, metaBlog] = await Promise.all(
@@ -29,6 +29,7 @@ export async function getServerSideProps() {
 			blogData: BlogData,
 			metaBlog,
 		},
+		revalidate: 60 * 5,
 	};
 }
 
@@ -130,6 +131,11 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 							: "Amazon Marketing Services, amazon seller feedback, amazon product review, amazon seo, amazon fba consultant, amazonseo services, amazonsearch engine optimization, amazonseo consultant, amazon seo agency, worst amazon reviews, amazon bad reviews, amazon fba consulting services, listing optimization services, amazon negative review removal, how to remove bad reviews on amazon"
 					}
 				/>
+				<link
+          rel="canonical"
+          href="https://virtualexperts.net/blog"
+          key="canonical"
+        />
 			</Head>
 			<ToastContainer
 				position="top-right"

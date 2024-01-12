@@ -4,7 +4,7 @@ import React from "react";
 import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = [
 		"http://localhost:5000/amazonfba",
 		"http://localhost:5000/fbadesc1",
@@ -25,6 +25,7 @@ export async function getServerSideProps() {
 			fbaServiceData,
 			metaFBA: metaFBA[0],
 		},
+		revalidate: 60 * 5,
 	};
 }
 
@@ -80,6 +81,11 @@ const AmazonFBA = ({ fbaData, fbad1Data, whyshouldhireData, fbaServiceData, meta
 							? ` ${metaFBA?.keywords}`
 							: "amazon fba consultant, amazon seo services, amazon seo consultant, amazon seo agency"
 					}
+				/>
+				<link
+					rel="canonical"
+					href="https://virtualexperts.net/amazon-fba-consultant"
+					key="canonical"
 				/>
 			</Head>
 

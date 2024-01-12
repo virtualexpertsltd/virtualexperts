@@ -9,7 +9,7 @@ import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServic
 import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = [
 		"http://localhost:5000/topServices",
 		"http://localhost:5000/headerInfoTopServices",
@@ -49,6 +49,7 @@ export async function getServerSideProps() {
 			placeAnOrderData,
 			metaHome: metaHome[0],
 		},
+		revalidate: 60 * 5,
 	};
 }
 
@@ -144,6 +145,11 @@ export default function Home({
 							: "Amazon Marketing Service, amazon ppc, amazon seller feedback, amazon marketing strategy, amazon product review, amazon fba consultant, amazon seo agency, worst amazon reviews, amazon seo consultant, amazon seo services, amazon bad reviews, amazon negative review removal, listing optimization services"
 					}
 				/>
+				<link
+          rel="canonical"
+          href="https://virtualexperts.net"
+          key="canonical"
+        />
 			</Head>
 
 			<main>

@@ -4,7 +4,7 @@ import React from "react";
 import AboutComponents from "../Components/About/About";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = [
 		"http://localhost:5000/about",
 		"http://localhost:5000/aboutUnique",
@@ -35,6 +35,7 @@ export async function getServerSideProps() {
 			teams,
 			metaAbout: metaAbout[0],
 		},
+		revalidate: 60 * 5,
 	};
 }
 
@@ -124,6 +125,11 @@ const AboutCopy = ({
 							: "amazon fba consultant, amazon seo services, amazon seo consultant, amazon seo agency"
 					}
 				/>
+				<link
+          rel="canonical"
+          href="https://virtualexperts.net/about"
+          key="canonical"
+        />
 			</Head>
 			<AboutComponents
 				aboutData={aboutData}

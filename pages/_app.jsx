@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Footer from "../Components/Shared/Footer/Footer";
 import Navbar from "../Components/Shared/Navbar/Navbar";
 import "../styles/globals.css";
+import Script from "next/script";
 
 nProgress.configure(
 	{ showSpinner: true },
@@ -93,17 +94,15 @@ export default function App({ Component, pageProps }) {
 	return (
 		<>
 			<Head>
-				{/* Google Analytics Script Add */}
-				{/* <script
-          dangerouslySetInnerHTML={{
-            __html: `[window.dataLayer = window.dataLayer || [];
-              function gtag() {
-                dataLayer.push(arguments);
-              }
-              gtag("js", new Date());
-              gtag("config", "G-M0L3PN9HQL");]`,
-          }}
-        /> */}
+        { /* eslint-disable-next-line @next/next/next-script-for-ga */ }
+        <script dangerouslySetInnerHTML={{
+          __html: `
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MMLGVSGZ');`
+        }}></script>
 				{/* facebook Analytics Script Add */}
 				{/* <script
           dangerouslySetInnerHTML={{
@@ -127,10 +126,6 @@ export default function App({ Component, pageProps }) {
           />
         </noscript> */}
 			</Head>
-			{/* <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
-      /> */}
 			<Navbar />
 			<UserContext.Provider value={[signedUser, setSignedUser]}>
 				<Component {...pageProps} />

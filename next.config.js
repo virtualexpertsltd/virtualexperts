@@ -14,6 +14,12 @@ const nextConfig = {
 			"www.virtualexperts.net"
 		],
 	},
+	rewrites: async () => [
+		{
+			source: "/sitemap.xml",
+			destination: "/api/sitemap",
+		},
+	],
 };
 
 module.exports = nextConfig;

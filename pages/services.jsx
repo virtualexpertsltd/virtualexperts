@@ -4,7 +4,7 @@ import React from "react";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 import ServicesComponents from "../Components/Services/Services";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const urls = [
 		"http://localhost:5000/servicesCard",
 		"http://localhost:5000/whatWeDo",
@@ -23,6 +23,7 @@ export async function getServerSideProps() {
 			serviceCardHeader,
 			metaService: metaService[0],
 		},
+		revalidate: 60 * 5,
 	};
 }
 
@@ -76,6 +77,11 @@ const Services = ({ servicesCardData, whatWeDo, serviceCardHeader, metaService }
 							: "Amazon Marketing Services, amazon seller feedback, amazon product review, amazon seo, amazon fba consultant, amazonseo services, amazonsearch engine optimization, amazonseo consultant, amazon seo agency, worst amazon reviews, amazon bad reviews, amazon fba consulting services, listing optimization services, amazon negative review removal, how to remove bad reviews on amazon"
 					}
 				/>
+				<link
+          rel="canonical"
+          href="https://virtualexperts.net/services"
+          key="canonical"
+        />
 			</Head>
 			<ServicesComponents
 				whatWeDo={whatWeDo}
