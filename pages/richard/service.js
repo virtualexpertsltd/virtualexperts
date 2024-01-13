@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { GoPlus } from "react-icons/go";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import AdminAddServices from "../../Components/Admin/Dashboard/Services/AdminAddServices/AdminAddServices";
@@ -41,20 +40,8 @@ const Service = () => {
 		<>
 			<Head>
 				<title>Virtual Experts | Admin-Service</title>
-				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
 			<section className="overflow-hidden">
-				<ToastContainer
-					position="top-right"
-					autoClose={3000}
-					hideProgressBar={false}
-					newestOnTop={false}
-					closeOnClick
-					rtl={false}
-					pauseOnFocusLoss
-					draggable
-					pauseOnHover
-				/>
 				<div className="row">
 					<div className="col-12 col-md-2 d-none d-md-block">
 						<Sidebar />

@@ -92,8 +92,8 @@ const Banner = ({ bannerData }) => {
 								title="amazon-fba-consultant-virtual-experts"
 								className="img-fluid"
 								sizes="(max-width: 768px) 100vw, 636px"
-								placeholder="blur"
-								quality={100}
+								// placeholder="blur"
+								quality={75}
 								priority
 							/>
 						</div>

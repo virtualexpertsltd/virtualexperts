@@ -8,7 +8,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaEnvelope, FaFacebook, FaSkype, FaTelegram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { ImTwitter } from "react-icons/im";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Logo from "../../Assets/Images/others/Shape.svg";
 import styles from "../../styles/LetsTalk.module.css";
@@ -99,17 +99,6 @@ const LetsTalk = ({ footerData }) => {
 
 	return (
 		<>
-			<ToastContainer
-				position="top-right"
-				autoClose={3000}
-				hideProgressBar={false}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-			/>
 			<section className="mb-2  overflow-hidden">
 				<div className="background-color-skyblue">
 					<div className="container d-md-flex justify-content-between align-items-center py-5">

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 import cardHeaderBg from "../Assets/Images/others/Group 157.svg";
@@ -107,20 +107,8 @@ const Signin = () => {
 		<>
 			<Head>
 				<title>Virtual Experts | SignIn</title>
-				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
 			<div className="background-color-skyblue d-flex align-items-center justify-content-center vh-100">
-				<ToastContainer
-					position="top-right"
-					autoClose={3000}
-					hideProgressBar={false}
-					newestOnTop={false}
-					closeOnClick
-					rtl={false}
-					pauseOnFocusLoss
-					draggable
-					pauseOnHover
-				/>
 				<div className="py-5 mx-auto">
 					<div className="my-4">{showSpinner ? <Spinner /> : ""}</div>
 					<>

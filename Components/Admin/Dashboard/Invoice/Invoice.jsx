@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const MyDocument = dynamic(import("../../../Others/PDF"), {
@@ -78,21 +78,8 @@ const AdminInvoice = () => {
 		setSelectedServices([]);
 	};
 
-	// console.log(info);
-
 	return (
 		<>
-			<ToastContainer
-				position="top-right"
-				autoClose={3000}
-				hideProgressBar={false}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-			/>
 			<section className="overflow-hidden">
 				<div className="row">
 					<div className="col-12 mt-n5 col-md-10 mx-auto scroll d-flex justify-content-between align-items-center">
