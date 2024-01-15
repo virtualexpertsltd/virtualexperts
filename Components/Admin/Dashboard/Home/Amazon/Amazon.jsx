@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const AdminAmazon = () => {
 	const [amazon, setAmazon] = useState({});

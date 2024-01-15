@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { GoPlus } from "react-icons/go";
-import "react-toastify/dist/ReactToastify.css";
+
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import AdminAddServices from "../../Components/Admin/Dashboard/Services/AdminAddServices/AdminAddServices";
 import AdminServiceBanner from "../../Components/Admin/Dashboard/Services/AdminServiceBanner/AdminServiceBanner";

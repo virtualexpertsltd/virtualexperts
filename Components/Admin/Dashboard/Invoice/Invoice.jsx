@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const MyDocument = dynamic(import("../../../Others/PDF"), {
 	ssr: false,

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
-import "react-toastify/dist/ReactToastify.css";
+
 import AdminAmazon from "../../Components/Admin/Dashboard/Home/Amazon/Amazon";
 import AdminBanner from "../../Components/Admin/Dashboard/Home/Banner/Banner";
 import AdminHowToPlaceAnOrder from "../../Components/Admin/Dashboard/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";

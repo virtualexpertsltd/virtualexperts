@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
-import "react-toastify/dist/ReactToastify.css";
+
 import bannerImg from "../../../Assets/Images/home/amazon-fba-consultant-virtual-experts.webp";
 import cardHeaderBg from "../../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
@@ -90,8 +90,8 @@ const Banner = ({ bannerData }) => {
 								src={bannerImg}
 								alt="amazon-fba-consultant-virtual-experts"
 								title="amazon-fba-consultant-virtual-experts"
-								className="img-fluid"
-								sizes="(max-width: 768px) 100vw, 636px"
+								className="banner-img img-fluid"
+								sizes="(max-width: 768px) 80vw, 636px"
 								// placeholder="blur"
 								quality={75}
 								priority

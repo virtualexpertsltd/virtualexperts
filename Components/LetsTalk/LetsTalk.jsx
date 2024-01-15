@@ -9,7 +9,7 @@ import { FaEnvelope, FaFacebook, FaSkype, FaTelegram, FaWhatsapp, FaYoutube } fr
 import { GoLocation } from "react-icons/go";
 import { ImTwitter } from "react-icons/im";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import Logo from "../../Assets/Images/others/Shape.svg";
 import styles from "../../styles/LetsTalk.module.css";
 import SideLink from "../Home/Banner/SideLink/SideLink";

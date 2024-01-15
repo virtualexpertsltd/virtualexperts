@@ -5,7 +5,7 @@ import { AiFillEye, AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 

@@ -17,19 +17,13 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
 								key={service._id}
 								className={`${styles.serviceCard} col-12 col-md-4 mx-auto mt-md-5`}
 							>
-								<div
-									style={{
-										position: "relative",
-										width: "150px",
-										height: "150px",
-									}}
-									className="d-flex justify-content-center mx-auto"
-								>
+								<div className="d-flex justify-content-center mx-auto">
 									<Image
 										src={service.imgURL}
 										title="Service"
 										alt="Service"
-										fill
+										height={150}
+										width={150}
 									/>
 								</div>
 								<div className="boxShadow p-2 rounded">
@@ -37,8 +31,7 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
 										{service.title}
 									</h3>
 									<p
-										style={{ height: "210px" + "em" }}
-										className="text-justify fs-14 lh-24 mt-3 text-color "
+										className={`${styles.description} text-justify fs-14 lh-24 mt-3 text-color`}
 									>
 										{service.description}
 									</p>

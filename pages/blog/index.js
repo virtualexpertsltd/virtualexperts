@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
-import "react-toastify/dist/ReactToastify.css";
+
 import swal from "sweetalert";
 import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";

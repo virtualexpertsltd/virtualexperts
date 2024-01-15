@@ -6,7 +6,7 @@ import { BiMenu } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import ReactPaginate from "react-paginate";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import AdminInvoice from "../../Components/Admin/Dashboard/Invoice/Invoice";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import MyDocument from "../../Components/Others/PDF";

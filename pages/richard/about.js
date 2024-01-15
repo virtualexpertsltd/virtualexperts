@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
-import "react-toastify/dist/ReactToastify.css";
+
 import AdminAboutMission from "../../Components/Admin/Dashboard/About/AboutMission/AboutMission";
 import AdminTeamSection from "../../Components/Admin/Dashboard/About/TeamSection/TeamSection";
 import AdminTeams from "../../Components/Admin/Dashboard/About/Teams/Teams";

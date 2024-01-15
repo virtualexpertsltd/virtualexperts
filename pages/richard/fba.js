@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
-import "react-toastify/dist/ReactToastify.css";
+
 import AdminFBAService from "../../Components/Admin/Dashboard/FBA/FBAService/FBAService";
 import AdminWhatIsFBAConsultant from "../../Components/Admin/Dashboard/FBA/WhatIsFBAConsultant/WhatIsFBAConsultant";
 import AdminWhyShouldHireFBA from "../../Components/Admin/Dashboard/FBA/WhyShouldHireFBA/WhyShouldHireFBA";
