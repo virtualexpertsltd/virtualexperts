@@ -7,26 +7,16 @@ import Footer from "../Components/Shared/Footer/Footer";
 import Navbar from "../Components/Shared/Navbar/Navbar";
 import "../styles/globals.css";
 
-nProgress.configure(
-	{ showSpinner: true },
-	{
-		template: "<div role='bar' className='bg-info'>...</div>",
-	}
-);
+nProgress.configure({ showSpinner: false });
+
+Router.events.on("routeChangeStart", () => nProgress.start());
+Router.events.on("routeChangeComplete", () => nProgress.done());
+Router.events.on("routeChangeError", () => nProgress.done());
 
 export const UserContext = createContext();
 
 const CommonContent = ({ children }) => {
 	const [signedUser, setSignedUser] = useState({});
-
-	//showing n-progress
-	Router.events.on("routeChangeStart", (url) => {
-		nProgress.start();
-	});
-	Router.events.on("routeChangeComplete", (url) => {
-		nProgress.done();
-	});
-	Router.events.on("routeChangeError", () => nProgress.done());
 
 	useEffect(() => {
 		const info = JSON.parse(window.localStorage.getItem("info"));
