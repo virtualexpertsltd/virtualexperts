@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function PageHeader() {
 	return (
-		<div className="page-header bg-grey bg-opacity-50 relative z-10">
+		<div className="page-header bg-grey bg-opacity-50">
 			<div className="container">
 				<div className="flex justify-between items-center gap-x-8 gap-y-10 py-8">
 					<div className="text-content max-w-[690px] space-y-4">

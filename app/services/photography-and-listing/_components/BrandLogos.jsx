@@ -11,11 +11,12 @@ let sliderSettings = {
 	speed: 4000,
 	slidesToShow: 4,
 	slidesToScroll: 1,
+	arrows: false,
 };
 
 export default function BrandLogos() {
 	return (
-		<section className="section bg-white pt-20">
+		<section className="section pt-20">
 			<div className="container">
 				<SectionTitle title="Brands we have work with" underlined="Brands" />
 				<Slider className="brandlogos" {...sliderSettings}>

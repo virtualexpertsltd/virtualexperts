@@ -5,7 +5,7 @@ import SectionTitle from "@/appComponents/shared/SectionTitle";
 
 export default function Faqs() {
 	return (
-		<section className="section py-20 relative z-10">
+		<section className="section py-20">
 			<div className="container">
 				<SectionTitle
 					title="Frequently Asked Questions about Our Design Service"

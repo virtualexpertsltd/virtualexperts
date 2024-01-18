@@ -12,12 +12,13 @@ let sliderSettings = {
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	dots: false,
+	arrows: false,
 	adaptiveHeight: true,
 };
 
 export default function Testimonials() {
 	return (
-		<section className="section bg-grey bg-opacity-50 py-20 relative z-10">
+		<section className="section bg-grey bg-opacity-50 py-20">
 			<div className="container">
 				<SectionTitle
 					title="Voices of Success: Hear What Our Clients Have to Say"

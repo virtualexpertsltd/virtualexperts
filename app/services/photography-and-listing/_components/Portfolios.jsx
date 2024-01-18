@@ -11,12 +11,13 @@ let sliderSettings = {
 	speed: 4000,
 	slidesToShow: 2,
 	slidesToScroll: 1,
+	arrows: false,
 	dots: true,
 };
 
 export default function Portfolios() {
 	return (
-		<section className="section bg-white pt-20">
+		<section className="section pt-20">
 			<div className="container">
 				<SectionTitle
 					title="Transformative Designs for Amazon Success"

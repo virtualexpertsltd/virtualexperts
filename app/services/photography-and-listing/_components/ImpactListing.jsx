@@ -2,7 +2,7 @@ import SectionTitle from "@/appComponents/shared/SectionTitle";
 
 export default function ImpactListing() {
 	return (
-		<section className="section relative py-20 z-10">
+		<section className="section py-20">
 			<div className="container">
 				<SectionTitle
 					title="The Impact of Professional Amazon Product Listing Images"

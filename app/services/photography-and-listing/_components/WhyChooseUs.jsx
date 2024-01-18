@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function WhyChooseUs() {
 	return (
-		<section className="section bg-grey bg-opacity-50 py-20 relative z-10">
+		<section className="section bg-grey bg-opacity-50 py-20">
 			<div className="container">
 				<SectionTitle
 					title="Why Choose us to Avoid Design Errors"
