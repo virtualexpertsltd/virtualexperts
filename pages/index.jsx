@@ -65,63 +65,6 @@ export default function Home({
 	placeAnOrderData,
 	metaHome,
 }) {
-	// const [topServicesData, setTopServicesData] = useState()
-	// const [headerInfoTopServicesData, setHeaderInfoTopServicesData] = useState()
-	// const [headerInfoVirtualExpertsData, seTheaderInfoVirtualExpertsData] = useState()
-	// const [virtualServicesData, setVirtualServicesData] = useState()
-	// const [testimonials, setTestimonials] = useState()
-	// const [amazonData, setAmazonData] = useState()
-	// const [placeAnOrderListData, setPlaceAnOrderListData] = useState()
-	// const [placeAnOrderData, setPlaceAnOrderData] = useState()
-	// const [bannerData, setBannerData] = useState()
-	// const [metaHome, setMetaHome] = useState()
-
-	// useEffect(() => {
-	//   (async () => {
-
-	//     fetch("https://virtualexperts.net/api/topServices").then(firstRes => firstRes.json()).then(res => {
-	//       setTopServicesData(res)
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/headerInfoTopServices").then(firstRes => firstRes.json()).then(res => {
-	//       setHeaderInfoTopServicesData(res)
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/virtualService").then(firstRes => firstRes.json()).then(res => {
-	//       setVirtualServicesData(res)
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/headerInfoVirtualExports").then(firstRes => firstRes.json()).then(res => {
-	//       seTheaderInfoVirtualExpertsData(res)
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/banner").then(firstRes => firstRes.json()).then(res => {
-	//       console.log(res[0], 'banner')
-	//       setBannerData(res[0])
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/testimonials").then(firstRes => firstRes.json()).then(res => {
-	//       setTestimonials(res)
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/amazon").then(firstRes => firstRes.json()).then(res => {
-	//       setAmazonData(res)
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/placeAnOrderList").then(firstRes => firstRes.json()).then(res => {
-	//       setPlaceAnOrderListData(res)
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/placeAnOrder").then(firstRes => firstRes.json()).then(res => {
-	//       setPlaceAnOrderData(res)
-	//     }).catch(err => console.log(err))
-
-	//     fetch("https://virtualexperts.net/api/metaHome").then(firstRes => firstRes.json()).then(res => {
-	//       setMetaHome(res[0])
-	//     }).catch(err => console.log(err))
-	//   })()
-	// }, [])
-
 	return (
 		<>
 			<Head>
@@ -145,11 +88,7 @@ export default function Home({
 							: "Amazon Marketing Service, amazon ppc, amazon seller feedback, amazon marketing strategy, amazon product review, amazon fba consultant, amazon seo agency, worst amazon reviews, amazon seo consultant, amazon seo services, amazon bad reviews, amazon negative review removal, listing optimization services"
 					}
 				/>
-				<link
-          rel="canonical"
-          href="https://virtualexperts.net"
-          key="canonical"
-        />
+				<link rel="canonical" href="https://virtualexperts.net" key="canonical" />
 			</Head>
 
 			<main>

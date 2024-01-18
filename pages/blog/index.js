@@ -6,8 +6,7 @@ import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import swal from "sweetalert";
 import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
@@ -111,7 +110,6 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 	return (
 		<>
 			<Head>
-				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<title>
 					{metaBlog?.title
 						? `Virtual Experts |  ${metaBlog?.title}`
@@ -131,23 +129,9 @@ const Blog = ({ blogsCardData, blogData, metaBlog }) => {
 							: "Amazon Marketing Services, amazon seller feedback, amazon product review, amazon seo, amazon fba consultant, amazonseo services, amazonsearch engine optimization, amazonseo consultant, amazon seo agency, worst amazon reviews, amazon bad reviews, amazon fba consulting services, listing optimization services, amazon negative review removal, how to remove bad reviews on amazon"
 					}
 				/>
-				<link
-          rel="canonical"
-          href="https://virtualexperts.net/blog"
-          key="canonical"
-        />
+				<link rel="canonical" href="https://virtualexperts.net/blog" key="canonical" />
 			</Head>
-			<ToastContainer
-				position="top-right"
-				autoClose={3000}
-				hideProgressBar={false}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-			/>
+
 			<div className="background-color-skyblue">
 				<div className="container d-md-flex justify-content-between align-items-center py-5">
 					<h6 className="fs-30 roboto-font-family fw-400">Blog</h6>

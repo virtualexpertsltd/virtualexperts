@@ -9,16 +9,14 @@ export default function Document() {
 					href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,600&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
 					rel="stylesheet"
 				></link>
-				<link
-					rel="stylesheet"
-					href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-				/>
 				<script
-					defer
 					src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+					defer
 				></script>
-				<script type="application/ld+json" dangerouslySetInnerHTML={{
-					__html: `
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: `
 {
 	"@context": "https://schema.org",
 	"@type": "Organization",
@@ -52,14 +50,11 @@ export default function Document() {
 	},
 	"foundingDate": "2014"
 }
-					`
-				}}></script>
+					`,
+					}}
+				></script>
 			</Head>
 			<body>
-				<noscript>
-					<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMLGVSGZ"
-					height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe>
-				</noscript>
 				<Main />
 				<NextScript />
 			</body>
