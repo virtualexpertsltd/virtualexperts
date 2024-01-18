@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function WhyChooseUs() {
 	return (
-		<section className="section bg-grey py-20">
+		<section className="section bg-grey bg-opacity-50 py-20 relative z-10">
 			<div className="container">
 				<SectionTitle
 					title="Why Choose us to Avoid Design Errors"
@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
 						</ul>
 					</div>
 				</div>
-				<div className="flex justify-between gap-x-5 mt-20">
+				<div className="flex justify-between flex-wrap gap-5 mt-20">
 					<div className="item w-[200px] rounded-lg bg-white shadow-custom px-3 py-4 text-center">
 						<Image
 							src="/images/services/photography/icons/icon-designer.svg"
@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
 					</div>
 					<div className="item w-[200px] rounded-lg bg-white shadow-custom px-3 py-4 text-center">
 						<Image
-							src="/images/services/photography/icons/icon-designer.svg"
+							src="/images/services/photography/icons/icon-solutions.svg"
 							alt="designer"
 							height={55}
 							width={55}

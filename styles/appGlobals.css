@@ -3,66 +3,134 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply m-0 p-0 box-border;
-  }
-  body {
-    @apply text-base font-normal text-light;
-  }
-  a,
-  a:focus,
-  a:visited {
-    @apply text-inherit;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-dark font-sans;
-  }
-  h1 {
-    @apply text-5xl;
-  }
-  h2 {
-    @apply text-4xl;
-  }
-  h3 {
-    @apply text-3xl;
-  }
-  h4 {
-    @apply text-2xl;
-  }
-  h5 {
-    @apply text-xl;
-  }
-  h6 {
-    @apply text-lg;
-  }
-  strong {
-    @apply font-bold;
-  }
+	* {
+		@apply m-0 p-0 box-border;
+	}
+	body {
+		@apply text-base font-normal text-light;
+	}
+	a,
+	a:focus,
+	a:visited {
+		@apply text-inherit;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-dark font-sans;
+	}
+	h1 {
+		@apply text-5xl;
+	}
+	h2 {
+		@apply text-4xl;
+	}
+	h3 {
+		@apply text-3xl;
+	}
+	h4 {
+		@apply text-2xl;
+	}
+	h5 {
+		@apply text-xl;
+	}
+	h6 {
+		@apply text-lg;
+	}
+	strong {
+		@apply font-bold;
+	}
 }
 
 @layer utilities {
-  .container {
-    @apply max-w-[1380px] mx-auto px-4;
-  }
-  .btn,
-  a.btn {
-    @apply text-base bg-primary rounded-lg px-5 py-3 text-white min-w-[160px] text-center;
-  }
-  .btn-black,
-  a.btn-black {
-    @apply bg-black text-white;
-  }
-  .styled-underline {
-    @apply relative;
-  }
-  .styled-underline::after {
-    content: "";
-    background-image: url("../appAssets/images/shapes/styled-underline.svg");
-    @apply absolute left-0 top-auto -bottom-2 w-full h-4 bg-contain bg-center bg-no-repeat;
-  }
+	.container {
+		@apply max-w-[1380px] mx-auto px-4;
+	}
+	.btn,
+	a.btn {
+		@apply relative overflow-hidden bg-primary text-base rounded-lg px-5 py-3 text-white min-w-[160px] text-center after:content-[""] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-white after:opacity-20 after:-translate-x-full after:transition-all hover:after:translate-x-0;
+	}
+	.btn-black,
+	a.btn-black {
+		@apply bg-black text-white after:opacity-15;
+	}
+	.styled-underline {
+		@apply relative;
+	}
+	.styled-underline::after {
+		content: "";
+		background-image: url("../appAssets/images/shapes/styled-underline.svg");
+		@apply absolute left-0 top-auto -bottom-2 w-full h-4 bg-contain bg-center bg-no-repeat;
+	}
+	.styled-list {
+		@apply *:relative;
+	}
+	.styled-list li {
+		@apply relative;
+	}
+	.styled-list li:before {
+		content: "\2713";
+		@apply mr-1 text-primary;
+	}
+}
+
+/* Reset Slick */
+.slick-slide *:focus,
+.slick-slide *:focus-visible,
+.slick-slide *:focus-within,
+.slick-slide *:active,
+.slick-slide *:visited {
+	@apply !outline-none !border-none;
+}
+
+.slick-slide > div > * {
+	@apply align-middle;
+}
+
+/* Slick Dots */
+.slick-dots {
+	@apply relative bottom-0 mt-6;
+}
+.slick-dots li {
+	@apply align-middle;
+}
+.slick-dots li button {
+	@apply p-0 size-4 bg-primary rounded-full text-xs leading-none opacity-40 transition;
+}
+
+.slick-dots li.slick-active button,
+.slick-dots li:hover button {
+	@apply opacity-100;
+}
+
+.slick-dots li.slick-active button {
+	@apply ring-1 ring-offset-1;
+}
+
+.slick-dots li button::before {
+	@apply hidden;
+}
+
+.brandlogos {
+	@apply overflow-hidden;
+}
+.brandlogos .slick-list {
+	@apply -mx-4;
+}
+
+.brandlogos .slick-slide {
+	@apply px-4;
+}
+
+.portfolios-slider {
+	@apply overflow-hidden;
+}
+.portfolios-slider .slick-list {
+	@apply -mx-4;
+}
+.portfolios-slider .slick-slide {
+	@apply px-4;
 }
