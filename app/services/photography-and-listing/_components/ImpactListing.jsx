@@ -1,5 +1,38 @@
 import SectionTitle from "@/appComponents/shared/SectionTitle";
 
+let data = [
+	{
+		id: 1,
+		title: "Enhance First Impression:",
+		desc: "The listing images on Amazon can significantly influence the primary perception of a consumer. Prospective buyers are naturally inclined towards listings featuring visually appealing content. When your product listing images are visually engaging and provide valuable information, shoppers are more likely to click on your listing.",
+	},
+	{
+		id: 2,
+		title: "Adhere to Amazon Guidelines:",
+		desc: "Amazon listing image requirements and guidelines are critical for achieving success on Amazon.com. You must ensure that your images adhere to Amazon's dimensions, quality, and subject matter specifications to prevent potential complications and maintain a solid market presence.",
+	},
+	{
+		id: 3,
+		title: "Improve Brand Credibility:",
+		desc: "A premium and professional product listing image design can enhance your brand's credibility on Amazon. When a customer sees well-planned and professionally designed product listing images or infographics, they will have more trust in your brand, leading to higher sales and business growth.",
+	},
+	{
+		id: 4,
+		title: "Achieve a Higher Conversion Rate:",
+		desc: "Convincing Amazon listing images or infographics design influences the conversion rate of your Amazon product listings. Customers are more likely to act and make buying decisions when the product features and benefits are demonstrated through illustrations. It also helps to acquire higher revenue from conversions.",
+	},
+	{
+		id: 5,
+		title: "Build Credibility and Trust:",
+		desc: "Trust is a vital ingredient of a successful e-commerce business. Your Amazon product listing images play an important role in building customer trust. A clear and accurate image design can reduce uncertainty and hesitation in customers' minds. It also encourages customers to gain more confidence in your product.",
+	},
+	{
+		id: 6,
+		title: "Increase Customer Engagement:",
+		desc: "A professionally designed Amazon product listing image can effectively demonstrate the product's functionality and help to create a strong connection between customers and your product. If a product's images can acquire their attention, they will likely look deeper into your listing and buy it.",
+	},
+];
+
 export default function ImpactListing() {
 	return (
 		<section className="section py-20">
@@ -9,44 +42,16 @@ export default function ImpactListing() {
 					underlined="Professional"
 					colored="Amazon Product Listing Images"
 				/>
-				<div className="grid grid-cols-2 gap-14">
-					<div className="col-span-1 bg-white bg-opacity-40 rounded-3xl px-8 py-4 shadow-lg space-y-4">
-						<h3 className="text-primary font-medium">Enhance First Impression</h3>
-						<p className="text-xl text-dark">
-							EnhancProfessional Amazon product images significantly increase
-							visibility in search results, catching the eye of potential customers.
-							This heightened visibility often leads to improved click-through rates,
-							increasing the chances of turning browsing users into engaged customers.
-							ed Visibility and Click-Through Rates:
-						</p>
-					</div>
-					<div className="col-span-1 bg-white bg-opacity-40 rounded-3xl px-8 py-4 shadow-lg space-y-4">
-						<h3 className="text-primary font-medium">Adherence Amazon Guidelines</h3>
-						<p className="text-xl text-dark">
-							Professional product images go beyond mere representation; they tell a
-							visual story. This storytelling aspect not only creates a connection
-							with the audience but also reinforces your brand identity, making your
-							products memorable in the crowded marketplace.
-						</p>
-					</div>
-					<div className="col-span-1 bg-white bg-opacity-40 rounded-3xl px-8 py-4 shadow-lg space-y-4">
-						<h3 className="text-primary font-medium">Higher Conversion Rate</h3>
-						<p className="text-xl text-dark">
-							Engaging and well-crafted images not only attract attention but also
-							contribute to higher conversion rates. When customers can clearly see
-							the value and features of your product, they are more likely to make a
-							purchase decision.
-						</p>
-					</div>
-					<div className="col-span-1 bg-white bg-opacity-40 rounded-3xl px-8 py-4 shadow-lg space-y-4">
-						<h3 className="text-primary font-medium">Improve Brand Credibility</h3>
-						<p className="text-xl text-dark">
-							Clear and accurate images leave little room for misunderstandings about
-							the product. This clarity leads to reduced return rates, as customers
-							receive what they expect. Improved customer satisfaction, in turn,
-							contributes to positive reviews and repeat business.
-						</p>
-					</div>
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-14">
+					{data.map((item) => (
+						<div
+							key={item.id}
+							className="col-span-1 bg-white bg-opacity-40 rounded-3xl px-8 py-4 shadow-lg space-y-4"
+						>
+							<h3 className="text-primary font-medium">{item.title}</h3>
+							<p className="text-xl text-dark">{item.desc}</p>
+						</div>
+					))}
 				</div>
 			</div>
 		</section>

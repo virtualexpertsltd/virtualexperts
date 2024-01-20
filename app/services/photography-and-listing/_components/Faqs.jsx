@@ -1,46 +1,41 @@
-"use client";
-
 import Accordions from "@/appComponents/shared/Accordions";
 import SectionTitle from "@/appComponents/shared/SectionTitle";
+
+let data = [
+	{
+		priority: 1,
+		question: "What do you need from me to get started?",
+		answer: "First, provide product details (including ASIN if available), high-quality images, links to competitor products, preferred design samples, and other information you think fits this project.",
+	},
+	{
+		priority: 2,
+		question: "How can I obtain the source files for my design?",
+		answer: "You can easily obtain the source files for your design by contacting our design team. We will provide all necessary formats, like AI, PSD, and PDF, ensuring your complete access and control over the design project.",
+	},
+	{
+		priority: 3,
+		question: "Do you provide Amazon product photography services?",
+		answer: "Yes! We provide Amazon product photography services alongside product listing images and infographic design.",
+	},
+	{
+		priority: 4,
+		question: "Are my product photos and listing images safe with you?",
+		answer: "Yes! We guarantee the security of your product and listing images. We maintain strict confidentiality and never disclose our client's files or information to third parties.",
+	},
+	{
+		priority: 5,
+		question: "Can you design Amazon Enhanced Brand Content (EBC)?",
+		answer: "Yes! We can design the best Amazon EBC/A+ content for your product. Our process involves thorough research of your product niche, highlighting its best features and unique selling points to create compelling Amazon EBC content.",
+	},
+];
 
 export default function Faqs() {
 	return (
 		<section className="section py-20">
 			<div className="container">
-				<SectionTitle
-					title="Frequently Asked Questions about Our Design Service"
-					colored="Frequently Asked Questions"
-				/>
+				<SectionTitle title="Unlocking the Design Answers: FAQs" colored="FAQs" />
 				<div className="accordions max-w-[890px] mx-auto">
-					<Accordions
-						data={[
-							{
-								priority: 1,
-								question: "What do you need from me to get started?",
-								answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur debitis harum soluta repudiandae odit voluptate provident nisi fuga maxime vitae expedita velit eaque, necessitatibus ullam tempora sequi. Accusantium, eius. Alias.",
-							},
-							{
-								priority: 2,
-								question: "I need source files. How do I get those?",
-								answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quaerat similique aperiam excepturi culpa rem dolorum? Expedita, perspiciatis?",
-							},
-							{
-								priority: 3,
-								question: "Do you provide Amazon product photography service?",
-								answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a asperiores provident perspiciatis eius optio accusantium quisquam maiores cum libero inventore voluptates.",
-							},
-							{
-								priority: 4,
-								question: "Can you help me with my Amazon's product description?",
-								answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat officia itaque eveniet ullam odit quod sed dolorum impedit nulla. Officia laborum veniam doloribus? Qui necessitatibus harum nemo fugit dicta!",
-							},
-							{
-								priority: 5,
-								question: "Are my product photos and listing images safe with you?",
-								answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat dolorum obcaecati architecto quaerat magnam distinctio ea. Minus accusantium eum vel magni voluptates. Aperiam minus beatae expedita aliquam nemo ipsam nesciunt.",
-							},
-						]}
-					/>
+					<Accordions data={data} />
 				</div>
 			</div>
 		</section>

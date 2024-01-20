@@ -13,7 +13,7 @@ const nextConfig = {
 				hostname: "res.cloudinary.com",
 			},
 			{
-				hostname: "virtualexperts.net",
+				hostname: "**.virtualexperts.net",
 			},
 			{
 				hostname: "amzonestep.com",

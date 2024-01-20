@@ -6,6 +6,15 @@
 	* {
 		@apply m-0 p-0 box-border;
 	}
+	html {
+		@apply text-base;
+		font-size: 85%;
+	}
+	@media screen(lg) {
+		html {
+			font-size: 100%;
+		}
+	}
 	body {
 		@apply text-base font-normal text-light;
 	}
@@ -52,16 +61,26 @@
 	.btn,
 	a.btn {
 		backface-visibility: hidden;
-		@apply relative overflow-hidden bg-primary text-base rounded-lg px-5 py-3 text-white min-w-[160px] text-center text-opacity-0;
+		@apply inline-flex justify-center items-center relative overflow-hidden bg-primary text-base rounded-lg px-5 py-3 text-white min-w-[160px] text-center z-10;
 	}
-	.btn,
-	a.btn {
-		@apply before:content-[attr(data-text)] before:text-white before:flex before:justify-center before:items-center before:absolute before:left-0 before:top-0 before:h-full before:w-full before:translate-y-0 before:transition-all hover:before:-translate-y-full before:z-10 after:content-[attr(data-text)] after:text-white after:flex after:justify-center after:items-center after:absolute after:left-0 after:top-0 after:h-full after:w-full after:translate-y-full after:transition-all hover:after:translate-y-0;
+	.btn::before,
+	a.btn::before {
+		content: "";
+		@apply bg-black absolute left-0 top-0 h-full w-full translate-y-full transition-all hover:translate-y-0 z-10 overflow-hidden;
+	}
+	.btn > *,
+	a.btn > * {
+		@apply relative z-20;
 	}
 	.btn-black,
 	a.btn-black {
-		@apply bg-black text-white after:opacity-15;
+		@apply bg-black text-white;
 	}
+	.btn-black::before,
+	a.btn-black::before {
+		@apply bg-primary;
+	}
+
 	.styled-underline,
 	.styled-underline-red {
 		@apply relative;

@@ -1,8 +1,46 @@
 "use client";
 
 import SectionTitle from "@/appComponents/shared/SectionTitle";
-import Image from "next/image";
 import Slider from "react-slick";
+import TestimonialItem from "./TestimonialItem";
+
+let data = [
+	{
+		id: 1,
+		thumb: "/images/services/photography/authors/author-1.png",
+		quote: "Its been around 6 years since we started working with Virtual Experts. We have used their Amazon Listing Image Design and Ranking booster services a lot. Their services are too good for Amazon FBA Business.",
+		authorName: "Abdurahman Adam Ravat",
+		designation: "Founder & CEO, Amcrest Technologies",
+	},
+	{
+		id: 2,
+		thumb: "/images/services/photography/authors/author-1.png",
+		quote: "Exceptional Amazon listing image design revamp! Our sales have seen a significant boost since we redesigned our product listing images. The images are visually appealing and informative and have improved our overall brand presence. Highly recommended!",
+		authorName: "Robert Cameron",
+		designation: "Founder, T3-R LLC",
+	},
+	{
+		id: 3,
+		thumb: "/images/services/photography/authors/author-1.png",
+		quote: "After struggling with unprofessional Amazon product listing images, we sought help from Virtual Experts for their photography and listing image design services. Their expertise helped us increase our sales by 30%.",
+		authorName: "Benjamin Arneberg",
+		designation: "CEO of PetHonesty",
+	},
+	{
+		id: 4,
+		thumb: "/images/services/photography/authors/author-1.png",
+		quote: "When launching our first products on Amazon, we were worried and sought the assistance of Virtual Experts. They provided end-to-end services for our Amazon FBA business, including product research, product listing, content writing, EBC content, and more.",
+		authorName: "Ian Page",
+		designation: "Owner, Bullseye Sellers Ecom Consulting",
+	},
+	{
+		id: 5,
+		thumb: "/images/services/photography/authors/author-1.png",
+		quote: "We have hired Virtual Experts for Amazon FBA (A-Z) 20 product launches for our clients Aspen Essentials LLC and they built the whole brand from scratch.",
+		authorName: "Alex Latham",
+		designation: "Owner, Activ8 Automation",
+	},
+];
 
 let sliderSettings = {
 	infinite: true,
@@ -21,80 +59,14 @@ export default function Testimonials() {
 		<section className="section bg-grey bg-opacity-50 py-20">
 			<div className="container">
 				<SectionTitle
-					title="Voices of Success: Hear What Our Clients Have to Say"
+					title="Voices of Success: Hear from Our Successful Clients"
 					colored="Voices of Success: "
 				/>
-				<div className="testimonials max-w-[820px] border border-border mx-auto">
+				<div className="testimonials bg-white max-w-[820px] border border-border border-opacity-20 mx-auto rounded-lg overflow-hidden">
 					<Slider {...sliderSettings}>
-						<div className="testimonial bg-white text-center px-7 py-7">
-							<div className="max-w-[550px] mx-auto">
-								<div className="thumbnail size-20 border-4 border-primary rounded-full inline-block mb-2 overflow-hidden">
-									<Image
-										src="/images/services/photography/authors/author-1.png"
-										alt="author"
-										height={70}
-										width={70}
-										className="object-cover object-center w-full h-full"
-									/>
-								</div>
-								<p className="block before:content-['“'] after:content-['”'] text-xl">
-									Its been around 6 years since we are working with Virtual
-									Experts. We have used their Amazon Listing Image Design and
-									Ranking booster services a lot. Their services are too good for
-									Amazon FBA Business.
-								</p>
-								<div className="author mt-5">
-									<h4 className="font-bold">Abdurahman Adam Ravat</h4>
-									<h5>Founder & CEO, Amcrest Technologies</h5>
-								</div>
-							</div>
-						</div>
-						<div className="testimonial bg-white text-center px-7 py-7">
-							<div className="max-w-[550px] mx-auto">
-								<div className="thumbnail size-20 border-4 border-primary rounded-full inline-block mb-2 overflow-hidden">
-									<Image
-										src="/images/services/photography/authors/author-1.png"
-										alt="author"
-										height={70}
-										width={70}
-										className="object-cover object-center w-full h-full"
-									/>
-								</div>
-								<p className="block before:content-['“'] after:content-['”'] text-xl">
-									Its been around 6 years since we are working with Virtual
-									Experts. We have used their Amazon Listing Image Design and
-									Ranking booster services a lot. Their services are too good for
-									Amazon FBA Business.
-								</p>
-								<div className="author mt-5">
-									<h4 className="font-bold">Abdurahman Adam Ravat</h4>
-									<h5>Founder & CEO, Amcrest Technologies</h5>
-								</div>
-							</div>
-						</div>
-						<div className="testimonial bg-white text-center px-7 py-7">
-							<div className="max-w-[550px] mx-auto">
-								<div className="thumbnail size-20 border-4 border-primary rounded-full inline-block mb-2 overflow-hidden">
-									<Image
-										src="/images/services/photography/authors/author-1.png"
-										alt="author"
-										height={70}
-										width={70}
-										className="object-cover object-center w-full h-full"
-									/>
-								</div>
-								<p className="block before:content-['“'] after:content-['”'] text-xl">
-									Its been around 6 years since we are working with Virtual
-									Experts. We have used their Amazon Listing Image Design and
-									Ranking booster services a lot. Their services are too good for
-									Amazon FBA Business.
-								</p>
-								<div className="author mt-5">
-									<h4 className="font-bold">Abdurahman Adam Ravat</h4>
-									<h5>Founder & CEO, Amcrest Technologies</h5>
-								</div>
-							</div>
-						</div>
+						{data.map((item) => (
+							<TestimonialItem key={item.id} data={item} />
+						))}
 					</Slider>
 				</div>
 			</div>

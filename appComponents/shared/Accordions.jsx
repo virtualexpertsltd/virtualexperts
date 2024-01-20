@@ -28,7 +28,10 @@ export default Accordions;
 
 const Accordion = ({ data, current, setCurrent }) => {
 	return (
-		<div className="accordion bg-white shadow-custom mt-5 first:mt-0" key={data.priority}>
+		<div
+			className="accordion bg-white shadow-custom rounded-md overflow-hidden mt-5 first:mt-0"
+			key={data.priority}
+		>
 			<button
 				className={`accordion-header flex items-center justify-between gap-x-3 text-left font-medium w-full px-3 sm:px-5 py-3 ${
 					current === data.priority ? "" : "bg-white"
@@ -45,7 +48,7 @@ const Accordion = ({ data, current, setCurrent }) => {
 			<div
 				className={`accordion-content text-xl px-3 sm:px-5 py-5 border-t border-border border-opacity-10 ${data.priority === current ? "block" : "hidden"}`}
 			>
-				Ans: {data.answer}
+				{data.answer}
 			</div>
 		</div>
 	);

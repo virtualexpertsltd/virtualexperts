@@ -8,9 +8,9 @@ export default function Pricing() {
 					title="Amazon Listing Images Design Service"
 					colored="Design Service"
 				/>
-				<div className="grid grid-cols-3 gap-8">
-					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center">
-						<h3 className="inline-block px-1 py-1 min-w-[170px] uppercase font-bold border border-primary text-center">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center rounded-lg">
+						<h3 className="inline-block px-1 py-1 min-w-[170px] uppercase font-bold border border-primary text-center rounded-md">
 							Starter
 						</h3>
 						<h5 className="text-center text-primary font-medium uppercase">
@@ -27,13 +27,13 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn" data-text="Order Now">
-								Order Now
+							<button className="btn">
+								<span>Order Now</span>
 							</button>
 						</div>
 					</div>
-					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center">
-						<h3 className="inline-block px-1 py-1 min-w-[170px] uppercase font-bold border border-primary text-center">
+					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center rounded-lg">
+						<h3 className="inline-block px-1 py-1 min-w-[170px] uppercase font-bold border border-primary text-center rounded-md">
 							Pro
 						</h3>
 						<h5 className="text-center text-primary font-medium uppercase">
@@ -50,13 +50,13 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn" data-text="Order Now">
-								Order Now
+							<button className="btn">
+								<span>Order Now</span>
 							</button>
 						</div>
 					</div>
-					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center">
-						<h3 className="inline-block px-1 py-1 min-w-[170px] uppercase font-bold border border-primary text-center">
+					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center rounded-lg">
+						<h3 className="inline-block px-1 py-1 min-w-[170px] uppercase font-bold border border-primary text-center rounded-md">
 							Elite
 						</h3>
 						<h5 className="text-center text-primary font-medium uppercase">
@@ -74,8 +74,8 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn" data-text="Order Now">
-								Order Now
+							<button className="btn">
+								<span>Order Now</span>
 							</button>
 						</div>
 					</div>

@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 // ignore-organize-import
+import SiteHeader from "@/appComponents/layout/SiteHeader";
 import "@/styles/appGlobals.css";
 
 const roboto = Roboto({
@@ -19,8 +20,8 @@ const RootLayout = ({ children }) => {
 	return (
 		<html lang="en" className={`${roboto.variable} font-sans`}>
 			<body>
-				<div className="site-wrapper">
-					{/* <Navbar /> */}
+				<div className="site-wrapper mt-[82px]">
+					<SiteHeader />
 					{children}
 					{/* <Footer /> */}
 				</div>

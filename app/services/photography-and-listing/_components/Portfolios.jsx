@@ -13,6 +13,14 @@ let sliderSettings = {
 	slidesToScroll: 1,
 	arrows: false,
 	dots: true,
+	responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 1,
+			},
+		},
+	],
 };
 
 export default function Portfolios() {
@@ -20,11 +28,11 @@ export default function Portfolios() {
 		<section className="section pt-20">
 			<div className="container">
 				<SectionTitle
-					title="Transformative Designs for Amazon Success"
-					colored="Amazon Success"
+					title="Our Transformed Clients Design Portfolio"
+					colored="Design Portfolio"
 				/>
 				<Slider className="portfolios-slider" {...sliderSettings}>
-					<div className="portfolio-item">
+					<div className="portfolio-item rounded-lg overflow-hidden">
 						<Image
 							src="/images/services/photography/portfolios/bugwomp-pest-repeller-protfolio-images.jpg"
 							alt="portfolio"
@@ -32,7 +40,7 @@ export default function Portfolios() {
 							width={672}
 						/>
 					</div>
-					<div className="portfolio-item">
+					<div className="portfolio-item rounded-lg overflow-hidden">
 						<Image
 							src="/images/services/photography/portfolios/dominatorr-protfolio-image.jpg"
 							alt="portfolio"
@@ -40,7 +48,7 @@ export default function Portfolios() {
 							width={672}
 						/>
 					</div>
-					<div className="portfolio-item">
+					<div className="portfolio-item rounded-lg overflow-hidden">
 						<Image
 							src="/images/services/photography/portfolios/doog-poo-bags--protfolio-image.jpg"
 							alt="portfolio"
@@ -48,7 +56,7 @@ export default function Portfolios() {
 							width={672}
 						/>
 					</div>
-					<div className="portfolio-item">
+					<div className="portfolio-item rounded-lg overflow-hidden">
 						<Image
 							src="/images/services/photography/portfolios/get-well-soon-protfolio-image.jpg"
 							alt="portfolio"
@@ -56,7 +64,7 @@ export default function Portfolios() {
 							width={672}
 						/>
 					</div>
-					<div className="portfolio-item">
+					<div className="portfolio-item rounded-lg overflow-hidden">
 						<Image
 							src="/images/services/photography/portfolios/tamec-listing-images-design.jpg"
 							alt="portfolio"
@@ -64,7 +72,7 @@ export default function Portfolios() {
 							width={672}
 						/>
 					</div>
-					<div className="portfolio-item">
+					<div className="portfolio-item rounded-lg overflow-hidden">
 						<Image
 							src="/images/services/photography/portfolios/virtusale-urinal-screnr-protfolio-image.jpg"
 							alt="portfolio"
@@ -72,7 +80,7 @@ export default function Portfolios() {
 							width={672}
 						/>
 					</div>
-					<div className="portfolio-item">
+					<div className="portfolio-item rounded-lg overflow-hidden">
 						<Image
 							src="/images/services/photography/portfolios/wrap-organizenr-protfolio-image.jpg"
 							alt="portfolio"

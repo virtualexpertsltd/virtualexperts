@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import amazonLogo from "../../../../appAssets/images/service/photography/shapes/amazon-icon.svg";
 import virtualExpertLogo from "../../../../appAssets/images/service/photography/shapes/virtual-experts-logo-gray.svg";
 
@@ -18,9 +19,13 @@ export default function CallToAction() {
 						<span className="text-primary">5,000+</span> Amazon sellers to gain
 						potential sales
 					</h3>
-					<button className="btn" data-text="Schedule a Meeting">
-						Schedule a Meeting
-					</button>
+					<Link
+						href="https://calendly.com/virtualexpertsltd/amazon-fba-consultancy"
+						target="_blank"
+						className="btn"
+					>
+						<span>Schedule a Meeting</span>
+					</Link>
 				</div>
 			</div>
 		</div>
