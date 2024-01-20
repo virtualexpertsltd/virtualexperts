@@ -1,4 +1,4 @@
-import { Roboto } from "@next/font/google";
+import { Roboto } from "next/font/google";
 import "nprogress/nprogress.css";
 import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,7 @@ const roboto = Roboto({
 	style: ["normal", "italic"],
 	subsets: ["latin"],
 	display: "swap",
+	fallback: ["system-ui", "arial"],
 	variable: "--font-roboto",
 });
 

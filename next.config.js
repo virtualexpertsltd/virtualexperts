@@ -1,20 +1,32 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	experimental: {
-		appDir: true,
-	},
 	images: {
-		domains: [
-			"images.unsplash.com",
-			"www.linkpicture.com",
-			"lh3.googleusercontent.com",
-			"media.istockphoto.com",
-			"i.pinimg.com",
-			"www.amzonestep.com",
-			"res.cloudinary.com",
-			"i.ibb.co",
-			"www.virtualexperts.net",
+		remotePatterns: [
+			{
+				hostname: "images.insplash.com",
+			},
+			{
+				hostname: "www.linkpicture.com",
+			},
+			{
+				hostname: "res.cloudinary.com",
+			},
+			{
+				hostname: "virtualexperts.net",
+			},
+			{
+				hostname: "amzonestep.com",
+			},
+			{
+				hostname: "media.istockphoto.com",
+			},
+			{
+				hostname: "i.pinimg.com",
+			},
+			{
+				hostname: "i.ibb.co",
+			},
 		],
 	},
 	rewrites: async () => [

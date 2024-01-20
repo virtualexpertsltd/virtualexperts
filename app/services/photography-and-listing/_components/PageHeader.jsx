@@ -18,7 +18,7 @@ export default function PageHeader() {
 							Amazon Listing Images.
 						</h4>
 						<div className="flex flex-wrap items-center gap-x-3 gap-y-3">
-							<Link href="/" className="btn btn-black">
+							<Link href="/" className="btn" data-text="Get a Free Quote">
 								Get a Free Quote
 							</Link>
 							<p className="text-dark max-w-[400px]">

@@ -8,7 +8,9 @@ export default function WhyChooseUs() {
 			<div className="container">
 				<SectionTitle
 					title="Why Choose us to Avoid Design Errors"
-					colored="Avoid Design Errors"
+					colored="Why Choose us"
+					underlined="Errors"
+					underlineColor="red"
 				/>
 				<div className="grid grid-cols-12 items-center gap-8">
 					<div className="col-span-5">
@@ -41,7 +43,7 @@ export default function WhyChooseUs() {
 							alt="designer"
 							height={55}
 							width={55}
-							className="object-contain object-center inline-block"
+							className="object-contain object-center inline-block h-[55px] w-[55px] align-middle"
 						/>
 						<h4 className="font-medium text-light mt-3 text-center mx-auto leading-tight">
 							Skilled Designers
@@ -53,7 +55,7 @@ export default function WhyChooseUs() {
 							alt="designer"
 							height={55}
 							width={55}
-							className="object-contain object-center inline-block"
+							className="object-contain object-center inline-block h-[55px] w-[55px] align-middle"
 						/>
 						<h4 className="font-medium text-light mt-3 text-center mx-auto leading-tight">
 							Customized Solutions
@@ -61,11 +63,11 @@ export default function WhyChooseUs() {
 					</div>
 					<div className="item w-[200px] rounded-lg bg-white shadow-custom px-3 py-4 text-center">
 						<Image
-							src="/images/services/photography/icons/icon-designer.svg"
+							src="/images/services/photography/icons/icon-workflow.svg"
 							alt="designer"
 							height={55}
 							width={55}
-							className="object-contain object-center inline-block"
+							className="object-contain object-center inline-block h-[55px] w-[55px] align-middle"
 						/>
 						<h4 className="font-medium text-light mt-3 text-center mx-auto leading-tight">
 							Efficient Workflow
@@ -73,11 +75,11 @@ export default function WhyChooseUs() {
 					</div>
 					<div className="item w-[200px] rounded-lg bg-white shadow-custom px-3 py-4 text-center">
 						<Image
-							src="/images/services/photography/icons/icon-designer.svg"
+							src="/images/services/photography/icons/icon-premium-design.svg"
 							alt="designer"
 							height={55}
 							width={55}
-							className="object-contain object-center inline-block"
+							className="object-contain object-center inline-block h-[55px] w-[55px] align-middle"
 						/>
 						<h4 className="font-medium text-light mt-3 text-center mx-auto leading-tight">
 							Premium Design
@@ -85,11 +87,11 @@ export default function WhyChooseUs() {
 					</div>
 					<div className="item w-[200px] rounded-lg bg-white shadow-custom px-3 py-4 text-center">
 						<Image
-							src="/images/services/photography/icons/icon-designer.svg"
+							src="/images/services/photography/icons/icon-support.svg"
 							alt="designer"
 							height={55}
 							width={55}
-							className="object-contain object-center inline-block"
+							className="object-contain object-center inline-block h-[55px] w-[55px] align-middle"
 						/>
 						<h4 className="font-medium text-light mt-3 text-center mx-auto leading-tight">
 							24/7 Support

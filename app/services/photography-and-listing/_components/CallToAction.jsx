@@ -18,7 +18,9 @@ export default function CallToAction() {
 						<span className="text-primary">5,000+</span> Amazon sellers to gain
 						potential sales
 					</h3>
-					<button className="btn btn-black">Schedule a Meeting</button>
+					<button className="btn" data-text="Schedule a Meeting">
+						Schedule a Meeting
+					</button>
 				</div>
 			</div>
 		</div>

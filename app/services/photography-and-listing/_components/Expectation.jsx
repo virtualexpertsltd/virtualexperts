@@ -20,17 +20,18 @@ export default function Expectation() {
 							<li>Lighting and Color Adjustments</li>
 							<li>Image editing and retouching</li>
 						</ul>
-						<button className="btn btn-black">Order Now</button>
+						<button className="btn" data-text="Order Now">
+							Order Now
+						</button>
 					</div>
 					<div className="col-span-7">
 						<div className="aspect-video rounded-2xl overflow-hidden">
 							<iframe
 								src="https://www.youtube.com/embed/ChAeF2io9ck?si=722cFdGtNp_1_8ep"
 								title="YouTube video player"
-								frameborder="0"
 								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-								className="h-full w-full"
+								allowFullScreen
+								className="h-full w-full border-none outline-none"
 							></iframe>
 						</div>
 					</div>

@@ -27,7 +27,9 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn">Order Now</button>
+							<button className="btn" data-text="Order Now">
+								Order Now
+							</button>
 						</div>
 					</div>
 					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center">
@@ -48,7 +50,9 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn">Order Now</button>
+							<button className="btn" data-text="Order Now">
+								Order Now
+							</button>
 						</div>
 					</div>
 					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center">
@@ -70,7 +74,9 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn">Order Now</button>
+							<button className="btn" data-text="Order Now">
+								Order Now
+							</button>
 						</div>
 					</div>
 				</div>

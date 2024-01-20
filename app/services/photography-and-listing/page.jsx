@@ -32,12 +32,4 @@ const PhotographyAndListing = () => {
 	);
 };
 
-export const getStaticProps = async (ctx) => {
-	return {
-		props: {
-			data: null,
-		},
-	};
-};
-
 export default PhotographyAndListing;
