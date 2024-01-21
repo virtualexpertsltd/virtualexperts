@@ -12,6 +12,7 @@ export default function TestimonialItem({ data }) {
 						height={70}
 						width={70}
 						className="object-cover object-center w-full h-full"
+						loading="eager"
 					/>
 				</div>
 				<p className="block before:content-['“'] after:content-['”'] text-xl">{quote}</p>

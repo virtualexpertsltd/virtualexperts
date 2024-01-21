@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 // ignore-organize-import
+import SiteFooter from "@/appComponents/layout/SiteFooter";
 import SiteHeader from "@/appComponents/layout/SiteHeader";
 import "@/styles/appGlobals.css";
 
@@ -23,7 +24,7 @@ const RootLayout = ({ children }) => {
 				<div className="site-wrapper mt-[82px]">
 					<SiteHeader />
 					{children}
-					{/* <Footer /> */}
+					<SiteFooter />
 				</div>
 			</body>
 		</html>

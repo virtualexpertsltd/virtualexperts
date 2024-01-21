@@ -1,4 +1,5 @@
 import SectionTitle from "@/appComponents/shared/SectionTitle";
+import Link from "next/link";
 
 let data = [
 	{
@@ -50,9 +51,9 @@ export default function Expectation() {
 								<li key={item.id}>{item.content}</li>
 							))}
 						</ul>
-						<button className="btn mt-7">
+						<Link href="/order" className="btn mt-7">
 							<span>Order Now</span>
-						</button>
+						</Link>
 					</div>
 					<div className="col-span-12 lg:col-span-7 order-1 lg:order-2">
 						<div className="max-w-[450px] lg:max-w-none mx-auto lg:mx-0 aspect-video rounded-2xl overflow-hidden">

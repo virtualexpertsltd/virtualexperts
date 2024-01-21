@@ -1,4 +1,5 @@
 import SectionTitle from "@/appComponents/shared/SectionTitle";
+import Link from "next/link";
 
 export default function Pricing() {
 	return (
@@ -27,9 +28,9 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn">
+							<Link href="/order" className="btn">
 								<span>Order Now</span>
-							</button>
+							</Link>
 						</div>
 					</div>
 					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center rounded-lg">
@@ -50,9 +51,9 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn">
+							<Link href="/order" className="btn">
 								<span>Order Now</span>
-							</button>
+							</Link>
 						</div>
 					</div>
 					<div className="col-span-1 space-y-4 text-center bg-grey bg-opacity-50 shadow-custom py-8 px-4 flex flex-col items-center rounded-lg">
@@ -74,9 +75,9 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<button className="btn">
+							<Link href="/order" className="btn">
 								<span>Order Now</span>
-							</button>
+							</Link>
 						</div>
 					</div>
 				</div>
