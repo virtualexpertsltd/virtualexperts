@@ -28,7 +28,7 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<Link href="/order" className="btn">
+							<Link href="/order?service=photography-and-listing" className="btn">
 								<span>Order Now</span>
 							</Link>
 						</div>
@@ -51,7 +51,7 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<Link href="/order" className="btn">
+							<Link href="/order?service=photography-and-listing" className="btn">
 								<span>Order Now</span>
 							</Link>
 						</div>
@@ -75,7 +75,7 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<Link href="/order" className="btn">
+							<Link href="/order?service=photography-and-listing" className="btn">
 								<span>Order Now</span>
 							</Link>
 						</div>

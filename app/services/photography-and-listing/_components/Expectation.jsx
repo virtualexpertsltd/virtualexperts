@@ -51,7 +51,7 @@ export default function Expectation() {
 								<li key={item.id}>{item.content}</li>
 							))}
 						</ul>
-						<Link href="/order" className="btn mt-7">
+						<Link href="/order?service=photography-and-listing" className="btn mt-7">
 							<span>Order Now</span>
 						</Link>
 					</div>
