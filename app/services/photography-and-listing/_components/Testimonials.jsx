@@ -51,7 +51,7 @@ let sliderSettings = {
 	slidesToScroll: 1,
 	dots: true,
 	arrows: false,
-	adaptiveHeight: true,
+	adaptiveHeight: false,
 	fade: true,
 };
 

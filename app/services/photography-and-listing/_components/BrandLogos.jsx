@@ -26,7 +26,7 @@ let sliderSettings = {
 			},
 		},
 		{
-			breakpoint: 480,
+			breakpoint: 380,
 			settings: {
 				slidesToShow: 1,
 			},
