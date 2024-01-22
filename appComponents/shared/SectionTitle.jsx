@@ -1,9 +1,12 @@
 export default function SectionTitle({ title, underlined, colored, underlineColor = "primary" }) {
 	let convertedText = title
-		.replace(colored, `<span class="bg-primary text-white">${colored}</span>`)
+		.replace(
+			colored,
+			`<br class="block sm:hidden"/><span class="bg-primary text-white">${colored}</span><br class="block sm:hidden"/>`
+		)
 		.replace(
 			underlined,
-			`<span class=${underlineColor === "red" ? "styled-underline-red" : "styled-underline"}>${underlined}</span>`
+			`<span class=${underlineColor === "red" ? "sm:styled-underline-red" : "sm:styled-underline"}>${underlined}</span>`
 		);
 
 	return (

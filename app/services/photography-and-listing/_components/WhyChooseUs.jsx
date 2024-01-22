@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
 		<section className="section bg-grey bg-opacity-50 py-20">
 			<div className="container">
 				<SectionTitle
-					title="Why Choose Us to Avoid Design Errors"
+					title="Why Choose Us to Avoid Design Errors?"
 					colored="Why Choose Us"
 					underlined="Errors"
 					underlineColor="red"
@@ -74,11 +74,11 @@ export default function WhyChooseUs() {
 						/>
 					</div>
 					<div className="col-span-1 lg:col-span-7">
-						<ul className="space-y-3 border-l border-border ml-2 *:pl-8 *:relative *:text-2xl *:font-medium">
+						<ul className="space-y-3 border-l border-border ml-2.5 *:pl-8 *:relative *:text-2xl *:font-medium">
 							{data.map((item) => (
 								<li
 									key={item.id}
-									className="before:content before:absolute before:size-4 before:bg-primary before:rounded-full before:-left-2  before:top-2"
+									className="before:content before:absolute before:size-4 before:bg-primary before:rounded-full before:-left-2 before:-ml-px  before:top-2"
 								>
 									{item.content}
 								</li>
@@ -90,7 +90,7 @@ export default function WhyChooseUs() {
 					{data2.map((item) => (
 						<div
 							key={item.id}
-							className="item w-[200px] rounded-lg bg-white shadow-custom px-3 py-4 text-center"
+							className="item w-[175px] lg:w-[200px] rounded-lg bg-white shadow-custom px-3 py-4 text-center"
 						>
 							<Image
 								src={item.icon}

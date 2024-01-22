@@ -45,13 +45,14 @@ let data = [
 let sliderSettings = {
 	infinite: true,
 	autoplay: true,
-	autoplaySpeed: 3000,
-	speed: 4000,
+	autoplaySpeed: 5000,
+	speed: 1000,
 	slidesToShow: 1,
 	slidesToScroll: 1,
-	dots: false,
+	dots: true,
 	arrows: false,
 	adaptiveHeight: true,
+	fade: true,
 };
 
 export default function Testimonials() {
@@ -62,8 +63,8 @@ export default function Testimonials() {
 					title="Voices of Success: Hear from Our Successful Clients"
 					colored="Voices of Success: "
 				/>
-				<div className="testimonials bg-white max-w-[820px] border border-border border-opacity-20 mx-auto rounded-lg overflow-hidden">
-					<Slider {...sliderSettings}>
+				<div className="testimonials max-w-[820px] mx-auto">
+					<Slider {...sliderSettings} className="testimonials-slider">
 						{data.map((item) => (
 							<TestimonialItem key={item.id} data={item} />
 						))}

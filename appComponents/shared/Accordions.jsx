@@ -38,7 +38,9 @@ const Accordion = ({ data, current, setCurrent }) => {
 				}`}
 				onClick={() => setCurrent(current === data.priority ? -100 : data.priority)}
 			>
-				<span className="font-medium text-2xl text-dark">Q: {data.question}</span>
+				<span className="font-medium text-xl md:text-2xl text-dark">
+					Q: {data.question}
+				</span>
 				{current === data.priority ? (
 					<FiChevronUp className="text-primary text-2xl" />
 				) : (

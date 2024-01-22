@@ -32,13 +32,13 @@
 		@apply text-dark font-sans;
 	}
 	h1 {
-		@apply text-5xl;
+		@apply text-[40px] md:text-5xl;
 	}
 	h2 {
-		@apply text-4xl;
+		@apply text-3xl md:text-4xl;
 	}
 	h3 {
-		@apply text-3xl;
+		@apply text-2xl md:text-3xl;
 	}
 	h4 {
 		@apply text-2xl;
@@ -56,7 +56,7 @@
 
 @layer utilities {
 	.container {
-		@apply max-w-[1380px] mx-auto px-4;
+		@apply mx-auto px-4;
 	}
 	.btn,
 	a.btn {
@@ -185,4 +185,8 @@
 }
 .portfolios-slider .slick-slide {
 	@apply px-4;
+}
+
+.testimonials-slider .slick-list {
+	@apply bg-white border border-border border-opacity-20 rounded-lg overflow-hidden;
 }

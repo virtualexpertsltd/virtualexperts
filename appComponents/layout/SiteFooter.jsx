@@ -20,8 +20,8 @@ export default function SiteFooter() {
 	return (
 		<footer className="footer bg-grey relative z-40">
 			<div className="container">
-				<div className="footer-top flex justify-between gap-x-10 gap-y-14 flex-wrap py-20">
-					<div className="widget max-w-[370px]">
+				<div className="footer-top flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-x-10 gap-y-14 py-20">
+					<div className="widget text-center lg:text-left max-w-[370px] w-full">
 						<Logo />
 						<p className="text-sm mt-3">
 							Virtual Experts Limited is the best Amazon FBA Consultant & Amazon
@@ -29,12 +29,12 @@ export default function SiteFooter() {
 							workload & grow your brands.
 						</p>
 					</div>
-					<div className="widget">
-						<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
+					<div className="widget text-center lg:text-left w-full">
+						<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
 							Get in Touch
 						</h6>
 						<ul className="space-y-3">
-							<li className="flex items-center gap-x-2">
+							<li className="flex justify-center lg:justify-start items-center gap-x-2 whitespace-nowrap">
 								<SlEnvolope className="text-primary" />
 								<Link
 									href="mailto:help@virtualexperts.net"
@@ -44,7 +44,7 @@ export default function SiteFooter() {
 									<strong>Email :</strong> help@virtualexperts.net
 								</Link>
 							</li>
-							<li className="flex items-center gap-x-2">
+							<li className="flex justify-center lg:justify-start items-center gap-x-2 whitespace-nowrap">
 								<SlSocialSkype className="text-primary" />
 								<Link
 									href="https://join.skype.com/invite/NMl9NExzR6b3"
@@ -54,7 +54,7 @@ export default function SiteFooter() {
 									<strong>Skype :</strong> VirtualExpertsLTD
 								</Link>
 							</li>
-							<li className="flex items-center gap-x-2">
+							<li className="flex justify-center lg:justify-start items-center gap-x-2 whitespace-nowrap">
 								<RiWhatsappLine className="text-primary" />
 								<Link
 									href="https://wa.me/15099035120"
@@ -66,12 +66,12 @@ export default function SiteFooter() {
 							</li>
 						</ul>
 					</div>
-					<div className="column space-y-5">
-						<div className="widget">
-							<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
+					<div className="column w-full space-y-5">
+						<div className="widget text-center lg:text-left">
+							<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
 								Let&apos;s Get Social
 							</h6>
-							<ul className="flex flex-wrap gap-3">
+							<ul className="flex justify-center lg:justify-start flex-wrap gap-3">
 								{socialLinks.facebook ? (
 									<li>
 										<Link
@@ -134,11 +134,11 @@ export default function SiteFooter() {
 								) : null}
 							</ul>
 						</div>
-						<div className="widget">
-							<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
+						<div className="widget text-center lg:text-left">
+							<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
 								Payment method
 							</h6>
-							<div className="payment-methods">
+							<div className="payment-methods flex justify-center lg:justify-start">
 								<Image
 									src={paymentMethods}
 									alt="payment methods"
