@@ -38,7 +38,7 @@ export default function Pricing() {
 							Pro
 						</h3>
 						<h5 className="text-center text-primary font-medium uppercase">
-							x Amazon Listing Images
+							7x Amazon Listing Images
 						</h5>
 						<div className="flex-grow">
 							<ul className="styled-list *:text-lg text-left inline-block">
@@ -61,7 +61,7 @@ export default function Pricing() {
 							Elite
 						</h3>
 						<h5 className="text-center text-primary font-medium uppercase">
-							3x Amazon Listing Images
+							PHOTOGRAPHY + 7X Images
 						</h5>
 						<div className="flex-grow">
 							<ul className="styled-list *:text-lg text-left inline-block">

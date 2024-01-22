@@ -9,6 +9,10 @@ import Pricing from "./_components/Pricing";
 import Testimonials from "./_components/Testimonials";
 import WhyChooseUs from "./_components/WhyChooseUs";
 
+export const metadata = {
+	title: "Photography & Listing",
+};
+
 const PhotographyAndListing = () => {
 	return (
 		<main className="relative z-10">

@@ -8,6 +8,17 @@ import "slick-carousel/slick/slick.css";
 // ignore-organize-import
 import "@/styles/appGlobals.css";
 
+export const metadata = {
+	title: {
+		template: "Virtual Experts | %s",
+		default: "Virtual Experts",
+	},
+	description:
+		"Virtual Experts is the best Amazon FBA Consultant who will reduce your workload and ensure your business growth. Virtual Experts provides Amazon Marketing Services including Amazon SEO Services with Listing Optimization Services & Amazon PPC",
+	keyword:
+		"amazon fba consultant, amazon marketing service, amazon seo consultant, amazon seo agency, amazon listing optimisation, amazon listing images, amazon, ppc agency, amazon ppc services\n",
+};
+
 const roboto = Roboto({
 	weight: ["300", "400", "500", "700"],
 	style: ["normal", "italic"],

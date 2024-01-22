@@ -41,6 +41,7 @@ export default function ImpactListing() {
 					title="The Impact of Professional Amazon Product Listing Images"
 					underlined="Professional"
 					colored="Amazon Product Listing Images"
+					underlineHideOnMobile
 				/>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-14">
 					{data.map((item) => (
