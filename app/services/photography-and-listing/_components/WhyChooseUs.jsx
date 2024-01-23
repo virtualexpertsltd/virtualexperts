@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
 						>
 							<Image
 								src={item.icon}
-								alt="designer"
+								alt={`${item.name} icon`}
 								height={55}
 								width={55}
 								className="object-contain object-center inline-block h-[55px] w-[55px] align-middle"

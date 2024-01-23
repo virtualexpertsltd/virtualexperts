@@ -152,7 +152,8 @@
 	@apply align-middle;
 }
 .slick-dots li button {
-	@apply inline-block align-middle p-0 size-4 bg-primary rounded-full text-xs leading-none opacity-40 transition;
+	background: unset;
+	@apply inline-block align-middle p-0 size-4 text-primary bg-primary rounded-full text-xs leading-none opacity-40 transition;
 }
 
 .slick-dots li button::before {
