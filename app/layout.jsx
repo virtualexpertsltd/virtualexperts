@@ -1,7 +1,6 @@
 import SiteFooter from "@/appComponents/layout/SiteFooter";
 import SiteHeader from "@/appComponents/layout/SiteHeader";
 import { Roboto } from "next/font/google";
-import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 // ignore-organize-import
