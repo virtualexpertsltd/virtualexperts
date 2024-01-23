@@ -33,6 +33,7 @@ const Accordion = ({ data, current, setCurrent }) => {
 			key={data.priority}
 		>
 			<button
+				title={data.question}
 				className={`accordion-header flex items-center justify-between gap-x-3 text-left font-medium w-full px-3 sm:px-5 py-3 ${
 					current === data.priority ? "" : "bg-white"
 				}`}

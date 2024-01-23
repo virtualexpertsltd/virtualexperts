@@ -87,7 +87,7 @@ export default function FreeQuoteBox() {
 						<p className="text-sm mt-1 text-red-500">Description Required</p>
 					)}
 				</div>
-				<button type="submit" className="btn">
+				<button title="Submit" type="submit" className="btn">
 					<span>Submit</span>
 				</button>
 			</form>

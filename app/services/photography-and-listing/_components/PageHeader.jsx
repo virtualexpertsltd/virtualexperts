@@ -31,7 +31,11 @@ export default function PageHeader() {
 								Sales.
 							</h4>
 							<div className="flex flex-wrap items-center gap-x-3 gap-y-3">
-								<button className="btn" onClick={() => setIsModalOpen(true)}>
+								<button
+									title="Get a Free Quote"
+									className="btn"
+									onClick={() => setIsModalOpen(true)}
+								>
 									<span>Get a Free Quote</span>
 								</button>
 								<p className="text-dark max-w-[350px] lg:max-w-[400px]">

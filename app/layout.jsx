@@ -1,7 +1,6 @@
 import SiteFooter from "@/appComponents/layout/SiteFooter";
 import SiteHeader from "@/appComponents/layout/SiteHeader";
 import { Roboto } from "next/font/google";
-import "nprogress/nprogress.css";
 import "react-toastify/dist/ReactToastify.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -20,8 +19,8 @@ export const metadata = {
 };
 
 const roboto = Roboto({
-	weight: ["300", "400", "500", "700"],
-	style: ["normal", "italic"],
+	weight: ["400", "500", "700"],
+	style: ["normal"],
 	subsets: ["latin"],
 	display: "swap",
 	fallback: ["system-ui", "arial"],

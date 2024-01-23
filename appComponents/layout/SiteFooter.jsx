@@ -79,6 +79,7 @@ export default function SiteFooter() {
 											target="_blank"
 											rel="noreferrer"
 											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
+											aria-label="Facebook"
 										>
 											<FiFacebook className="text-primary transition-all group-hover:text-black" />
 										</Link>
@@ -91,6 +92,7 @@ export default function SiteFooter() {
 											target="_blank"
 											rel="noreferrer"
 											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
+											aria-label="Instagram"
 										>
 											<FiInstagram className="text-primary transition-all group-hover:text-black" />
 										</Link>
@@ -103,6 +105,7 @@ export default function SiteFooter() {
 											target="_blank"
 											rel="noreferrer"
 											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
+											aria-label="Twitter"
 										>
 											<FiTwitter className="text-primary transition-all group-hover:text-black" />
 										</Link>
@@ -115,6 +118,7 @@ export default function SiteFooter() {
 											target="_blank"
 											rel="noreferrer"
 											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
+											aria-label="Youtube"
 										>
 											<FiYoutube className="text-primary transition-all group-hover:text-black" />
 										</Link>
@@ -127,6 +131,7 @@ export default function SiteFooter() {
 											target="_blank"
 											rel="noreferrer"
 											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
+											aria-label="Telegram"
 										>
 											<LiaTelegram className="text-primary transition-all group-hover:text-black" />
 										</Link>

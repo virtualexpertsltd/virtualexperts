@@ -66,6 +66,7 @@ const SiteHeader = () => {
 							<Logo />
 						</div>
 						<button
+							title="Toggle Menu"
 							className="inline-block lg:hidden text-4xl"
 							onClick={() => setIsMobileMenuOpen((prev) => !prev)}
 						>
@@ -103,6 +104,7 @@ function MobileMenu({ isOpen, closeHandler }) {
 		>
 			<div className="inner relative h-full flex flex-col items-center gap-10 pt-12">
 				<button
+					title="Close Menu"
 					className="absolute left-auto right-0 top-0 inline-flex justify-center items-center h-10 w-10 rounded-full border text-white border-white hover:text-orange-500 hover:border-orange-500"
 					onClick={closeHandler}
 				>
