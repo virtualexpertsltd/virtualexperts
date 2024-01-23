@@ -7,8 +7,8 @@ import Slider from "react-slick";
 let sliderSettings = {
 	infinite: true,
 	autoplay: true,
-	autoplaySpeed: 3000,
-	speed: 4000,
+	autoplaySpeed: 5000,
+	speed: 3000,
 	slidesToShow: 2,
 	slidesToScroll: 1,
 	arrows: false,

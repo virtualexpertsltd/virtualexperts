@@ -99,23 +99,23 @@ const SiteHeader = () => {
 function MobileMenu({ isOpen, closeHandler }) {
 	return (
 		<div
-			className={`fixed h-screen w-[300px] bg-white left-auto right-0 top-0 z-50 p-5 border-l border-border border-opacity-20 transition-all duration-500 transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+			className={`fixed h-screen w-[300px] bg-[#828b9a] left-auto right-0 top-0 z-50 p-5 border-l border-border border-opacity-20 transition-all duration-500 transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
 		>
-			<div className="inner relative h-full flex flex-col justify-center items-center gap-10 pt-12">
+			<div className="inner relative h-full flex flex-col items-center gap-10 pt-12">
 				<button
-					className="absolute left-auto right-0 top-0 inline-flex justify-center items-center h-10 w-10 rounded-full border border-border hover:text-orange-500 hover:border-orange-500"
+					className="absolute left-auto right-0 top-0 inline-flex justify-center items-center h-10 w-10 rounded-full border text-white border-white hover:text-orange-500 hover:border-orange-500"
 					onClick={closeHandler}
 				>
 					<FiX className="text-lg" />
 				</button>
 				<Logo mobileLogo />
-				<nav className="max-h-[220px] overflow-y-auto">
-					<ul className="text-center space-y-2">
+				<nav className="max-h-full overflow-y-auto">
+					<ul className="text-center space-y-5">
 						{navbarData.map((item) => (
 							<li key={item.id} className="block">
 								<Link
 									href={item.link}
-									className="block text-xl transition-all text-dark hover:text-primary font-medium"
+									className="block text-xl transition-all text-white hover:text-primary font-medium"
 								>
 									{item.title}
 								</Link>

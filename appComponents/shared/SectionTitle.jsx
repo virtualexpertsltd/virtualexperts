@@ -7,7 +7,7 @@ export default function SectionTitle({
 }) {
 	let convertedText = title.replace(
 		colored,
-		`<br class="block sm:hidden"/><span class="bg-primary text-white">${colored}</span><br class="block sm:hidden"/>`
+		`<br class="block content-[''] sm:hidden"/><span class="bg-primary text-white">${colored}</span><br class="block content-[''] sm:hidden"/>`
 	);
 	if (underlineHideOnMobile) {
 		convertedText = convertedText.replace(
