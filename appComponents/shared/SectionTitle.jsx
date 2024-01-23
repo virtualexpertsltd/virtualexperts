@@ -12,7 +12,7 @@ export default function SectionTitle({
 	if (underlineHideOnMobile) {
 		convertedText = convertedText.replace(
 			underlined,
-			`<span class=${underlineColor === "red" ? "sm:styled-underline-red" : "sm:styled-underline"}>${underlined}</span>`
+			`<span class=${underlineColor === "red" ? "xl:styled-underline-red" : "xl:styled-underline"}>${underlined}</span>`
 		);
 	} else {
 		convertedText = convertedText.replace(
