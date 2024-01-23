@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebook, FaSkype, FaTelegram, FaYoutube } from "react-icons/fa";
 import { ImTwitter } from "react-icons/im";

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
 

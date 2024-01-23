@@ -10,6 +10,8 @@ import SectionTitle from "../Components/Shared/SectionTitile/SectionTitile";
 const Order = () => {
 	const router = useRouter();
 
+	const serviceFromRouter = router.query?.service;
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -368,6 +370,9 @@ const Order = () => {
 											value="Photoshoot of the Product"
 											className="me-2 my-3"
 											id="Photoshoot of the Product"
+											checked={
+												serviceFromRouter === "photography-and-listing"
+											}
 										/>{" "}
 										<label
 											htmlFor="Photoshoot of the Product"
