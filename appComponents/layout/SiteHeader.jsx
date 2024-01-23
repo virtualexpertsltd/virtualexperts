@@ -115,7 +115,7 @@ function MobileMenu({ isOpen, closeHandler }) {
 							<li key={item.id} className="block">
 								<Link
 									href={item.link}
-									className="block text-xl transition-all text-white hover:text-primary font-medium"
+									className="block text-xl transition-all !text-white hover:!text-primary font-medium"
 								>
 									{item.title}
 								</Link>
