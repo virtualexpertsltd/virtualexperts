@@ -46,9 +46,14 @@ export default function Expectation() {
 				/>
 				<div className="grid grid-cols-12 items-center gap-8">
 					<div className="col-span-12 lg:col-span-5 order-2 lg:order-1">
-						<ul className="space-y-3 *:text-2xl *:font-medium *:text-dark">
+						<ul className="space-y-3 border-l border-border ml-2.5 *:pl-8 *:relative *:text-2xl *:font-medium">
 							{data.map((item) => (
-								<li key={item.id}>{item.content}</li>
+								<li
+									key={item.id}
+									className="text-dark before:content before:absolute before:size-4 before:bg-primary before:rounded-full before:-left-2 before:-ml-px  before:top-2"
+								>
+									{item.content}
+								</li>
 							))}
 						</ul>
 						<Link href="/order?service=photography-and-listing" className="btn mt-7">
