@@ -3,14 +3,10 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
-// import SectionTitle from "../Components/Shared/SectionTitile/SectionTitile";
-
 import SectionTitle from "../Components/Shared/SectionTitile/SectionTitile";
 
-const Order = () => {
+const Order = ({ servicesFromRouter }) => {
 	const router = useRouter();
-
-	const serviceFromRouter = router.query?.service;
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -20,7 +16,14 @@ const Order = () => {
 		handleSubmit,
 		register,
 		formState: { errors },
-	} = useForm();
+	} = useForm({
+		defaultValues: {
+			ProductListingimagesDesign: servicesFromRouter?.includes(
+				"product-listing-images-design"
+			),
+			PhotoshootoftheProduct: servicesFromRouter?.includes("photoshoot-of-the-product"),
+		},
+	});
 
 	const onSubmit = (data, e) => {
 		const newArray = Object.keys(data);
@@ -370,9 +373,6 @@ const Order = () => {
 											value="Photoshoot of the Product"
 											className="me-2 my-3"
 											id="Photoshoot of the Product"
-											checked={
-												serviceFromRouter === "photography-and-listing"
-											}
 										/>{" "}
 										<label
 											htmlFor="Photoshoot of the Product"
@@ -455,3 +455,13 @@ const Order = () => {
 };
 
 export default Order;
+
+export const getServerSideProps = async (ctx) => {
+	let servicesFromRouter = ctx.query?.service?.split(",");
+
+	return {
+		props: {
+			servicesFromRouter: servicesFromRouter,
+		},
+	};
+};
