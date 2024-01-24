@@ -91,21 +91,18 @@ const SiteHeader = () => {
 										key={item.id}
 										className="relative group self-stretch inline-flex items-center"
 									>
-										<Link
-											href={item.link}
-											className="py-2 self-stretch inline-flex items-center text-dark group-hover:text-primary transition-all"
-										>
-											{item.title}
-										</Link>
 										{item.dropdowns ? (
 											<React.Fragment>
+												<span className="py-2 self-stretch inline-flex items-center text-dark group-hover:text-primary transition-all">
+													{item.title}
+												</span>
 												<FiChevronDown className="ml-1 transition-all transform text-dark group-hover:text-primary group-hover:rotate-180" />
 												<ul className="absolute left-auto right-0 top-full bg-white shadow-custom border-b-4 border-primary min-w-[200px] p-2 rounded z-40 opacity-0 invisible transition-all duration-500 transform translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
 													{item.dropdowns.map((dropitem) => (
 														<li key={dropitem.id} className="block">
 															<Link
 																href={dropitem.link}
-																className="text-dark block py-1 transition-all hover:text-primary underline decoration-transparent hover:decoration-primary leading-tight"
+																className="text-dark block py-1 transition-all hover:text-primary leading-tight"
 															>
 																{dropitem.title}
 															</Link>
@@ -113,7 +110,14 @@ const SiteHeader = () => {
 													))}
 												</ul>
 											</React.Fragment>
-										) : null}
+										) : (
+											<Link
+												href={item.link}
+												className="py-2 self-stretch inline-flex items-center text-dark group-hover:text-primary transition-all"
+											>
+												{item.title}
+											</Link>
+										)}
 									</li>
 								))}
 							</ul>
@@ -185,7 +189,7 @@ function MobileDropdownItem({ data }) {
 						<li key={dropitem.id} className="block text-white">
 							<Link
 								href={dropitem.link}
-								className="text-white block py-1 transition-all hover:text-primary underline decoration-transparent hover:decoration-primary leading-tight"
+								className="text-white block py-1 transition-all hover:text-primary leading-tight"
 							>
 								{dropitem.title}
 							</Link>
