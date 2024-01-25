@@ -12,7 +12,7 @@ import WhyChooseUs from "./_components/WhyChooseUs";
 export const metadata = {
 	title: "Photography & Listing",
 	alternates: {
-		canonical: "https://virtualexperts.net/services/photography-and-listing",
+		canonical: "https://virtualexperts.net/services/amazon-listing-images",
 	},
 };
 

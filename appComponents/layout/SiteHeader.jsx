@@ -29,7 +29,7 @@ const navbarData = [
 			{
 				id: 2,
 				title: "Product Listing Images Design",
-				link: "/services/photography-and-listing",
+				link: "/services/amazon-listing-images",
 			},
 		],
 	},

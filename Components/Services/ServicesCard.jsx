@@ -21,7 +21,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
 									<div className="card h-100 border-0 borderRadius overflow-hidden">
 										{servicesCard.title === "Product Listing images Design" ? (
 											<Link
-												href="/services/photography-and-listing"
+												href="/services/amazon-listing-images"
 												className="d-flex justify-content-center background-color-skyblue overflow-hidden "
 											>
 												<Image
@@ -51,7 +51,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
 												>
 													{servicesCard.title ===
 													"Product Listing images Design" ? (
-														<Link href="/services/photography-and-listing">
+														<Link href="/services/amazon-listing-images">
 															{servicesCard.title}
 														</Link>
 													) : (
@@ -67,7 +67,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
 													{servicesCard.title ===
 													"Product Listing images Design" ? (
 														<Link
-															href="/services/photography-and-listing"
+															href="/services/amazon-listing-images"
 															className="text-theme"
 														>
 															Learn more...

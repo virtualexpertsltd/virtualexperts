@@ -19,7 +19,7 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
 							>
 								{service.title === "Photography & Listing Images Design" ? (
 									<Link
-										href={"/services/photography-and-listing"}
+										href={"/services/amazon-listing-images"}
 										className="d-flex justify-content-center mx-auto"
 									>
 										<Image
@@ -46,7 +46,7 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
 									<h3 className="text-center mt-5 font-family-roboto fs-18 fs-600 lh-28">
 										{service.title === "Photography & Listing Images Design" ? (
 											<Link
-												href="/services/photography-and-listing"
+												href="/services/amazon-listing-images"
 												className=""
 											>
 												{service.title}
