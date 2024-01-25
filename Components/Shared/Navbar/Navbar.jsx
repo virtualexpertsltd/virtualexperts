@@ -189,14 +189,8 @@ function MobileDropdownItem({ data }) {
 			{isOpen ? (
 				<ul className={styles.dropdownItems}>
 					{data.dropdowns.map((dropitem) => (
-						<li key={dropitem.id}>
-							<Link
-								href={dropitem.link}
-								data-bs-dismiss="offcanvas"
-								aria-label="Close"
-							>
-								{dropitem.title}
-							</Link>
+						<li key={dropitem.id} data-bs-dismiss="offcanvas" aria-label="Close">
+							<Link href={dropitem.link}>{dropitem.title}</Link>
 						</li>
 					))}
 				</ul>

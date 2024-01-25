@@ -149,7 +149,10 @@ function MobileMenu({ isOpen, closeHandler }) {
 						{navbarData.map((item) => (
 							<React.Fragment key={item.id}>
 								{item.dropdowns ? (
-									<MobileDropdownItem data={item} />
+									<MobileDropdownItem
+										data={item}
+										menuCloseHandler={closeHandler}
+									/>
 								) : (
 									<li className="">
 										<Link
@@ -169,7 +172,7 @@ function MobileMenu({ isOpen, closeHandler }) {
 	);
 }
 
-function MobileDropdownItem({ data }) {
+function MobileDropdownItem({ data, menuCloseHandler }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -190,6 +193,7 @@ function MobileDropdownItem({ data }) {
 							<Link
 								href={dropitem.link}
 								className="text-white block py-1 transition-all hover:text-primary leading-tight"
+								onClick={menuCloseHandler}
 							>
 								{dropitem.title}
 							</Link>
