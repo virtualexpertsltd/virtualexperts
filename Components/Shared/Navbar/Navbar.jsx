@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { FiChevronDown } from "react-icons/fi";
 import logo from "../../../Assets/Images/others/Logo.svg";
 import mobileLogo from "../../../Assets/Images/others/v-logo.svg";
 import { NavbarData } from "../../../Data/NavbarData";
@@ -53,17 +55,45 @@ const Navbar = () => {
 						<div className="d-none d-md-block">
 							<ul className="d-flex align-items-center">
 								{NavbarData?.map((nav) => (
-									<li key={nav.id} className="mx-3 position-relative">
-										<Link
-											href={nav.link}
-											className={`${
-												currentPath === nav.link ? `${styles.active}` : ""
-											} ${styles.navItem}`}
-											legacyBehavior
-										>
-											{nav.title}
-										</Link>
-									</li>
+									<React.Fragment key={nav.id}>
+										{nav.dropdowns ? (
+											<li
+												className={`mx-3 position-relative ${styles.lDropdownItem}`}
+											>
+												<span>
+													<span>{nav.title}</span> <FiChevronDown />
+												</span>
+												<ul>
+													{nav.dropdowns.map((dropItem) => (
+														<li key={dropItem.id}>
+															<Link
+																href={dropItem.link}
+																legacyBehavior
+															>
+																{dropItem.title}
+															</Link>
+														</li>
+													))}
+												</ul>
+											</li>
+										) : (
+											<li
+												className={`mx-3 position-relative ${styles.navItemLi}`}
+											>
+												<Link
+													href={nav.link}
+													className={`${
+														currentPath === nav.link
+															? `${styles.active}`
+															: ""
+													} ${styles.navItem}`}
+													legacyBehavior
+												>
+													{nav.title}
+												</Link>
+											</li>
+										)}
+									</React.Fragment>
 								))}
 							</ul>
 						</div>
@@ -112,22 +142,28 @@ const Navbar = () => {
 					<div className="offcanvas-body">
 						<div className="text-center">
 							{NavbarData?.map((nav) => (
-								<div
-									key={nav.id}
-									className={`${styles.navItemMobileHover} my-2 py-2`}
-								>
-									<Link href={nav.link} passHref legacyBehavior>
-										<span
-											className={`cursor-pointer`}
-											data-bs-dismiss="offcanvas"
-											aria-label="Close"
-										>
-											<a href={nav.link} className={styles.navItemMobile}>
-												{nav.title}
-											</a>
-										</span>
-									</Link>
-								</div>
+								<React.Fragment key={nav.id}>
+									{nav.dropdowns ? (
+										<MobileDropdownItem data={nav} />
+									) : (
+										<div className={`${styles.navItemMobileHover} my-2 py-2`}>
+											<Link href={nav.link} passHref legacyBehavior>
+												<span
+													className={`cursor-pointer`}
+													data-bs-dismiss="offcanvas"
+													aria-label="Close"
+												>
+													<a
+														href={nav.link}
+														className={styles.navItemMobile}
+													>
+														{nav.title}
+													</a>
+												</span>
+											</Link>
+										</div>
+									)}
+								</React.Fragment>
 							))}
 						</div>
 					</div>
@@ -136,5 +172,31 @@ const Navbar = () => {
 		</nav>
 	);
 };
+
+function MobileDropdownItem({ data }) {
+	const [isOpen, setIsOpen] = useState(false);
+
+	return (
+		<div className={`my-2`}>
+			<button
+				className={`py-2 ${styles.dropdownTrigger} ${isOpen ? styles.dropdownTriggerActive : ""}`}
+				onClick={() => setIsOpen((prev) => !prev)}
+			>
+				<span>{data.title}</span>
+				<FiChevronDown />
+			</button>
+
+			{isOpen ? (
+				<ul className={styles.dropdownItems}>
+					{data.dropdowns.map((dropitem) => (
+						<li key={dropitem.id} data-bs-dismiss="offcanvas" aria-label="Close">
+							<Link href={dropitem.link}>{dropitem.title}</Link>
+						</li>
+					))}
+				</ul>
+			) : null}
+		</div>
+	);
+}
 
 export default Navbar;

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useLayoutEffect, useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import Logo from "./Logo";
 
 const navbarData = [
@@ -20,6 +20,18 @@ const navbarData = [
 		id: "3",
 		title: "Service",
 		link: "/services",
+		dropdowns: [
+			{
+				id: 1,
+				title: "All Services",
+				link: "/services",
+			},
+			{
+				id: 2,
+				title: "Product Listing Images Design",
+				link: "/services/amazon-listing-images",
+			},
+		],
 	},
 	{
 		id: "4",
@@ -77,14 +89,35 @@ const SiteHeader = () => {
 								{navbarData.map((item) => (
 									<li
 										key={item.id}
-										className="self-stretch inline-flex items-center"
+										className="relative group self-stretch inline-flex items-center"
 									>
-										<Link
-											href={item.link}
-											className="py-2 self-stretch inline-flex items-center text-dark hover:text-primary transition-all"
-										>
-											{item.title}
-										</Link>
+										{item.dropdowns ? (
+											<React.Fragment>
+												<span className="py-2 self-stretch inline-flex items-center text-dark group-hover:text-primary transition-all">
+													{item.title}
+												</span>
+												<FiChevronDown className="ml-1 transition-all transform text-dark group-hover:text-primary group-hover:rotate-180" />
+												<ul className="absolute left-auto right-0 top-full bg-white shadow-custom border-b-4 border-primary min-w-[200px] p-2 rounded z-40 opacity-0 invisible transition-all duration-500 transform translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+													{item.dropdowns.map((dropitem) => (
+														<li key={dropitem.id} className="block">
+															<Link
+																href={dropitem.link}
+																className="text-dark block py-1 transition-all hover:text-primary leading-tight"
+															>
+																{dropitem.title}
+															</Link>
+														</li>
+													))}
+												</ul>
+											</React.Fragment>
+										) : (
+											<Link
+												href={item.link}
+												className="py-2 self-stretch inline-flex items-center text-dark group-hover:text-primary transition-all"
+											>
+												{item.title}
+											</Link>
+										)}
 									</li>
 								))}
 							</ul>
@@ -114,19 +147,61 @@ function MobileMenu({ isOpen, closeHandler }) {
 				<nav className="max-h-full overflow-y-auto">
 					<ul className="text-center space-y-5">
 						{navbarData.map((item) => (
-							<li key={item.id} className="block">
-								<Link
-									href={item.link}
-									className="block text-xl transition-all !text-white hover:!text-primary font-medium"
-								>
-									{item.title}
-								</Link>
-							</li>
+							<React.Fragment key={item.id}>
+								{item.dropdowns ? (
+									<MobileDropdownItem
+										data={item}
+										menuCloseHandler={closeHandler}
+									/>
+								) : (
+									<li className="">
+										<Link
+											href={item.link}
+											className="block text-xl transition-all !text-white hover:!text-primary font-medium"
+										>
+											{item.title}
+										</Link>
+									</li>
+								)}
+							</React.Fragment>
 						))}
 					</ul>
 				</nav>
 			</div>
 		</div>
+	);
+}
+
+function MobileDropdownItem({ data, menuCloseHandler }) {
+	const [isOpen, setIsOpen] = useState(false);
+
+	return (
+		<li key={data.id} className="block">
+			<button
+				className={`group flex w-full justify-center items-center text-xl transition-all hover:text-primary font-medium ${isOpen ? "text-primary" : "text-white"}`}
+				onClick={() => setIsOpen((prev) => !prev)}
+			>
+				<span>{data.title}</span>
+				<FiChevronDown
+					className={`text-xl ml-1 transition-all transform group-hover:text-primary ${isOpen ? "rotate-180 text-primary" : "text-white rotate-0"}`}
+				/>
+			</button>
+			{isOpen ? (
+				<ul className="pt-1">
+					{data.dropdowns.map((dropitem) => (
+						<li key={dropitem.id} className="block text-white">
+							<Link
+								href={dropitem.link}
+								className="text-white block py-1 transition-all hover:text-primary leading-tight"
+								onClick={menuCloseHandler}
+							>
+								{dropitem.title}
+							</Link>
+						</li>
+					))}
+				</ul>
+			) : null}
+		</li>
 	);
 }
 

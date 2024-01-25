@@ -17,18 +17,43 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
 								key={service._id}
 								className={`${styles.serviceCard} col-12 col-md-4 mx-auto mt-md-5`}
 							>
-								<div className="d-flex justify-content-center mx-auto">
-									<Image
-										src={service.imgURL}
-										title="Service"
-										alt="Service"
-										height={150}
-										width={150}
-									/>
-								</div>
+								{service.title === "Photography & Listing Images Design" ? (
+									<Link
+										href={"/services/amazon-listing-images"}
+										className="d-flex justify-content-center mx-auto"
+									>
+										<Image
+											src={service.imgURL}
+											title="Service"
+											alt="Service"
+											height={150}
+											width={150}
+										/>
+									</Link>
+								) : (
+									<div className="d-flex justify-content-center mx-auto">
+										<Image
+											src={service.imgURL}
+											title="Service"
+											alt="Service"
+											height={150}
+											width={150}
+										/>
+									</div>
+								)}
+
 								<div className="boxShadow p-2 rounded">
 									<h3 className="text-center mt-5 font-family-roboto fs-18 fs-600 lh-28">
-										{service.title}
+										{service.title === "Photography & Listing Images Design" ? (
+											<Link
+												href="/services/amazon-listing-images"
+												className=""
+											>
+												{service.title}
+											</Link>
+										) : (
+											service.title
+										)}
 									</h3>
 									<p
 										className={`${styles.description} text-justify fs-14 lh-24 mt-3 text-color`}

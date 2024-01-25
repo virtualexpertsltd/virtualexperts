@@ -46,9 +46,14 @@ export default function Expectation() {
 				/>
 				<div className="grid grid-cols-12 items-center gap-8">
 					<div className="col-span-12 lg:col-span-5 order-2 lg:order-1">
-						<ul className="space-y-3 *:text-2xl *:font-medium *:text-dark">
+						<ul className="space-y-3 border-l border-border ml-2.5 *:pl-8 *:relative *:text-2xl *:font-medium">
 							{data.map((item) => (
-								<li key={item.id}>{item.content}</li>
+								<li
+									key={item.id}
+									className="text-dark before:content before:absolute before:size-4 before:bg-primary before:rounded-full before:-left-2 before:-ml-px  before:top-2"
+								>
+									{item.content}
+								</li>
 							))}
 						</ul>
 						<Link href="/order?service=photography-and-listing" className="btn mt-7">
@@ -58,7 +63,7 @@ export default function Expectation() {
 					<div className="col-span-12 lg:col-span-7 order-1 lg:order-2">
 						<div className="max-w-[450px] lg:max-w-none mx-auto lg:mx-0 aspect-video rounded-2xl overflow-hidden">
 							<iframe
-								src="https://www.youtube.com/embed/ChAeF2io9ck?si=722cFdGtNp_1_8ep"
+								src="https://www.youtube.com/embed/BLaC6pVGk60?si=GMjxo_p-Eu40V3as"
 								title="YouTube video player"
 								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 								allowFullScreen
