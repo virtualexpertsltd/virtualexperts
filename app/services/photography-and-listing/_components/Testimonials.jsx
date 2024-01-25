@@ -14,7 +14,7 @@ let data = [
 	},
 	{
 		id: 2,
-		thumb: "/images/testimonial-authors/alex-latham.webp",
+		thumb: "/images/testimonial-authors/robert-cameron.webp",
 		quote: "Exceptional Amazon listing image design revamp! Our sales have seen a significant boost since we redesigned our product listing images. The images are visually appealing and informative and have improved our overall brand presence. Highly recommended!",
 		authorName: "Robert Cameron",
 		designation: "Founder, T3-R LLC",
