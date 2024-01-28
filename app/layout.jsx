@@ -1,6 +1,6 @@
 import SiteFooter from "@/appComponents/layout/SiteFooter";
 import SiteHeader from "@/appComponents/layout/SiteHeader";
-import { Roboto } from "next/font/google";
+import { Poppins, Roboto } from "next/font/google";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 // ignore-organize-import
@@ -26,11 +26,20 @@ const roboto = Roboto({
 	variable: "--font-roboto",
 });
 
+const poppins = Poppins({
+	weight: ["400", "500", "600", "700"],
+	style: ["normal"],
+	subsets: ["latin"],
+	display: "swap",
+	fallback: ["system-ui", "arial"],
+	variable: "--font-poppins",
+});
+
 const RootLayout = ({ children }) => {
 	return (
-		<html lang="en" className={`${roboto.variable} font-sans`}>
+		<html lang="en" className={`${roboto.variable} ${poppins.variable} font-sans`}>
 			<body>
-				<div className="site-wrapper mt-[82px]">
+				<div className="site-wrapper mt-[60px] md:mt-[80px]">
 					<SiteHeader />
 					{children}
 					<SiteFooter />

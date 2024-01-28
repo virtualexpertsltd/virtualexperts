@@ -1,8 +1,11 @@
 "use client";
 
+import smallLogo from "@/appAssets/images/mobile-logo.png";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useLayoutEffect, useState } from "react";
-import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
+import { AiOutlineClose } from "react-icons/ai";
+import { FiChevronDown } from "react-icons/fi";
 import Logo from "./Logo";
 
 const navbarData = [
@@ -70,7 +73,7 @@ const SiteHeader = () => {
 	return (
 		<React.Fragment>
 			<header
-				className={`header w-full fixed left-0 top-0 bg-white z-40  ${isSticky ? "bg-opacity-80 filter backdrop-blur-sm border-b border-border border-opacity-10" : "bg-opacity-100"}`}
+				className={`header font-poppins w-full fixed left-0 top-0 bg-white z-40  ${isSticky ? "" : ""}`}
 			>
 				<div className="container">
 					<div className="inner flex gap-7 justify-between items-center">
@@ -79,21 +82,23 @@ const SiteHeader = () => {
 						</div>
 						<button
 							title="Toggle Menu"
-							className="inline-block lg:hidden text-4xl"
+							className="inline-block lg:hidden p-4 cursor-pointer"
 							onClick={() => setIsMobileMenuOpen((prev) => !prev)}
 						>
-							<FiMenu />
+							<span className="h-[2px] w-[30px] block ml-auto bg-[#828b9a] mt-[5px] first:mt-0"></span>
+							<span className="h-[2px] w-[25px] block ml-auto bg-[#828b9a] mt-[5px] first:mt-0"></span>
+							<span className="h-[2px] w-[20px] block ml-auto bg-[#828b9a] mt-[5px] first:mt-0"></span>
 						</button>
-						<nav className="hidden lg:flex self-stretch items-center">
-							<ul className="flex lg:gap-x-8 xl:gap-x-12 self-stretch items-center">
+						<nav className="hidden lg:flex">
+							<ul className="flex py-4 mb-4">
 								{navbarData.map((item) => (
 									<li
 										key={item.id}
-										className="relative group self-stretch inline-flex items-center"
+										className="relative group inline-flex items-center px-4"
 									>
 										{item.dropdowns ? (
 											<React.Fragment>
-												<span className="py-2 self-stretch inline-flex items-center text-dark group-hover:text-primary transition-all">
+												<span className="self-stretch inline-flex items-center text-dark group-hover:text-primary transition-all">
 													{item.title}
 												</span>
 												<FiChevronDown className="ml-1 transition-all transform text-dark group-hover:text-primary group-hover:rotate-180" />
@@ -102,7 +107,7 @@ const SiteHeader = () => {
 														<li key={dropitem.id} className="block">
 															<Link
 																href={dropitem.link}
-																className="text-dark block py-1 transition-all hover:text-primary leading-tight"
+																className="text-dark text-sm block py-1 transition-all hover:text-primary leading-tight"
 															>
 																{dropitem.title}
 															</Link>
@@ -113,7 +118,7 @@ const SiteHeader = () => {
 										) : (
 											<Link
 												href={item.link}
-												className="py-2 self-stretch inline-flex items-center text-dark group-hover:text-primary transition-all"
+												className="inline-flex items-center text-dark group-hover:text-primary transition-all"
 											>
 												{item.title}
 											</Link>
@@ -133,19 +138,28 @@ const SiteHeader = () => {
 function MobileMenu({ isOpen, closeHandler }) {
 	return (
 		<div
-			className={`fixed h-screen w-[300px] bg-[#828b9a] left-auto right-0 top-0 z-50 p-5 border-l border-border border-opacity-20 transition-all duration-500 transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+			className={`fixed font-poppins h-screen w-[400px] max-w-full bg-[#828b9a] left-auto right-0 top-0 z-50 border-l border-border border-opacity-20 transition-all duration-500 transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
 		>
-			<div className="inner relative h-full flex flex-col items-center gap-10 pt-12">
-				<button
-					title="Close Menu"
-					className="absolute left-auto right-0 top-0 inline-flex justify-center items-center h-10 w-10 rounded-full border text-white border-white hover:text-orange-500 hover:border-orange-500"
-					onClick={closeHandler}
-				>
-					<FiX className="text-lg" />
-				</button>
-				<Logo mobileLogo />
-				<nav className="max-h-full overflow-y-auto">
-					<ul className="text-center space-y-5">
+			<div className="inner relative h-full text-center">
+				<div className="header text-right p-4">
+					<button
+						title="Close Menu"
+						className="inline-flex text-white"
+						onClick={closeHandler}
+					>
+						<AiOutlineClose size={24} />
+					</button>
+				</div>
+				<Image
+					src={smallLogo}
+					alt="virtualexperts.net"
+					height={100}
+					width={112}
+					className="object-contain object-center max-h-full max-w-full align-middle mx-auto"
+					quality={100}
+				/>
+				<nav className="max-h-full overflow-y-auto p-4">
+					<ul className="text-center">
 						{navbarData.map((item) => (
 							<React.Fragment key={item.id}>
 								{item.dropdowns ? (
@@ -154,10 +168,10 @@ function MobileMenu({ isOpen, closeHandler }) {
 										menuCloseHandler={closeHandler}
 									/>
 								) : (
-									<li className="">
+									<li className="my-2">
 										<Link
 											href={item.link}
-											className="block text-xl transition-all !text-white hover:!text-primary font-medium"
+											className="block text-sm py-2 transition-all !text-white hover:bg-primary"
 										>
 											{item.title}
 										</Link>
@@ -176,14 +190,14 @@ function MobileDropdownItem({ data, menuCloseHandler }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<li key={data.id} className="block">
+		<li key={data.id} className="block my-2">
 			<button
-				className={`group flex w-full justify-center items-center text-xl transition-all hover:text-primary font-medium ${isOpen ? "text-primary" : "text-white"}`}
+				className="flex w-full justify-center py-2 items-center text-sm transition-all text-white hover:bg-primary"
 				onClick={() => setIsOpen((prev) => !prev)}
 			>
 				<span>{data.title}</span>
 				<FiChevronDown
-					className={`text-xl ml-1 transition-all transform group-hover:text-primary ${isOpen ? "rotate-180 text-primary" : "text-white rotate-0"}`}
+					className={`ml-1 transition-all transform ${isOpen ? "rotate-180" : "rotate-0"}`}
 				/>
 			</button>
 			{isOpen ? (
@@ -192,7 +206,7 @@ function MobileDropdownItem({ data, menuCloseHandler }) {
 						<li key={dropitem.id} className="block text-white">
 							<Link
 								href={dropitem.link}
-								className="text-white block py-1 transition-all hover:text-primary leading-tight"
+								className="text-white text-sm block py-1 transition-all hover:text-primary leading-tight"
 								onClick={menuCloseHandler}
 							>
 								{dropitem.title}
