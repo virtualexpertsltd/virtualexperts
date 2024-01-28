@@ -18,9 +18,7 @@ const Order = ({ servicesFromRouter }) => {
 		formState: { errors },
 	} = useForm({
 		defaultValues: {
-			ProductListingimagesDesign: servicesFromRouter?.includes(
-				"product-listing-images-design"
-			),
+			ProductListingimagesDesign: servicesFromRouter?.includes("amazon-listing-images"),
 			PhotoshootoftheProduct: servicesFromRouter?.includes("photoshoot-of-the-product"),
 		},
 	});

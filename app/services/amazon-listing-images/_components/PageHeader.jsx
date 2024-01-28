@@ -15,16 +15,16 @@ export default function PageHeader() {
 				<div className="container">
 					<div className="flex flex-wrap lg:flex-nowrap lg:flex-row-reverse justify-between items-center gap-x-8 gap-y-10 py-8">
 						<div className="image max-w-[230px] lg:max-w-full mx-auto lg:mx-0">
-							<Image src={amazonListing} alt="amazon listing" />
+							<Image src={amazonListing} alt="amazon-listing-images" />
 						</div>
 						<div className="text-content max-w-[690px] space-y-4">
-							<h2 className="font-bold">
+							<h1 className="text-3xl md:text-4xl font-bold">
 								Worried About Amazon Listing Images Design?{" "}
 								<span className="styled-underline">Maximize</span> Your Profits with{" "}
 								<span className="text-primary">
 									Professional Listing Images Design.
 								</span>
-							</h2>
+							</h1>
 							<h4 className="font-medium">
 								Stand Out from the Crowd and Maximize Your Profits with Our Proven
 								Method for Designing Amazon Listing Images that Turn Clicks into

@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
 					<div className="col-span-1 lg:col-span-5">
 						<Image
 							src={whyChooseImage}
-							alt="why choose us"
+							alt="amazon-listing-images-design"
 							height={368}
 							width={366}
 							className="mx-auto lg:mx-0"

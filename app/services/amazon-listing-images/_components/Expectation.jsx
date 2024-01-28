@@ -56,7 +56,7 @@ export default function Expectation() {
 								</li>
 							))}
 						</ul>
-						<Link href="/order?service=photography-and-listing" className="btn mt-7">
+						<Link href="/order?service=amazon-listing-images" className="btn mt-7">
 							<span>Order Now</span>
 						</Link>
 					</div>

@@ -3,6 +3,7 @@
 import SectionTitle from "@/appComponents/shared/SectionTitle";
 import { generateAltFromFilename } from "@/utils/utils";
 import Image from "next/image";
+import { memo } from "react";
 import Slider from "react-slick";
 
 let data = [
@@ -43,11 +44,12 @@ let data = [
 let sliderSettings = {
 	infinite: true,
 	autoplay: true,
-	autoplaySpeed: 0,
-	speed: 4000,
 	slidesToShow: 4,
 	slidesToScroll: 1,
 	arrows: false,
+	speed: 7000,
+	autoplaySpeed: 0,
+	cssEase: "linear",
 	responsive: [
 		{
 			breakpoint: 1280,
@@ -70,7 +72,7 @@ let sliderSettings = {
 	],
 };
 
-export default function BrandLogos() {
+function BrandLogos() {
 	return (
 		<section className="section pt-20">
 			<div className="container">
@@ -91,3 +93,5 @@ export default function BrandLogos() {
 		</section>
 	);
 }
+
+export default memo(BrandLogos);

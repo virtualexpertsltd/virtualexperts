@@ -8,11 +8,11 @@ import "@/styles/appGlobals.css";
 
 export const metadata = {
 	title: {
-		template: "Virtual Experts | %s",
-		default: "Virtual Experts",
+		template: "%s | VirtualExperts",
+		default: "VirtualExperts",
 	},
 	description:
-		"Virtual Experts is the best Amazon FBA Consultant who will reduce your workload and ensure your business growth. Virtual Experts provides Amazon Marketing Services including Amazon SEO Services with Listing Optimization Services & Amazon PPC",
+		"Stand Out from the Crowd and Maximize Your Profits with Virtual Experts Proven Method for Designing Amazon Listing Images that Turn Clicks into Sales.",
 	keyword:
 		"amazon fba consultant, amazon marketing service, amazon seo consultant, amazon seo agency, amazon listing optimisation, amazon listing images, amazon, ppc agency, amazon ppc services\n",
 };

@@ -18,6 +18,13 @@ module.exports = {
 				custom: "0px 3px 6px rgba(0,0,0,0.16)",
 			},
 		},
+		screens: {
+			sm: "576px",
+			md: "768px",
+			lg: "992px",
+			xl: "1200px",
+			"2xl": "1400px",
+		},
 	},
 	plugins: [
 		require("@tailwindcss/typography"),

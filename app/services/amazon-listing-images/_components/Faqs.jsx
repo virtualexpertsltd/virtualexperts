@@ -15,7 +15,7 @@ let data = [
 	{
 		priority: 3,
 		question: "Do you provide Amazon product photography services?",
-		answer: "Yes! We provide Amazon product photography services alongside product listing images and infographic design.",
+		answer: 'Yes! We provide Amazon product photography <a href="https://virtualexperts.net/services" class="text-primary">services</a> alongside product listing images and infographic design.',
 	},
 	{
 		priority: 4,

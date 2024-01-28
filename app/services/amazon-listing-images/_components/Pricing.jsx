@@ -28,10 +28,7 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<Link
-								href="/order?service=product-listing-images-design"
-								className="btn"
-							>
+							<Link href="/order?service=amazon-listing-images" className="btn">
 								<span>Order Now</span>
 							</Link>
 						</div>
@@ -54,10 +51,7 @@ export default function Pricing() {
 							</ul>
 						</div>
 						<div className="">
-							<Link
-								href="/order?service=product-listing-images-design"
-								className="btn"
-							>
+							<Link href="/order?service=amazon-listing-images" className="btn">
 								<span>Order Now</span>
 							</Link>
 						</div>
@@ -82,7 +76,7 @@ export default function Pricing() {
 						</div>
 						<div className="">
 							<Link
-								href="/order?service=product-listing-images-design,photoshoot-of-the-product"
+								href="/order?service=amazon-listing-images,photoshoot-of-the-product"
 								className="btn"
 							>
 								<span>Order Now</span>

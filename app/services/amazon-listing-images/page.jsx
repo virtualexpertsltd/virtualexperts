@@ -10,7 +10,7 @@ import Testimonials from "./_components/Testimonials";
 import WhyChooseUs from "./_components/WhyChooseUs";
 
 export const metadata = {
-	title: "Photography & Listing",
+	title: "Amazon Listing Images",
 	alternates: {
 		canonical: "https://virtualexperts.net/services/amazon-listing-images",
 	},
