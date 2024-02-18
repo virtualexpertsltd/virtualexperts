@@ -1,6 +1,7 @@
 import SiteFooter from "@/appComponents/layout/SiteFooter";
 import SiteHeader from "@/appComponents/layout/SiteHeader";
 import { Poppins, Roboto } from "next/font/google";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 // ignore-organize-import

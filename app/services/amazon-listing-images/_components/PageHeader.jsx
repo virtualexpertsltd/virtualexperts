@@ -15,7 +15,12 @@ export default function PageHeader() {
 				<div className="container">
 					<div className="flex flex-wrap lg:flex-nowrap lg:flex-row-reverse justify-between items-center gap-x-8 gap-y-10 py-8">
 						<div className="image max-w-[230px] lg:max-w-full mx-auto lg:mx-0">
-							<Image src={amazonListing} alt="amazon-listing-images" />
+							<Image
+								src={amazonListing}
+								alt="amazon-listing-images"
+								quality={75}
+								priority
+							/>
 						</div>
 						<div className="text-content max-w-[690px] space-y-4">
 							<h1 className="text-3xl md:text-4xl font-bold">
