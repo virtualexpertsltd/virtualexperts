@@ -1,11 +1,15 @@
-import paymentMethods from "@/appAssets/images/payment-methods.png";
+import BTC from "@/Assets/Images/others/Bitcoin.svg";
+import PayPal from "@/Assets/Images/others/PayPal.svg";
+import Payoneer from "@/Assets/Images/others/Payoneer.svg";
+import skrill from "@/Assets/Images/others/Skrill.svg";
+import footerLogo from "@/appAssets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from "react-icons/fi";
-import { LiaTelegram } from "react-icons/lia";
-import { RiWhatsappLine } from "react-icons/ri";
-import { SlEnvolope, SlSocialSkype } from "react-icons/sl";
-import Logo from "./Logo";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaFacebook, FaSkype, FaTelegram, FaYoutube } from "react-icons/fa";
+import { ImTwitter } from "react-icons/im";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
 
 let socialLinks = {
 	facebook: "https://www.facebook.com/virtualexpertsltd",
@@ -18,70 +22,78 @@ let socialLinks = {
 
 export default function SiteFooter() {
 	return (
-		<footer className="footer bg-grey relative z-40">
+		<footer className="footer font-poppins bg-grey relative z-40">
 			<div className="container">
-				<div className="footer-top flex justify-center lg:justify-between flex-wrap lg:flex-nowrap gap-x-10 gap-y-14 py-20">
-					<div className="widget text-center lg:text-left max-w-[370px] w-full">
-						<Logo />
-						<p className="text-sm mt-3">
+				<div className="footer-top grid grid-cols-1 gap-y-7 md:grid-cols-3 py-16 px-4 md:px-12">
+					<div className="col-span-1 widget">
+						<Image
+							src={footerLogo}
+							alt="virtualexperts.net"
+							height={60}
+							width={334}
+							className="object-contain object-center max-h-full max-w-full align-middle"
+							quality={100}
+						/>
+						<p className="text-sm leading-[1.625rem] mt-2">
 							Virtual Experts Limited is the best Amazon FBA Consultant & Amazon
 							Marketing Agency with 10 years of experience, who can reduce your
 							workload & grow your brands.
 						</p>
 					</div>
-					<div className="widget text-center lg:text-left w-full">
-						<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
+					<div className="col-span-1 widget w-full px-12">
+						<h6 className="widget-title text-center md:text-left font-poppins text-base font-medium relative pb-3 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
 							Get in Touch
 						</h6>
-						<ul className="space-y-3">
-							<li className="flex justify-center lg:justify-start items-center gap-x-2 whitespace-nowrap">
-								<SlEnvolope className="text-primary" />
+						<ul className="space-y-7">
+							<li className="flex justify-start items-center text-sm gap-x-2 whitespace-nowrap">
+								<MdEmail className="text-xl basis-[30px] grow-0 shrink-0 text-primary transition-all transform scale-100 hover:scale-[1.4]" />
 								<Link
 									href="mailto:help@virtualexperts.net"
 									target="_blank"
 									className="transition-all hover:text-primary"
 								>
-									<strong>Email :</strong> help@virtualexperts.net
+									<span className="font-medium">Email :</span>{" "}
+									help@virtualexperts.net
 								</Link>
 							</li>
-							<li className="flex justify-center lg:justify-start items-center gap-x-2 whitespace-nowrap">
-								<SlSocialSkype className="text-primary" />
+							<li className="flex justify-start items-center text-sm gap-x-2 whitespace-nowrap">
+								<FaSkype className="text-xl basis-[30px] grow-0 shrink-0 text-primary transition-all transform scale-100 hover:scale-[1.4]" />
 								<Link
 									href="https://join.skype.com/invite/NMl9NExzR6b3"
 									target="_blank"
 									className="transition-all hover:text-primary"
 								>
-									<strong>Skype :</strong> VirtualExpertsLTD
+									<span className="font-medium">Skype :</span> VirtualExpertsLTD
 								</Link>
 							</li>
-							<li className="flex justify-center lg:justify-start items-center gap-x-2 whitespace-nowrap">
-								<RiWhatsappLine className="text-primary" />
+							<li className="flex justify-start items-center text-sm gap-x-2 whitespace-nowrap">
+								<IoLogoWhatsapp className="text-xl basis-[30px] grow-0 shrink-0 text-primary transition-all transform scale-100 hover:scale-[1.4]" />
 								<Link
 									href="https://wa.me/15099035120"
 									target="_blank"
 									className="transition-all hover:text-primary"
 								>
-									<strong>Whatsapp :</strong> +15099035120
+									<span className="font-medium">Whatsapp :</span> +15099035120
 								</Link>
 							</li>
 						</ul>
 					</div>
-					<div className="column w-full space-y-5">
+					<div className="col-span-1 column w-full space-y-5">
 						<div className="widget text-center lg:text-left">
-							<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
+							<h6 className="widget-title text-center md:text-left font-poppins text-base font-medium relative pb-3 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
 								Let&apos;s Get Social
 							</h6>
-							<ul className="flex justify-center lg:justify-start flex-wrap gap-3">
+							<ul className="flex justify-center lg:justify-start items-center flex-wrap gap-x-4">
 								{socialLinks.facebook ? (
 									<li>
 										<Link
 											href={socialLinks.facebook}
 											target="_blank"
 											rel="noreferrer"
-											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
+											className="group text-xl"
 											aria-label="Facebook"
 										>
-											<FiFacebook className="text-primary transition-all group-hover:text-black" />
+											<FaFacebook className="text-primary transition-all transform scale-100 group-hover:scale-[1.4]" />
 										</Link>
 									</li>
 								) : null}
@@ -91,36 +103,10 @@ export default function SiteFooter() {
 											href={socialLinks.instagram}
 											target="_blank"
 											rel="noreferrer"
-											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
+											className="group text-xl"
 											aria-label="Instagram"
 										>
-											<FiInstagram className="text-primary transition-all group-hover:text-black" />
-										</Link>
-									</li>
-								) : null}
-								{socialLinks.twitter ? (
-									<li>
-										<Link
-											href={socialLinks.twitter}
-											target="_blank"
-											rel="noreferrer"
-											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
-											aria-label="Twitter"
-										>
-											<FiTwitter className="text-primary transition-all group-hover:text-black" />
-										</Link>
-									</li>
-								) : null}
-								{socialLinks.youTube ? (
-									<li>
-										<Link
-											href={socialLinks.youTube}
-											target="_blank"
-											rel="noreferrer"
-											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
-											aria-label="Youtube"
-										>
-											<FiYoutube className="text-primary transition-all group-hover:text-black" />
+											<AiFillInstagram className="text-primary transition-all transform scale-100 group-hover:scale-[1.4]" />
 										</Link>
 									</li>
 								) : null}
@@ -130,32 +116,64 @@ export default function SiteFooter() {
 											href={socialLinks.telegram}
 											target="_blank"
 											rel="noreferrer"
-											className="group inline-flex justify-center items-center h-8 w-8 rounded-full border border-primary text-primary transition-all hover:border-black hover:text-black"
+											className="group text-xl"
 											aria-label="Telegram"
 										>
-											<LiaTelegram className="text-primary transition-all group-hover:text-black" />
+											<FaTelegram className="text-primary transition-all transform scale-100 group-hover:scale-[1.4]" />
+										</Link>
+									</li>
+								) : null}
+								{socialLinks.twitter ? (
+									<li>
+										<Link
+											href={socialLinks.twitter}
+											target="_blank"
+											rel="noreferrer"
+											className="group text-xl"
+											aria-label="Twitter"
+										>
+											<ImTwitter className="text-primary transition-all transform scale-100 group-hover:scale-[1.4]" />
+										</Link>
+									</li>
+								) : null}
+								{socialLinks.youTube ? (
+									<li>
+										<Link
+											href={socialLinks.youTube}
+											target="_blank"
+											rel="noreferrer"
+											className="group text-xl"
+											aria-label="Youtube"
+										>
+											<FaYoutube className="text-primary transition-all transform scale-100 group-hover:scale-[1.4]" />
 										</Link>
 									</li>
 								) : null}
 							</ul>
 						</div>
 						<div className="widget text-center lg:text-left">
-							<h6 className="widget-title font-medium relative pb-2 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
+							<h6 className="widget-title text-center md:text-left font-poppins text-base font-medium relative pb-3 mb-3 before:absolute before:left-1/2 before:-ml-4 lg:before:left-0 lg:before:ml-0 before:top-auto before:bottom-0 before:content-[''] before:h-0.5 before:w-8 before:bg-primary">
 								Payment method
 							</h6>
-							<div className="payment-methods flex justify-center lg:justify-start">
-								<Image
-									src={paymentMethods}
-									alt="payment methods"
-									height={30}
-									width={330}
-								/>
+							<div className="payment-methods flex justify-center lg:justify-start items-center gap-x-4 gap-y-2">
+								<div className="">
+									<Image src={PayPal} alt="paypal" />
+								</div>
+								<div className="">
+									<Image src={Payoneer} alt="Payoneer" />
+								</div>
+								<div className="">
+									<Image src={skrill} alt="skrill" />
+								</div>
+								<div className="">
+									<Image src={BTC} alt="BTC" />
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div className="footer-bottom border-t border-border border-opacity-30 py-5">
-					<p className="text-sm text-center">
+					<p className="text-sm text-center pt-4">
 						© 2014-{new Date().getFullYear()} Virtual Experts Limited | All Right
 						Reserved
 					</p>

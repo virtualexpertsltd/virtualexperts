@@ -49,10 +49,9 @@ const Accordion = ({ data, current, setCurrent }) => {
 				)}
 			</button>
 			<div
-				className={`accordion-content text-xl px-3 sm:px-5 py-5 border-t border-border border-opacity-10 ${data.priority === current ? "block" : "hidden"}`}
-			>
-				{data.answer}
-			</div>
+				className={`accordion-content text-lg px-3 sm:px-5 py-5 border-t border-border border-opacity-10 ${data.priority === current ? "block" : "hidden"}`}
+				dangerouslySetInnerHTML={{ __html: data.answer }}
+			></div>
 		</div>
 	);
 };
